@@ -18,9 +18,7 @@ mongoose.connect(MONGOURL, err => {
     console.log(err || `MongoDb connected to ${MONGOURL}`);
 });
 
-// import users from './routes/users';
-
-let app = express();
+const app = express();
 
 const compiler = webpack(webpackConfig);
 
