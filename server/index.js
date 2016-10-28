@@ -4,7 +4,11 @@ import bodyParser from 'body-parser';
 import http from 'http';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
+import webpack from 'webpack';
+import webpackMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
 
+import webpackConfig from '../webpack.config.dev.js';
 import router from './routes/router';
 
 const MONGOURL = process.env.MONGODB_URI || 'mongodb://localhost/mentor';
@@ -13,10 +17,6 @@ mongoose.connect(MONGOURL, err => {
     console.log(err || `MongoDb connected to ${MONGOURL}`);
 })
 
-import webpack from 'webpack';
-import webpackMiddleware from 'webpack-dev-middleware';
-import webpackHotMiddleware from 'webpack-hot-middleware';
-import webpackConfig from '../webpack.config.dev.js';
 
 // import users from './routes/users';
 
