@@ -1,2 +1,2 @@
-export const ADD_FLASH_MESSAGE = 'ADD_FLASH_MESSAGE';
-export const DELETE_FLASH_MESSAGE = 'DELETE_FLASH_MESSAGE';
+export const AUTH_USER = 'AUTH_USER';
+export const UNAUTH_USER = 'UNAUTH_USER';
