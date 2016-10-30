@@ -5,7 +5,7 @@ import * as actions from '../../actions';
 class Signin extends Component {
     handleFormSubmit({ email, password}) {
         console.log(email, password);
-
+        console.log(this.props);
         this.props.signinUser({ email, password });
 
     }
@@ -23,6 +23,7 @@ class Signin extends Component {
                 </fieldset>
                 <button action="submit" className="btn btn-primary">Sign in</button>
             </form>
+            
         );
     }
 }
