@@ -23,11 +23,10 @@ class Signin extends Component {
                 </fieldset>
                 <button action="submit" className="btn btn-primary">Sign in</button>
             </form>
-            
+
         );
     }
 }
-
 export default reduxForm({
     form: 'signin',
     fields: ['email', 'password']
