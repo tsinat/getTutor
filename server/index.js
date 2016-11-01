@@ -19,7 +19,6 @@ mongoose.connect(MONGOURL, err => {
 });
 
 const app = express();
-
 const compiler = webpack(webpackConfig);
 
 app.use(webpackMiddleware(compiler, {
