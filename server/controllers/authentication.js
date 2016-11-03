@@ -29,12 +29,9 @@ export function signup(req, res, next){
         });
     });
 }
-
-
 export function signin(req, res, next) {
     res.send({ token: generateToken(req.user)});
 }
-
 function generateToken(user) {
     const timestamp = new Date().getTime();
     return jwt.encode({_id: user.id, iat: timestamp }, SECRET);
