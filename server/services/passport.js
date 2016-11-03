@@ -9,7 +9,6 @@ const localLogin = new LocalStrategy({ usernameField: 'email'}, (email, password
     User.findOne({ email: email}, (err, user) => {
         if(err) { return done(err); }
         if(!user) { return done(null, false); }
-
         user.comparePassword(password, (err, isMatched) => {
             if(err) { return done(err); }
             if(!isMatched) { return done(null, false); }
@@ -25,7 +24,6 @@ const jwtOptions = {
     jwtFromRequest: ExtractJwt.fromHeader('authorization'),
     secretOrKey: SECRET
 };
-
 //creat JWT Strategy
 const jwtLogin = new Strategy(jwtOptions, (payload, done) => {
     User.findById(payload._id, (err, user) => {
