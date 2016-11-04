@@ -15,7 +15,15 @@ export function signinUser({ email, password }) {
                 browserHistory.push('/feature');
             })
             .catch(error => {
-
+                dispatch(authError('Bad Login Info'));
             });
     }
+}
+
+
+export function authError(error) {
+    return {
+        type: AUTH_ERROR,
+        payload: error
+    };
 }
