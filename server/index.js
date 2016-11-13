@@ -36,5 +36,6 @@ app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, './index.html'));
 });
 router(app);
+const server = http.createServer(app);
 
-app.listen(3000, () => console.log('Running on localhost://3000'))
+server.listen(3000, () => console.log('Running on localhost://3000'))

@@ -7,7 +7,7 @@ import { AUTH_ERROR } from './types';
 const ROOT_URL =   'http://localhost:3000';
 
 export function signinUser({ email, password }) {
-    console.log('yes');
+    console.log('action', email, password);
     return function(dispatch) {
         axios.post(`${ROOT_URL}/signin`, { email, password })
             .then(response => {
