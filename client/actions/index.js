@@ -35,6 +35,9 @@ export function signupUser({ email, password, passwordConfirmation }) {
     }
 }
 
+export function signoutUser() {
+
+}
 
 export function authError(error) {
     return {
