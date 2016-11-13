@@ -9,9 +9,9 @@ const form =  reduxForm({
 });
 
 class Signup extends Component {
-    handleFormSubmit({ email, password}) {
+    handleFormSubmit({ email, password, passwordConfirmation}) {
         console.log(email, password);
-        this.props.signinUser({ email, password });
+        this.props.signinUser({ email, password, passwordConfirmation });
     }
     renderAlert() {
         if(this.props.errorMessage) {
