@@ -1,7 +1,23 @@
 import React, { Component} from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 
 class Header extends Component {
+    renderLinks() {
+        if(this.props.authenticated){
+            return [
+                <li className="nav-item"><Link className="nav-link" to='/signout'>Sign Out</Link></li>
+                <li className="nav-item"><Link className="nav-link" to='/help'>Help?</Link></li>
+            ]
+        } else {
+            return [
+                <li className="nav-item"><Link className="nav-link" to='/signup'>Sign Up</Link></li>
+                <li className="nav-item"><Link className="nav-link" to='/signin'>Sign In</Link></li>
+                <li className="nav-item"><Link className="nav-link" to='/help'>Help?</Link></li>
+            ]
+        }
+
+    }
     render() {
         return (
             <nav className='navbar navbar-default'>
@@ -11,9 +27,7 @@ class Header extends Component {
                     </div>
                     <div className='collapse navbar-collapse'>
                         <ul className='nav navbar-nav navbar-right'>
-                            <li><Link to='/signup'>Sign up</Link></li>
-                            <li><Link to='/signin'>Sign in</Link></li>
-                            <li><Link to='/help'>Help?</Link></li>
+                            { this.renderLinks() }
                         </ul>
                     </div>
                 </div>
@@ -22,5 +36,10 @@ class Header extends Component {
 
     }
 }
+function mapStateToProps(state) {
+    return {
+        authenticated: state.auth.authenticated
+    }
+}
 
-export default Header;
+export default connect(mapStateToProps )(Header);
