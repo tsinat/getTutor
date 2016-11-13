@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import 'babel-polyfill';
 import { Field, reduxForm } from 'redux-form';
 import  * as actions from '../../actions';
 import  { connect } from 'react-redux';
 
 const form =  reduxForm({
     form: 'signin',
-    fields: ['email', 'password']
+    fields: ['email', 'password', 'passwordConfirmation']
 });
 
 class Signup extends Component {
@@ -35,8 +34,12 @@ class Signup extends Component {
                     <label>Password:</label>
                     <Field name="password" component="input" type="password" className="form-control"/>
                 </fieldset>
+                <fieldset className="form-group">
+                    <label>Password Confirmation:</label>
+                    <Field name="passwordConfirmation" component="input" type="password" className="form-control"/>
+                </fieldset>
                 { this.renderAlert() }
-                <button action="submit" className="btn btn-primary">Sign in</button>
+                <button action="submit" className="btn btn-primary">Sign up</button>
             </form>
 
         );

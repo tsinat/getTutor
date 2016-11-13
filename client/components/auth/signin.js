@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import 'babel-polyfill';
 import { Field, reduxForm } from 'redux-form';
 import  * as actions from '../../actions';
 import  { connect } from 'react-redux';
