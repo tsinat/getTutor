@@ -4,14 +4,14 @@ import  * as actions from '../../actions';
 import  { connect } from 'react-redux';
 
 const form =  reduxForm({
-    form: 'signin',
-    fields: ['email', 'password', 'passwordConfirmation']
+    form: 'signup',
+    fields: ['email', 'password', 'passwordConfirm'],
 });
 
 class Signup extends Component {
-    handleFormSubmit({ email, password, passwordConfirmation}) {
+    handleFormSubmit({ email, password, passwordConfirm}) {
         console.log(email, password);
-        this.props.signinUser({ email, password, passwordConfirmation });
+        this.props.signinUser({ email, password, passwordConfirm });
     }
     renderAlert() {
         if(this.props.errorMessage) {
@@ -23,7 +23,7 @@ class Signup extends Component {
         }
     }
     render() {
-        const { handleSubmit, fields: { email, password }} = this.props;
+        const { handleSubmit, fields: { email, password, passwordConfirm }} = this.props;
         return (
             <form onSubmit={handleSubmit( this.handleFormSubmit.bind(this))}>
                 <fieldset className="form-group">
@@ -35,7 +35,7 @@ class Signup extends Component {
                     <Field name="password" component="input" type="password" className="form-control"/>
                 </fieldset>
                 <fieldset className="form-group">
-                    <label>Password Confirmation:</label>
+                    <label>Confirm Password:</label>
                     <Field name="passwordConfirmation" component="input" type="password" className="form-control"/>
                 </fieldset>
                 { this.renderAlert() }

@@ -1,8 +1,6 @@
-
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { AUTH_USER } from './types';
-import { AUTH_ERROR } from './types';
+import { AUTH_USER, AUTH_ERROR, SIGN_OUT } from './types';
 
 const ROOT_URL =   'http://localhost:3000';
 
@@ -20,8 +18,8 @@ export function signinUser({ email, password }) {
             });
     }
 }
-export function signupUser({ email, password, passwordConfirmation }) {
-    console.log('action', email, password, passwordConfirmation);
+export function signupUser({ email, password, passwordConfirm }) {
+    console.log('action', email, password, passwordConfirm);
     return function(dispatch) {
         axios.post(`${ROOT_URL}/signup`, { email, password })
             .then(response => {
@@ -36,7 +34,10 @@ export function signupUser({ email, password, passwordConfirmation }) {
 }
 
 export function signoutUser() {
-
+    localStorage.removeItem('token');
+    return {
+        type: SIGN_OUT
+    }
 }
 
 export function authError(error) {
