@@ -6,7 +6,7 @@ import  { connect } from 'react-redux';
 const form =  reduxForm({
     form: 'signup',
     fields: ['email', 'password', 'passwordConfirm'],
-    validate
+    // validate
 });
 
 class Signup extends Component {

@@ -7,6 +7,7 @@ const requireAuth = passport.authenticate('jwt', { session: false });
 const requireSignin = passport.authenticate('local', { session: false});
 
 export default function(app) {
+    console.log('backend called');
     // app.get('/', requireAuth, (req, res) => {
     // app.get('/', (req, res) => {
     //     res.send();

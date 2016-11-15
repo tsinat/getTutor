@@ -10,6 +10,8 @@ import Signout from './components/auth/signout';
 export default (
     <Route path='/' component={App}>
         <IndexRoute  component={HomePage}/>
+        <Route path='categories' component={Signin} />
+        <Route path='profile' component={Signin} />
         <Route path='signin' component={Signin} />
         <Route path='signup' component={Signup} />
         <Route path='signout' component={Signout} />

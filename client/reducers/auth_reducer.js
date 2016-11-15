@@ -4,7 +4,7 @@ export default function( state = {}, action) {
     switch(action.type) {
         case AUTH_USER:
             console.log('state',state);
-            return { ...state, authenticated: true };
+            return { ...state, error: '', authenticated: true };
         case SIGN_OUT:
             return { ...state, authenticated: false };
         case AUTH_ERROR:
