@@ -6,12 +6,13 @@ import  { connect } from 'react-redux';
 const form =  reduxForm({
     form: 'signup',
     fields: ['email', 'password', 'passwordConfirm'],
+    validate
 });
 
 class Signup extends Component {
     handleFormSubmit({ email, password, passwordConfirm}) {
         console.log(email, password);
-        this.props.signinUser({ email, password, passwordConfirm });
+        this.props.signupUser({ email, password });
     }
     renderAlert() {
         if(this.props.errorMessage) {
@@ -29,10 +30,12 @@ class Signup extends Component {
                 <fieldset className="form-group">
                     <label>Email:</label>
                     <Field name="email" component="input" type="text" className="form-control"/>
+                    {/*{email.touched && email.error && <div className="error">{email.error}</div>}*/}
                 </fieldset>
                 <fieldset className="form-group">
                     <label>Password:</label>
                     <Field name="password" component="input" type="password" className="form-control"/>
+                    {}
                 </fieldset>
                 <fieldset className="form-group">
                     <label>Confirm Password:</label>
@@ -45,6 +48,28 @@ class Signup extends Component {
         );
     }
 }
+function validate(formProps) {
+    const errors = {};
+
+    if (!formProps.email) {
+      errors.email = 'Please enter a email';
+    }
+
+    if (!formProps.password) {
+      errors.password = 'Please enter a password';
+    }
+
+    if (!formProps.passwordConfirm) {
+      errors.passwordConfirm = 'Please enter a passwordConfirm'
+    }
+
+    if(formProps.password !== formProps.passwordConfirm) {
+        errors.password = "Password must match"
+    }
+
+    return errors;
+}
+
 function mapStateToProps(state) {
     return {
         errorMessage: state.auth.error,

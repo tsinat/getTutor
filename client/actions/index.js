@@ -11,24 +11,24 @@ export function signinUser({ email, password }) {
             .then(response => {
                 dispatch({type: AUTH_USER})
                 localStorage.setItem('token', response.data.token)
-                browserHistory.push('/feature');
+                browserHistory.push('/profile');
             })
             .catch(error => {
                 dispatch(authError('Bad Login Info'));
             });
     }
 }
-export function signupUser({ email, password, passwordConfirm }) {
-    console.log('action', email, password, passwordConfirm);
+export function signupUser({ email, password }) {
+    console.log('action', email, password);
     return function(dispatch) {
         axios.post(`${ROOT_URL}/signup`, { email, password })
             .then(response => {
                 dispatch({type: AUTH_USER})
                 localStorage.setItem('token', response.data.token)
-                browserHistory.push('/feature');
+                browserHistory.push('/profile');
             })
             .catch(error => {
-                dispatch(authError('Bad Login Info'));
+                dispatch(authError('Bad signup Info'));
             });
     }
 }

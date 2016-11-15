@@ -9,8 +9,8 @@ import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 
-import webpackConfig from '../webpack.config.dev.js';
-import router from './routes/router';
+import webpackConfig from './webpack.config.dev.js';
+import router from './server/routes/router';
 
 const MONGOURL = process.env.MONGODB_URI || 'mongodb://localhost/mentor';
 
@@ -26,16 +26,20 @@ app.use(webpackMiddleware(compiler, {
     publicPath: webpackConfig.output.publicPath,
     noInfo: true
 }));
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 app.use(webpackHotMiddleware(compiler));
 app.use(morgan('dev'));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, './index.html'));
+    res.render('index');
 });
 router(app);
 const server = http.createServer(app);
 
-server.listen(3000, () => console.log('Running on localhost://3000'))
+server.listen(4000, () => console.log('Running on localhost://4000'))

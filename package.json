@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon --watch server --exec babel-node -- server/index.js",
+    "server": "nodemon --watch server --exec babel-node -- index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -28,6 +28,7 @@
     "body-parser": "^1.15.2",
     "classnames": "^2.2.5",
     "cors": "^2.8.1",
+    "ejs": "^2.5.2",
     "express": "^4.14.0",
     "http": "0.0.0",
     "jwt-simple": "^0.5.0",
