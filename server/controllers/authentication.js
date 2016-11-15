@@ -3,6 +3,7 @@ import User from '../models/user';
 import { SECRET } from '../config';
 
 export function signup(req, res, next){
+    console.log('YEAHH');
     const email = req.body.email;
     const password = req.body.password;
     console.log('password:', password);

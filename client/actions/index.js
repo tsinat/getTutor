@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { AUTH_USER, AUTH_ERROR, SIGN_OUT } from './types';
+import { AUTH_USER, AUTH_ERROR, SIGN_OUT, FETCH_MESSAGE} from './types';
 
-const ROOT_URL =   'http://localhost:3000';
+const ROOT_URL =   'http://localhost:4000';
 
 export function signinUser({ email, password }) {
     console.log('action', email, password);
@@ -32,7 +32,20 @@ export function signupUser({ email, password }) {
             });
     }
 }
-
+export function fetchMessage() {
+    return function(dispatch) {
+        axios.get(ROOT_URL, {
+            headers: { authorization: localStorage.getItem('token') }
+        })
+        .then(response => {
+            console.log(response);
+            dispatch({
+                type: FETCH_MESSAGE,
+                payload: response.data.message
+            });
+        });
+    }
+}
 export function signoutUser() {
     localStorage.removeItem('token');
     return {
