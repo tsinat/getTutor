@@ -19,7 +19,6 @@ export function signinUser({ email, password }) {
     }
 }
 export function signupUser({ email, password }) {
-    console.log('action', email, password);
     return function(dispatch) {
         axios.post(`${ROOT_URL}/signup`, { email, password })
             .then(response => {
@@ -38,7 +37,6 @@ export function fetchMessage() {
             headers: { authorization: localStorage.getItem('token') }
         })
         .then(response => {
-            console.log(response);
             dispatch({
                 type: FETCH_MESSAGE,
                 payload: response.data.message
