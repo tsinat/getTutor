@@ -6,8 +6,7 @@ import * as actions from '../../actions';
 class Signout extends Component {
     componentWillMount() {
         this.props.signoutUser();
-    }
-    
+    }    
     render() {
         return (
             <div>
@@ -16,5 +15,4 @@ class Signout extends Component {
         );
     }
 }
-
 export default connect(null, actions)(Signout);
