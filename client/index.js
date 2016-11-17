@@ -22,7 +22,6 @@ const token  = localStorage.getItem('token');
 if(token) {
     store.dispatch({type: AUTH_USER});
 }
-
 render(
     <Provider store={store}>
         <Router history={browserHistory} routes={routes}/>
