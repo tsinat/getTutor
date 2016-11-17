@@ -34,6 +34,7 @@ class SignupForm extends Component {
 
         return isValid;
     }
+    
     onSubmit(e) {
         e.preventDefault();
         if(this.isValid()){
@@ -50,6 +51,7 @@ class SignupForm extends Component {
             );
         }
     }
+
     render() {
         const { errors } = this.state;
         const options = map(timezones, (val, key) =>
