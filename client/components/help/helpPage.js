@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 
-class HelpPage extends Component {
-    render() {
+const HelpPage = () => {
         return (
             <div>Help page wll go here...</div>
             );
-    }
 }
 export default HelpPage;

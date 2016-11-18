@@ -2,10 +2,10 @@ import React from 'react';
 import {Route, IndexRoute} from 'react-router';
 
 import App from './components/App';
-import HelpPage from './components/helpPage/helpPage';
-import HomePage from './components/HomePage';
-import Profile from './components/feature';
-import Categories from './components/categories';
+import HelpPage from './components/help/helpPage';
+import HomePage from './components/home/HomePage';
+import Profile from './components/profile/ProfilePage';
+import Categories from './components/category/categoriesPage';
 import Signin from './components/auth/signin';
 import Signup from './components/auth/signup';
 import RequireAuth from './components/auth/require_auth';

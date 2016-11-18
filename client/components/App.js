@@ -1,11 +1,13 @@
 import React from 'react';
 import { Component } from 'react';
 import Navigation from './NavigationBar';
+import Footer from './Footer';
 
 class App extends Component {
     render(){
         const containerStyle = {
-            marginTop: "60px"
+            marginTop: "60px",
+            height: "auto"
         }
         return (
             <div>
@@ -17,6 +19,7 @@ class App extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }
