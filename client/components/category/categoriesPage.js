@@ -8,12 +8,14 @@ class Categories extends Component {
     getStyles() {
         return {
             categoryStyle: {
-                height: "auto"
+                height: "auto",
+                overflow: "scroll",
+                marginBottom: "40px"
             }
         }
     }
     renderCategory() {
-        let categoryList = [
+        const categoryList = [
             {
             title: "Web Development",
             desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.",

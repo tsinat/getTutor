@@ -7,6 +7,8 @@ class Footer extends Component {
     getStyles() {
         return {
             footerStyle: {
+                position: "static",
+                bottom: 0,
                 width: "100%",
                 height: "60px",
                 paddingTop: "20px",
@@ -42,7 +44,7 @@ class Footer extends Component {
                 <li className="nav-item" key={4}>
                     <Link to='/help' className="nav-link" style={styles.footerLiStyle}>Help?</Link>
                 </li>
-            ]
+            ];
         } else {
             return [
                 <li className="nav-item" key={1} style={styles.footerLiStyle}>
@@ -57,7 +59,7 @@ class Footer extends Component {
                 <li className="nav-item" key={4} style={styles.footerLiStyle}>
                     <Link to='/help' className="nav-link" onClick={this.toggleCollapse} >Help?</Link>
                 </li>
-            ]
+            ];
         }
 
     }

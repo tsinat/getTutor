@@ -5,15 +5,14 @@ import Radium from 'radium';
 const getStyles = () => {
         return {
             category: {
-                // width: "50%",
-                // height: "200px",
-                // marginBottom: "20px"
+                marginBottom: "40px"
             },
             image: {
-                width: "150px",
-                height: "150px"
+                width: "100%",
+                height: "150px",
+                borderBottom: "1px solid lightgrey"
             }
-        }
+        };
     }
 
 const Category = (props) => {

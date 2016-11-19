@@ -2,17 +2,23 @@ import React from 'react';
 import { Component } from 'react';
 import Navigation from './NavigationBar';
 import Footer from './Footer';
+import Radium from 'radium';
 
 class App extends Component {
-    render(){
-        const containerStyle = {
-            marginTop: "60px",
-            height: "auto"
+    getStyles() {
+        return {
+             containerStyle: {
+                marginTop: "80px",
+                minHeight: "100vh"
+            }
         }
+    }
+    render(){
+        const styles = this.getStyles();
         return (
             <div>
                 <Navigation />
-                <div className='container' style={containerStyle}>
+                <div className='container'  style={styles.containerStyle}>
                     <div className="row">
                         <div className="col-lg-12">
                             {this.props.children}
@@ -21,7 +27,7 @@ class App extends Component {
                 </div>
                 <Footer />
             </div>
-        )
+        );
     }
 }
 
