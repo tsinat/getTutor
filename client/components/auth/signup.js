@@ -5,14 +5,13 @@ import  { connect } from 'react-redux';
 
 const form =  reduxForm({
     form: 'signup',
-    fields: ['email', 'password', 'passwordConfirm'],
+    fields: [ 'firstName', 'lastName', 'email', 'password', 'passwordConfirm'],
     // validate
 });
 
 class Signup extends Component {
-    handleFormSubmit({ email, password, passwordConfirm}) {
-        console.log(email, password);
-        this.props.signupUser({ email, password });
+    handleFormSubmit({firstName, lastName, email, status, password, passwordConfirm}) {
+        this.props.signupUser({ firstName, lastName, email, password , status});
     }
     renderAlert() {
         if(this.props.errorMessage) {
@@ -27,13 +26,31 @@ class Signup extends Component {
     render() {
         const { handleSubmit, fields: { email, password, passwordConfirm }} = this.props;
         return (
-            <div className="row">
-                <div className="col-xs-6 col-xs-offset-3">
+            <div className="row ">
+                <div className="col-xs-6 col-xs-offset-3 jumbotron">
                     <form onSubmit={handleSubmit( this.handleFormSubmit.bind(this))}>
+                        <fieldset className="form-group">
+                            <label>First Name:</label>
+                            <Field name="firstName" component="input" type="text" className="form-control"/>
+                            {/*{email.touched && email.error && <div className="error">{email.error}</div>}*/}
+                        </fieldset>
+                        <fieldset className="form-group">
+                            <label>Last Name:</label>
+                            <Field name="lastName" component="input" type="text" className="form-control"/>
+                            {/*{email.touched && email.error && <div className="error">{email.error}</div>}*/}
+                        </fieldset>
                         <fieldset className="form-group">
                             <label>Email:</label>
                             <Field name="email" component="input" type="text" className="form-control"/>
                             {/*{email.touched && email.error && <div className="error">{email.error}</div>}*/}
+                        </fieldset>
+                        <fieldset className="form-group">
+                            <label>Mentor/Mentee:</label>
+                            <Field name="status" component="select" className="form-control">
+                                <option></option>
+                                <option>Mentor</option>
+                                <option>Mentee</option>
+                            </Field>
                         </fieldset>
                         <fieldset className="form-group">
                             <label>Password:</label>
@@ -56,6 +73,12 @@ class Signup extends Component {
 function validate(formProps) {
     const errors = {};
 
+    if (!formProps.firstName) {
+      errors.firstName = 'Please enter a first name';
+    }
+    if (!formProps.lastName) {
+      errors.lastName = 'Please enter a last name';
+    }
     if (!formProps.email) {
       errors.email = 'Please enter a email';
     }

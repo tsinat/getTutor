@@ -25,8 +25,8 @@ class Signin extends Component {
     render() {
         const { handleSubmit, fields: { email, password }} = this.props;
         return (
-            <div className="row">
-                <div className="col-xs-6 col-xs-offset-3">
+            <div className="row ">
+                <div className="col-xs-6 col-xs-offset-3 jumbotron">
                     <form onSubmit={handleSubmit( this.handleFormSubmit.bind(this))}>
                         <fieldset className="form-group">
                             <label>Email:</label>
