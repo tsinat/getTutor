@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import  * as actions from '../../actions';
 import  { connect } from 'react-redux';
+import Radium from 'radium';
 
 const form =  reduxForm({
     form: 'signup',
@@ -22,11 +23,19 @@ class Signup extends Component {
             );
         }
     }
+    getStyles() {
+        return {
+            signupStyle: {
+                marginTop: "80px"
+            }
+        }
+    }
 
     render() {
+        const styles = this.getStyles();
         const { handleSubmit, fields: { email, password, passwordConfirm }} = this.props;
         return (
-            <div className="row ">
+            <div className="row " style={styles.signupStyle}>
                 <div className="col-xs-6 col-xs-offset-3 jumbotron">
                     <form onSubmit={handleSubmit( this.handleFormSubmit.bind(this))}>
                         <fieldset className="form-group">

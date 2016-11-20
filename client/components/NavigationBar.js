@@ -19,7 +19,7 @@ class Header extends Component {
                 fontWeight: "bold",
             },
             textStyle: {
-                color: "white",
+                color: "#25252",
                 fontWeight: "bold"
             }
         }
