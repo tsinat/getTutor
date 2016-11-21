@@ -19,8 +19,8 @@ class Header extends Component {
                 borderBottom: "none"
             },
             textStyle: {
-                color: "silver",
-                fontWeight: 900,
+                color: "white",
+                fontWeight: 1500,
 
             }
         }
