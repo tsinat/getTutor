@@ -14,14 +14,17 @@ class Header extends Component {
     getStyles(){
         return {
             header: {
-                background: "transparent",
+                background: "#e67e22",
+                opacity: 0.8,
                 fontWeight: "bold",
                 borderBottom: "none"
             },
             textStyle: {
-                color: "white",
+                color: "#ecf0f1",
                 fontWeight: 1500,
-
+                ":hover": {
+                    color: "red"
+                }
             }
         }
     }
@@ -105,7 +108,7 @@ class Header extends Component {
                     <span className="icon-bar"></span>
                   </button>
                   <div className='navbar-header'>
-                        <Link to='/' className='navbar-brand' style={styles.textStyle}>getTutor</Link>
+                        <Link to='/' className='navbar-brand' style={styles.textStyle}>getMentor</Link>
                   </div>
                 </div>
                 <div className={ "navbar-collapse " + navClass } id="bs-example-navbar-collapse-1">
