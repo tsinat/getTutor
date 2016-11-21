@@ -11,7 +11,6 @@ class Categories extends Component {
             categoryStyle: {
                 height: "auto",
                 overflow: "scroll",
-                marginBottom: "40px",
                 marginTop: "80px"
             }
         }
