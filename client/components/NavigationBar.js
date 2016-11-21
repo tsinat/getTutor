@@ -15,12 +15,13 @@ class Header extends Component {
         return {
             header: {
                 background: "transparent",
-                colr: "white",
                 fontWeight: "bold",
+                borderBottom: "none"
             },
             textStyle: {
-                color: "#25252",
-                fontWeight: "bold"
+                color: "silver",
+                fontWeight: 900,
+
             }
         }
     }
