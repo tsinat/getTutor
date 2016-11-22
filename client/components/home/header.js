@@ -16,7 +16,7 @@ function getStyles() {
         },
         headerTextStyle: {
             position: "absolute",
-            top: "25%",
+            top: "30%",
             left:0,
             zIndex: 1,
             width: "100%",
@@ -27,6 +27,7 @@ function getStyles() {
             background: "#e67e22",
             opacity:0.6,
             color: "white",
+            fontWeight: "bold",
             fontSize: "1em",
             borderRadius: "10px",
             border: "none"

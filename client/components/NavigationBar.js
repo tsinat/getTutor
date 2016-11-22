@@ -22,7 +22,7 @@ class Header extends Component {
             textStyle: {
                 color: "#ecf0f1",
                 fontWeight: 1500,
-                ":hover": {
+                ':shover': {
                     color: "red"
                 }
             }
