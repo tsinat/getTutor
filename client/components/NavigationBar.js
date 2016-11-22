@@ -7,24 +7,53 @@ class Header extends Component {
     constructor(props){
         super(props);
         this.state = {
-            collapsed: true
+            collapsed: true,
+            translate: false
         };
         this.toggleCollapse = this.toggleCollapse.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
+    }
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+    handleScroll(e) {
+        const scrollTop = e.srcElement.body.scrollTop;
+
+        if(scrollTop > 80) {
+            this.setState({
+                translate: true
+            });
+        } else {
+            this.setState({
+                translate: false
+            });
+        }
     }
     getStyles(){
         return {
             header: {
-                background: "#e67e22",
-                opacity: 0.8,
+                position: 'fixed',
+                top: 0,
+                background: "transparent",
                 fontWeight: "bold",
-                borderBottom: "none"
+                borderBottom: "none",
             },
             textStyle: {
-                color: "#ecf0f1",
+                color: "white",
                 fontWeight: 1500,
-                ':shover': {
-                    color: "red"
+                ':hover': {
+                    color: "#FFF"
                 }
+            },
+            translateStyle: {
+                position: 'fixed',
+                top: 0,
+                fontWeight: "bold",
+                background: "#e67e22",
+                borderBottom: "none"
             }
         }
     }
@@ -95,10 +124,12 @@ class Header extends Component {
     }
     render() {
         const styles = this.getStyles();
-        const { collapsed } = this.state;
+        const { collapsed, translate } = this.state;
         const navClass = collapsed ? "collapse" : "";
+        const combinedStyle =  translate ? styles.translateStyle : styles.header;
+
         return (
-            <nav className="navbar navbar-default navbar-fixed-top" role="navigation" style={styles.header}>
+            <nav className="navbar navbar-default navbar-fixed-top" role="navigation" style={combinedStyle}>
               <div className="container">
                 <div className="navbar-header">
                   <button type="button" className="navbar-toggle" onClick={this.toggleCollapse}>
