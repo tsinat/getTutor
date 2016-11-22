@@ -128,7 +128,6 @@ class Header extends Component {
         const history = createHistory();
         const unlisten = history.listen((location) => {
             this.pathName = location.pathname;
-            console.log(this.pathName);
         })
         const styles = this.getStyles();
         const { collapsed, translate } = this.state;
