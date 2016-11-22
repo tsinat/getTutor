@@ -8,7 +8,8 @@ function getStyles() {
             position: "relative",
             width: "100%",
             zIndex: 0,
-            marginRight: "-15px"
+            marginRight: "-15px",
+            paddingBottom: 0
         },
         containerVideo: {
             position: "relative",
