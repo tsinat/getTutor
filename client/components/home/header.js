@@ -47,7 +47,7 @@ const Header = () => {
                     style={styles.containerVideo}>
                 </video>
                 <div style={styles.headerTextStyle} className="text-center">
-                    <h1>getMentor</h1>
+                    <h1>GetMentor</h1>
                     <h1>The easiest way to get local or online mentor</h1><br/>
                     <Link className="btn btn-default " style={styles.buttonStyle}>How it works?</Link>
                 </div>

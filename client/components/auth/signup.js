@@ -30,7 +30,6 @@ class Signup extends Component {
             }
         }
     }
-
     render() {
         const styles = this.getStyles();
         const { handleSubmit, fields: { email, password, passwordConfirm }} = this.props;

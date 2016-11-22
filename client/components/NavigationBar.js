@@ -1,7 +1,8 @@
 import React, { Component} from 'react';
-import { Link } from 'react-router';
+import { Link , hashHistory} from 'react-router';
 import { connect } from 'react-redux';
 import Radium from 'radium';
+import { createHistory } from 'history';
 
 class Header extends Component {
     constructor(props){
@@ -22,7 +23,7 @@ class Header extends Component {
     handleScroll(e) {
         const scrollTop = e.srcElement.body.scrollTop;
 
-        if(scrollTop > 80) {
+        if(scrollTop > 80 || window.location.pathname != '/') {
             this.setState({
                 translate: true
             });
@@ -123,11 +124,16 @@ class Header extends Component {
 
     }
     render() {
+        const pathName = '';
+        const history = createHistory();
+        const unlisten = history.listen((location) => {
+            this.pathName = location.pathname;
+            console.log(this.pathName);
+        })
         const styles = this.getStyles();
         const { collapsed, translate } = this.state;
         const navClass = collapsed ? "collapse" : "";
-        const combinedStyle =  translate ? styles.translateStyle : styles.header;
-
+        const combinedStyle =  translate || this.pathName != '/' ? styles.translateStyle : styles.header;
         return (
             <nav className="navbar navbar-default navbar-fixed-top" role="navigation" style={combinedStyle}>
               <div className="container">
@@ -139,7 +145,7 @@ class Header extends Component {
                     <span className="icon-bar"></span>
                   </button>
                   <div className='navbar-header'>
-                        <Link to='/' className='navbar-brand' style={styles.textStyle}>getMentor</Link>
+                        <Link to='/' className='navbar-brand' style={styles.textStyle}>GetMentor</Link>
                   </div>
                 </div>
                 <div className={ "navbar-collapse " + navClass } id="bs-example-navbar-collapse-1">
