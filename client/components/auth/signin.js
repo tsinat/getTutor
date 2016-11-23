@@ -27,6 +27,10 @@ class Signin extends Component {
         return {
             signinStyle: {
                 marginTop: "80px"
+            },
+            jumbotronStyle: {
+                borderRadius: 0,
+                background: "white"
             }
         }
     }
@@ -35,7 +39,7 @@ class Signin extends Component {
         const { handleSubmit, fields: { email, password }} = this.props;
         return (
             <div className="row " style={styles.signinStyle}>
-                <div className="col-xs-6 col-xs-offset-3 jumbotron">
+                <div className="col-xs-6 col-xs-offset-3 jumbotron" style={styles.jumbotronStyle}>
                     <form onSubmit={handleSubmit( this.handleFormSubmit.bind(this))}>
                         <fieldset className="form-group">
                             <label>Email:</label>

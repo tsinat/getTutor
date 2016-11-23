@@ -26,7 +26,12 @@ class Signup extends Component {
     getStyles() {
         return {
             signupStyle: {
-                marginTop: "80px"
+                marginTop: "80px",
+                borderRadius: 0
+            },
+            jambotronStyle: {
+                borderRadius: 0,
+                background: "white"
             }
         }
     }
@@ -35,7 +40,7 @@ class Signup extends Component {
         const { handleSubmit, fields: { email, password, passwordConfirm }} = this.props;
         return (
             <div className="row " style={styles.signupStyle}>
-                <div className="col-xs-6 col-xs-offset-3 jumbotron">
+                <div className="col-xs-6 col-xs-offset-3 jumbotron" style={styles.jambotronStyle}>
                     <form onSubmit={handleSubmit( this.handleFormSubmit.bind(this))}>
                         <fieldset className="form-group">
                             <label>First Name:</label>

@@ -11,7 +11,12 @@ class App extends Component {
                 margin: 0,
                 padding: 0,
                 width: "100%",
-                minHeight: "100vh"
+                minHeight: "100vh",
+                height: "100%",
+                background: "#FAFAFA"
+            },
+            rowStyle: {
+                background: "#FAFAFA"
             }
         }
     }
@@ -21,7 +26,7 @@ class App extends Component {
             <div>
                 <Navigation />
                 <div className='container'  style={styles.containerStyle}>
-                    <div className="row">
+                    <div className="row" style={styles.rowStyle}>
                         <div className="col-lg-12">
                             {this.props.children}
                         </div>
