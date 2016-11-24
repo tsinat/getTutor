@@ -13,7 +13,8 @@ class App extends Component {
                 width: "100%",
                 minHeight: "100vh",
                 height: "100%",
-                background: "#FAFAFA"
+                background: "#FAFAFA",
+                paddingTop:"80px"
             },
             rowStyle: {
                 background: "#FAFAFA"

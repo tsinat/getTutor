@@ -26,7 +26,7 @@ class Signin extends Component {
     getStyles() {
         return {
             signinStyle: {
-                marginTop: "80px"
+
             },
             jumbotronStyle: {
                 borderRadius: 0,

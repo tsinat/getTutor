@@ -10,9 +10,10 @@ const form =  reduxForm({
     // validate
 });
 
-class Signup extends Component {
-    handleFormSubmit({firstName, lastName, email, status, password, passwordConfirm}) {
-        this.props.signupUser({ firstName, lastName, email, password , status});
+class UpdateProfile extends Component {
+    handleFormSubmit(formProps) {
+        console.log('formProps:', formProps);
+        this.props.updateUser(formProps);
     }
     renderAlert() {
         if(this.props.errorMessage) {
@@ -44,17 +45,14 @@ class Signup extends Component {
                         <fieldset className="form-group">
                             <label>First Name:</label>
                             <Field name="firstName" component="input" type="text" className="form-control"/>
-                            {/*{email.touched && email.error && <div className="error">{email.error}</div>}*/}
                         </fieldset>
                         <fieldset className="form-group">
                             <label>Last Name:</label>
                             <Field name="lastName" component="input" type="text" className="form-control"/>
-                            {/*{email.touched && email.error && <div className="error">{email.error}</div>}*/}
                         </fieldset>
                         <fieldset className="form-group">
                             <label>Email:</label>
                             <Field name="email" component="input" type="text" className="form-control"/>
-                            {/*{email.touched && email.error && <div className="error">{email.error}</div>}*/}
                         </fieldset>
                         <fieldset className="form-group">
                             <label>Mentor/Mentee:</label>
@@ -82,33 +80,6 @@ class Signup extends Component {
         );
     }
 }
-function validate(formProps) {
-    const errors = {};
-
-    if (!formProps.firstName) {
-      errors.firstName = 'Please enter a first name';
-    }
-    if (!formProps.lastName) {
-      errors.lastName = 'Please enter a last name';
-    }
-    if (!formProps.email) {
-      errors.email = 'Please enter a email';
-    }
-
-    if (!formProps.password) {
-      errors.password = 'Please enter a password';
-    }
-
-    if (!formProps.passwordConfirm) {
-      errors.passwordConfirm = 'Please enter a passwordConfirm'
-    }
-
-    if(formProps.password !== formProps.passwordConfirm) {
-        errors.password = "Password must match"
-    }
-
-    return errors;
-}
 
 function mapStateToProps(state) {
     return {
@@ -117,4 +88,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps, actions)(form(Signup));
+export default connect(mapStateToProps, actions)(form(UpdateProfile));

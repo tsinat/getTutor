@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { AUTH_USER, AUTH_ERROR, SIGN_OUT, FETCH_MESSAGE} from './types';
+import { AUTH_USER, AUTH_ERROR, SIGN_OUT, FETCH_MESSAGE, UPDATE_USER} from './types';
 
 const ROOT_URL =   'http://localhost:4000';
 
@@ -28,6 +28,21 @@ export function signupUser({ email, password }) {
             })
             .catch(error => {
                 dispatch(authError('Bad signup Info'));
+            });
+    }
+}
+export function updateUser(userData) {
+    return function(dispatch) {
+        axios.post(`${ROOT_URL}/update`, userData)
+            .then(response => {
+                dispatch({
+                    type: UPDATE_USER,
+                    payload: response.data
+                })
+                browserHistory.push('/profile');
+            })
+            .catch(error => {
+                dispatch(authError('Bad update Info'));
             });
     }
 }

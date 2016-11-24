@@ -82,11 +82,18 @@ class Header extends Component {
                 </li>,
                 <li className="nav-item" key={3}>
                     <Link
+                        to='/profileUpdate' className="nav-link"
+                        onClick={this.toggleCollapse}
+                        style={styles.textStyle}>Profile update</Link>
+
+                </li>,
+                <li className="nav-item" key={4}>
+                    <Link
                         to='/signout' className="nav-link"
                         onClick={this.toggleCollapse}
                         style={styles.textStyle}>Sign Out</Link>
                 </li>,
-                <li className="nav-item" key={4}>
+                <li className="nav-item" key={5}>
                     <Link
                         to='/help' className="nav-link"
                         onClick={this.toggleCollapse}
