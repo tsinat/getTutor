@@ -9,7 +9,7 @@ function getStyles() {
             width: "100%",
             zIndex: 0,
             marginRight: "-15px",
-            paddingBottom: 0
+            paddingBottom: 0,
         },
         containerVideo: {
             position: "relative",
@@ -36,7 +36,6 @@ function getStyles() {
         }
     }
 }
-
 const Header = () => {
     const styles = getStyles();
     return (
