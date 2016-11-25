@@ -7,7 +7,7 @@ export default class HomePage extends Component {
     getStyles() {
         return {
             thumbnailStyle: {
-                float: "left"
+                float: "left",
             },
             panelStyle: {
                 marginTop: 0
