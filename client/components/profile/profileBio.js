@@ -21,6 +21,10 @@ class ProfileBioList extends Component {
         return {
             ulStyles: {
                 listStyle: "none"
+            },
+            listItem: {
+                borderRadius: 0,
+                border: "none"
             }
         }
     }
@@ -29,7 +33,7 @@ class ProfileBioList extends Component {
         if(this.state.editing !== true){
             return (
                 <div className="row">
-                    <div className="list-group-item col-xs-8 col-xs-offset-2" onClick={this.toggleEditing}>
+                    <div className="list-group-item col-xs-8 col-xs-offset-2" onClick={this.toggleEditing} style={styles.listItem}>
                         <span className="pull-right">
                             <i className='glyphicon glyphicon-edit text-success' onClick={this.toggleEditing}></i>
                         </span>

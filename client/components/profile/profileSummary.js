@@ -21,6 +21,10 @@ class ProfileSummary extends Component {
         return {
             ulStyles: {
                 listStyle: "none"
+            },
+            listItem: {
+                borderRadius: 0,
+                border: "none"
             }
         }
     }
@@ -29,7 +33,7 @@ class ProfileSummary extends Component {
         if(this.state.editing !== true){
             return (
                 <div className="row">
-                    <div className="list-group-item col-xs-8 col-xs-offset-2" onClick={this.toggleEditing}>
+                    <div className="list-group-item col-xs-8 col-xs-offset-2" onClick={this.toggleEditing} style={styles.listItem}>
                         <span className="pull-right">
                             <i className='glyphicon glyphicon-edit text-success' onClick={this.toggleEditing}></i>
                         </span>
@@ -52,7 +56,7 @@ class ProfileSummary extends Component {
                                 </li><br />
                                 <li className="btn-group">
                                     <button action="submit" className="btn btn-primary">Update</button>
-                                    <button  className="btn btn-default">Cancel</button>
+                                    <button  className="btn btn-default" onClick={this.toggleEditing}>Cancel</button>
                                 </li>
                             </ul>
                         </form>
