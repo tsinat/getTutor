@@ -45,6 +45,7 @@ class Header extends Component {
             textStyle: {
                 color: "white",
                 fontWeight: 1500,
+                fontSize:"1.3em",
                 ':hover': {
                     color: "#FFF"
                 }
@@ -78,13 +79,6 @@ class Header extends Component {
                         to='/profile' className="nav-link"
                         onClick={this.toggleCollapse}
                         style={styles.textStyle}>Profile</Link>
-
-                </li>,
-                <li className="nav-item" key={3}>
-                    <Link
-                        to='/profileUpdate' className="nav-link"
-                        onClick={this.toggleCollapse}
-                        style={styles.textStyle}>Profile update</Link>
 
                 </li>,
                 <li className="nav-item" key={4}>

@@ -41,6 +41,7 @@
     "path": "^0.12.7",
     "radium": "^0.18.1",
     "react": "^15.3.2",
+    "react-contenteditable": "^2.0.1",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",

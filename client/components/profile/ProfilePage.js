@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../../actions';
+import ProfileBioList from './profileBio';
 
-class Profile extends Component {
-    componentWillMount() {
-        this.props.fetchMessage();
-    }
-    render() {
-        return (
-            <div>{ this.props.message }
-                Profile page will go here ...
-            </div>
-        )
-    }
-}
-function mapStateToProps(state) {
-    return { message: state.auth.message };
-}
+export default class Example extends Component {
+   constructor(){
+     super();
+   }
+   handleChange() {
 
-export default connect(mapStateToProps, actions)(Profile);
+   }
+   render(){
+     const data = {
+         firstName: "Tsinat",
+         lastName: "Tesfalul",
+         education: "BS in Computer Science"
+     }
+     return(
+         <div>
+             <ProfileBioList
+                 data={data}
+                 onChange={this.handleChange}
+                 />
+         </div>
+     );
+   }
+ }

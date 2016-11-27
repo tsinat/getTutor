@@ -8,9 +8,9 @@ class App extends Component {
     getStyles() {
         return {
              containerStyle: {
-                margin: 0,
+                // margin: 0,
                 padding: 0,
-                width: "100%",
+                // width: "100%",
                 minHeight: "100vh",
                 height: "100%",
                 background: "#FAFAFA",
