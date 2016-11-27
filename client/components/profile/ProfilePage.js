@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import ProfileBioList from './profileBio';
 
-export default class Example extends Component {
+ class ProfilePage extends Component {
    constructor(){
      super();
    }
@@ -24,3 +25,5 @@ export default class Example extends Component {
      );
    }
  }
+
+export default connect(null)(ProfilePage);

@@ -10,7 +10,7 @@ class App extends Component {
              containerStyle: {
                 // margin: 0,
                 padding: 0,
-                // width: "100%",
+                width: "100%",
                 minHeight: "100vh",
                 height: "100%",
                 background: "#FAFAFA",
