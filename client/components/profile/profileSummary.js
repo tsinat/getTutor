@@ -4,12 +4,12 @@ import { Field, reduxForm } from 'redux-form';
 import Radium from 'radium';
 
 const form =  reduxForm({
-    form: 'profileEdit',
-    fields: [ 'firstName', 'lastName', 'email', 'educations'],
+    form: 'profileSummary',
+    fields: [ 'summary'],
     // validate
 });
 
-class ProfileBioList extends Component {
+class ProfileSummary extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -32,14 +32,9 @@ class ProfileBioList extends Component {
                     <span className="pull-right">
                         <i className='glyphicon glyphicon-edit' onClick={this.toggleEditing}></i>
                     </span>
+                    <h4>Summary</h4>
                     <p className="">
-                        <strong>First Name:</strong> {  this.props.data.firstName }
-                    </p>
-                    <p className="">
-                        <strong>Last Name:</strong> {  this.props.data.lastName }
-                    </p>
-                    <p className="">
-                        <strong>Education:</strong> {  this.props.data.education }
+                        {this.props.data.summary}
                     </p>
                 </div>
             );
@@ -50,16 +45,8 @@ class ProfileBioList extends Component {
                         <form>
                             <ul className="list-group-item" style={styles.ulStyles}>
                                 <li >
-                                    <label>First Name:</label>
-                                    <input name="firstName" type="text" className="form-control" defaultValue={this.props.data.firstName}/>
-                                </li>
-                                <li className="">
-                                    <label className="">Last Name:</label>
-                                    <input name="lastName"  type="text" className="form-control" defaultValue={this.props.data.lastName}/>
-                                </li>
-                                <li className="">
-                                    <label>Email:</label>
-                                    <input name="email" type="text" className="form-control" defaultValue={this.props.data.education}/>
+                                    <label>Summary:</label>
+                                    <textarea className="form-control" defaultValue={this.props.data.summary}></textarea>
                                 </li><br />
                                 <li>
                                     <button action="submit" className="btn btn-primary">Update</button>
@@ -85,4 +72,4 @@ class ProfileBioList extends Component {
     }
 }
 
-export default connect(null)(form(ProfileBioList));
+export default connect(null)(form(ProfileSummary));
