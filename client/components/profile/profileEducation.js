@@ -4,12 +4,12 @@ import { Field, reduxForm } from 'redux-form';
 import Radium from 'radium';
 
 const form =  reduxForm({
-    form: 'profileSummary',
-    fields: [ 'summary'],
+    form: 'profileEducation',
+    fields: [ 'firstName', 'lastName', 'email', 'educations'],
     // validate
 });
 
-class ProfileSummary extends Component {
+class ProfileEducation extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,9 +33,15 @@ class ProfileSummary extends Component {
                         <span className="pull-right">
                             <i className='glyphicon glyphicon-edit text-success' onClick={this.toggleEditing}></i>
                         </span>
-                        <h4>Summary</h4>
+                        <h4>Education</h4>
                         <p className="">
-                            {this.props.data.summary}
+                            <strong>School:</strong> {  this.props.data.education.school }
+                        </p>
+                        <p className="">
+                            <strong>Degree:</strong> {  this.props.data.education.degree }
+                        </p>
+                        <p className="">
+                            <strong>Field of Study:</strong> {  this.props.data.education.field}
                         </p><br />
                     </div>
                 </div>
@@ -47,8 +53,16 @@ class ProfileSummary extends Component {
                         <form>
                             <ul className="list-group-item" style={styles.ulStyles}>
                                 <li >
-                                    <label><strong>Summary:</strong></label>
-                                    <textarea className="form-control" rows='5' defaultValue={this.props.data.summary}></textarea>
+                                    <label>School:</label>
+                                    <input name="firstName" type="text" className="form-control" defaultValue={this.props.data.education.school}/>
+                                </li>
+                                <li className="">
+                                    <label className="">Degree:</label>
+                                    <input name="lastName"  type="text" className="form-control" defaultValue={this.props.data.education.degree}/>
+                                </li>
+                                <li className="">
+                                    <label>Field of Study:</label>
+                                    <input name="email" type="text" className="form-control" defaultValue={this.props.data.education.field}/>
                                 </li><br />
                                 <li className="btn-group">
                                     <button action="submit" className="btn btn-primary">Update</button>
@@ -73,4 +87,4 @@ class ProfileSummary extends Component {
     }
 }
 
-export default connect(null)(form(ProfileSummary));
+export default connect(null)(form(ProfileEducation));

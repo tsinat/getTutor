@@ -28,19 +28,21 @@ class ProfileBioList extends Component {
         const styles = this.getStyles();
         if(this.state.editing !== true){
             return (
-                <div className="list-group-item col-xs-8 col-xs-offset-2" onClick={this.toggleEditing}>
-                    <span className="pull-right">
-                        <i className='glyphicon glyphicon-edit' onClick={this.toggleEditing}></i>
-                    </span>
-                    <p className="">
-                        <strong>First Name:</strong> {  this.props.data.firstName }
-                    </p>
-                    <p className="">
-                        <strong>Last Name:</strong> {  this.props.data.lastName }
-                    </p>
-                    <p className="">
-                        <strong>Education:</strong> {  this.props.data.education }
-                    </p>
+                <div className="row">
+                    <div className="list-group-item col-xs-8 col-xs-offset-2" onClick={this.toggleEditing}>
+                        <span className="pull-right">
+                            <i className='glyphicon glyphicon-edit text-success' onClick={this.toggleEditing}></i>
+                        </span>
+                        <p className="">
+                            <strong>First Name:</strong> {  this.props.data.firstName }
+                        </p>
+                        <p className="">
+                            <strong>Last Name:</strong> {  this.props.data.lastName }
+                        </p>
+                        <p className="">
+                            <strong>Email:</strong> {  this.props.data.email }
+                        </p>
+                    </div>
                 </div>
             );
         } else {
@@ -59,9 +61,9 @@ class ProfileBioList extends Component {
                                 </li>
                                 <li className="">
                                     <label>Email:</label>
-                                    <input name="email" type="text" className="form-control" defaultValue={this.props.data.education}/>
+                                    <input name="email" type="text" className="form-control" defaultValue={this.props.data.email}/>
                                 </li><br />
-                                <li>
+                                <li className="btn-group">
                                     <button action="submit" className="btn btn-primary">Update</button>
                                     <button  className="btn btn-default">Cancel</button>
                                 </li>
@@ -76,7 +78,6 @@ class ProfileBioList extends Component {
         this.setState({editing: !this.state.editing});
     }
     render(){
-        console.log(this.props);
         return (
             <div>
                 {this.renderItemOrEditField()}
