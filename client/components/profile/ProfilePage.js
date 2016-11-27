@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ProfileBioList from './profileBio';
 import ProfileSummary from './profileSummary';
 import ProfileEducation from './profileEducation';
+import ProfilePicture from './profilePicture';
 
  class ProfilePage extends Component {
    constructor(){
@@ -25,6 +26,10 @@ import ProfileEducation from './profileEducation';
      }
      return(
          <div>
+             <ProfilePicture
+                 data={data}
+                 onChange={this.handleChange}
+                 />
              <ProfileBioList
                  data={data}
                  onChange={this.handleChange}
