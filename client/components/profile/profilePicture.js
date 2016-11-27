@@ -44,9 +44,9 @@ class ProfilePicture extends Component {
                         <div className="text-center circle">
                             <img src="https://avatars0.githubusercontent.com/u/11866441?v=3" style={styles.imageStyle}/>
                         </div>
-                        <span className="text-center">
-                            <i className='glyphicon' onClick={this.toggleEditing}>Change</i>
-                        </span>
+                        <p className="text-center">
+                            <button className='btn btn-default' onClick={this.toggleEditing}>Change Picture</button>
+                        </p>
                     </div>
                 </div>
             );
