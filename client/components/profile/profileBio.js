@@ -24,7 +24,7 @@ class ProfileBioList extends Component {
             },
             listItem: {
                 borderRadius: 0,
-                border: "none"
+                // border: "none"
             }
         }
     }

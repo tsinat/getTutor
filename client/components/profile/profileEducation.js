@@ -24,7 +24,7 @@ class ProfileEducation extends Component {
             },
             listItem: {
                 borderRadius: 0,
-                border: "none"
+                // border: "none"
             }
         }
     }
@@ -37,7 +37,7 @@ class ProfileEducation extends Component {
                         <span className="pull-right">
                             <i className='glyphicon glyphicon-edit text-success' onClick={this.toggleEditing}></i>
                         </span>
-                        <h4>Education</h4>
+                        <h4>Education</h4><hr />
                         <p className="">
                             <strong>School:</strong> {  this.props.data.education.school }
                         </p>

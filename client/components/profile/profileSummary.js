@@ -24,7 +24,7 @@ class ProfileSummary extends Component {
             },
             listItem: {
                 borderRadius: 0,
-                border: "none"
+                // border: "none"
             }
         }
     }
@@ -37,7 +37,7 @@ class ProfileSummary extends Component {
                         <span className="pull-right">
                             <i className='glyphicon glyphicon-edit text-success' onClick={this.toggleEditing}></i>
                         </span>
-                        <h4>Summary</h4>
+                        <h4>Summary</h4><hr />
                         <p className="">
                             {this.props.data.summary}
                         </p><br />

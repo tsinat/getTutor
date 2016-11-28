@@ -24,7 +24,7 @@ class ProfilePicture extends Component {
             },
             listItem: {
                 borderRadius: "20px 20px 0 0 ",
-                border: "none",
+                // border: "none",
                 borderBottom: "2px solid #FAFAFA"
             },
             imageStyle: {
@@ -40,7 +40,7 @@ class ProfilePicture extends Component {
         if(this.state.editing !== true){
             return (
                 <div className="row">
-                    <div className="list-group-item col-xs-8 col-xs-offset-2 " onClick={this.toggleEditing} style={styles.listItem}>
+                    <div className="list-group-item col-xs-8 col-xs-offset-2" style={styles.listItem}>
                         <div className="text-center circle">
                             <img src="https://avatars0.githubusercontent.com/u/11866441?v=3" style={styles.imageStyle}/>
                         </div>

@@ -14,7 +14,7 @@ function getStyles() {
         containerVideo: {
             position: "relative",
             width: "100%",
-            marginTop: "-140px"
+            marginTop: "-80px"
         },
         headerTextStyle: {
             position: "absolute",
@@ -42,7 +42,7 @@ const Header = () => {
         <div className="row" >
             <div className="col-sm-12" style={styles.headerContainer}>
                 <video
-                    src="https://d2fa3j67sd1nwo.cloudfront.net/video/homepage.020d4af35dca.mp4"
+                    src="https://s3-us-west-2.amazonaws.com/coverr/mp4/Spacious.mp4"
                     type="video/mp4" autoPlay="autoplay" loop
                     style={styles.containerVideo}>
                 </video>
