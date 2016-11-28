@@ -20,7 +20,6 @@ const store = createStore(
 const token  = localStorage.getItem('token');
 
 if(token) {
-    console.log('store', store);
     store.dispatch({type: AUTH_USER});
 }
 render(

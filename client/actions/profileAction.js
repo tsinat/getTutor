@@ -19,15 +19,16 @@ export function updateUser(userData) {
             });
     }
 }
-export function fetchMessage() {
+export function fetchUser() {
     return function(dispatch) {
-        axios.get(ROOT_URL, {
+        axios.get(`${ROOT_URL}/profile`, {
             headers: { authorization: localStorage.getItem('token') }
         })
         .then(response => {
+            console.log(response.data);
             dispatch({
                 type: FETCH_MESSAGE,
-                payload: response.data.message
+                payload: response.data
             });
         })
         .catch(error => {

@@ -11,6 +11,9 @@ import ProfilePicture from './profilePicture';
    constructor(){
      super();
    }
+   componentWillMount() {
+       this.props.fetchUser();
+   }
    handleChange() {
 
    }
@@ -26,12 +29,14 @@ import ProfilePicture from './profilePicture';
              field: "Computer Science"
          }
      }
+     const { user } = this.props;
      return(
          <div>
              <ProfilePicture
                  data={data}
                  onChange={this.handleChange}
                  />
+             {console.log('user:', user.user)}
              <ProfileBioList
                  data={data}
                  onChange={this.handleChange}
@@ -48,5 +53,10 @@ import ProfilePicture from './profilePicture';
      );
    }
  }
+function mapStateToProps(state) {
+    return {
+        user: state.users
+    }
+}
 
-export default connect(null)(ProfilePage);
+export default connect(mapStateToProps, actions)(ProfilePage);

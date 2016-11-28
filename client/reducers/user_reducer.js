@@ -1,4 +1,4 @@
-import { UPDATE_USER } from '../actions';
+import { UPDATE_USER, FETCH_MESSAGE } from '../actions/types';
 
 export default function(state = {}, actions) {
     switch (state.type) {
@@ -6,7 +6,13 @@ export default function(state = {}, actions) {
             return {
                 ...state,
                 userData: actions.payload
-            }
+            };
+        case FETCH_MESSAGE:
+            console.log('user in reducer:', action.payload);
+            return {
+                ...state,
+                user: action.payload
+            };
     }
     return state;
 }
