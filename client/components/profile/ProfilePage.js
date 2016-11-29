@@ -29,6 +29,7 @@ import ProfilePicture from './profilePicture';
              field: "Computer Science"
          }
      }
+     
      const { user } = this.props;
      return(
          <div>
