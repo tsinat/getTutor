@@ -11,7 +11,7 @@ import ProfilePicture from './profilePicture';
    constructor(){
      super();
    }
-   componentWillMount() {
+   componentDidMount() {
        this.props.fetchUser();
    }
    handleChange() {

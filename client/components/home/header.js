@@ -26,8 +26,8 @@ function getStyles() {
             fontSize: "2em"
         },
         buttonStyle: {
-            background: "#e67e22",
-            opacity:0.6,
+            background: "#F05A50",
+            // opacity:0.6,
             color: "white",
             fontWeight: "bold",
             fontSize: "1em",
