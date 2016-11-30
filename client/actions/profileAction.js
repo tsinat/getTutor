@@ -25,7 +25,6 @@ export function fetchUser() {
             headers: { authorization: localStorage.getItem('token') }
         })
         .then(response => {
-            console.log(response.data);
             dispatch({
                 type: FETCH_MESSAGE,
                 payload: response.data

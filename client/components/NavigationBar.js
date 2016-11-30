@@ -56,7 +56,8 @@ class Header extends Component {
                 fontWeight: "bold",
                 // background: "#e67e22",
                 background: "#F05A50",
-                borderBottom: "none"
+                borderBottom: "none",
+                opacity:"0.9"
             }
         }
     }

@@ -33,31 +33,55 @@ class Footer extends Component {
         if(this.props.authenticated){
             return [
                 <li className="nav-item" key={1}>
-                    <Link to='/categories' className="nav-link" style={styles.footerLiStyle}>Categories</Link>
+                    <Link
+                        to='/categories'
+                        className="nav-link"
+                        style={styles.footerLiStyle}>Categories</Link>
                 </li>,
                 <li className="nav-item" key={2}>
-                    <Link to='/profile' className="nav-link" style={styles.footerLiStyle}>Profile</Link>
+                    <Link
+                        to='/profile'
+                        className="nav-link"
+                        style={styles.footerLiStyle}>Profile</Link>
                 </li>,
                 <li className="nav-item" key={3}>
-                    <Link to='/signout' className="nav-link" style={styles.footerLiStyle}>Sign Out</Link>
+                    <Link
+                        to='/signout'
+                        className="nav-link"
+                        style={styles.footerLiStyle}>Sign Out</Link>
                 </li>,
                 <li className="nav-item" key={4}>
-                    <Link to='/help' className="nav-link" style={styles.footerLiStyle}>Help?</Link>
+                    <Link
+                        to='/help'
+                        className="nav-link"
+                        style={styles.footerLiStyle}>Help?</Link>
                 </li>
             ];
         } else {
             return [
-                <li className="nav-item" key={1} style={styles.footerLiStyle}>
-                    <Link to='/categories' className="nav-link" onClick={this.toggleCollapse} >Categories</Link>
+                <li className="nav-item" key={1}>
+                    <Link
+                        to='/categories'
+                        className="nav-link"
+                        style={styles.footerLiStyle} >Categories</Link>
                 </li>,
-                <li className="nav-item" key={2} style={styles.footerLiStyle}>
-                    <Link to='/signup' className="nav-link" onClick={this.toggleCollapse} >Sign Up</Link>
+                <li className="nav-item" key={2}>
+                    <Link
+                        to='/signup'
+                        className="nav-link"
+                        style={styles.footerLiStyle} >Sign Up</Link>
                 </li>,
-                <li className="nav-item" key={3} style={styles.footerLiStyle}>
-                    <Link to='/signin' className="nav-link" onClick={this.toggleCollapse} >Sign In</Link>
+                <li className="nav-item" key={3}>
+                    <Link
+                        to='/signin'
+                        className="nav-link"
+                        style={styles.footerLiStyle} >Sign In</Link>
                 </li>,
-                <li className="nav-item" key={4} style={styles.footerLiStyle}>
-                    <Link to='/help' className="nav-link" onClick={this.toggleCollapse} >Help?</Link>
+                <li className="nav-item" key={4}>
+                    <Link
+                        to='/help'
+                        className="nav-link"
+                        style={styles.footerLiStyle} >Help?</Link>
                 </li>
             ];
         }

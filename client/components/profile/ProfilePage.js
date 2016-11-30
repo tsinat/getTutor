@@ -11,7 +11,7 @@ import ProfilePicture from './profilePicture';
    constructor(){
      super();
    }
-   componentDidMount() {
+   componentWillReceiveProps() {
        this.props.fetchUser();
    }
    handleChange() {
@@ -29,15 +29,15 @@ import ProfilePicture from './profilePicture';
              field: "Computer Science"
          }
      }
-     
-     const { user } = this.props;
+
+     const { currentUser } = this.props;
+     console.log('users in render of profilepage:', currentUser.user);
      return(
          <div>
              <ProfilePicture
                  data={data}
                  onChange={this.handleChange}
                  />
-             {console.log('user:', user.user)}
              <ProfileBioList
                  data={data}
                  onChange={this.handleChange}
@@ -56,7 +56,7 @@ import ProfilePicture from './profilePicture';
  }
 function mapStateToProps(state) {
     return {
-        user: state.users
+        currentUser: state.currentUser
     }
 }
 
