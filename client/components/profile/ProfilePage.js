@@ -15,7 +15,7 @@ import ProfilePicture from './profilePicture';
        this.props.fetchUser();
    }
    handleChange() {
-
+       // change handler will go here;
    }
    render(){
      const data = {
