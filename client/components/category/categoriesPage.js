@@ -11,7 +11,7 @@ class Categories extends Component {
             categoryStyle: {
                 height: "auto",
                 overflow: "scroll",
-                // marginTop: "80px"
+                marginBottom: 0
             }
         }
     }
@@ -24,8 +24,14 @@ class Categories extends Component {
     render() {
         const style = this.getStyles();
         return (
-            <div className="container" style={style.categoryStyle}>
-                {this.renderCategory()}
+            <div>
+                <div className="container">
+                    <div className="">
+                        <h4 className="text-center">Select the category of your interest</h4>
+                    </div>
+                    <hr />
+                    {this.renderCategory()}
+                </div>
             </div>
         )
     }

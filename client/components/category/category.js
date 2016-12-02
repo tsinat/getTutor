@@ -15,6 +15,7 @@ const getStyles = () => {
             thumbnailStyle: {
                 border: "none",
                 borderRadius: 0,
+                padding:0,
                 boxShadow: "1px 1px 1px lightgrey"
             }
         };

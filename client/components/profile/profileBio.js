@@ -33,7 +33,7 @@ class ProfileBioList extends Component {
         if(this.state.editing !== true){
             return (
                 <div className="row">
-                    <div className="list-group-item col-xs-8 col-xs-offset-2" onClick={this.toggleEditing} style={styles.listItem}>
+                    <div className="list-group-item col-xs-10 col-xs-offset-1" onClick={this.toggleEditing} style={styles.listItem}>
                         <span className="pull-right">
                             <i className='glyphicon glyphicon-edit text-success' onClick={this.toggleEditing}></i>
                         </span>
@@ -52,7 +52,7 @@ class ProfileBioList extends Component {
         } else {
             return (
                 <div className="row ">
-                    <div className="col-xs-8 col-xs-offset-2">
+                    <div className="col-xs-10 col-xs-offset-1">
                         <form>
                             <ul className="list-group-item" style={styles.ulStyles}>
                                 <li >

@@ -40,7 +40,7 @@ class ProfilePicture extends Component {
         if(this.state.editing !== true){
             return (
                 <div className="row">
-                    <div className="list-group-item col-xs-8 col-xs-offset-2" style={styles.listItem}>
+                    <div className="list-group-item col-xs-10 col-xs-offset-1" style={styles.listItem}>
                         <div className="text-center circle">
                             <img src="https://avatars0.githubusercontent.com/u/11866441?v=3" style={styles.imageStyle}/>
                         </div>
@@ -53,7 +53,7 @@ class ProfilePicture extends Component {
         } else {
             return (
                 <div className="row ">
-                    <div className="col-xs-8 col-xs-offset-2">
+                    <div className="col-xs-10 col-xs-offset-1">
                         <form>
                             <ul className="list-group-item" style={styles.ulStyles}>
                                 <li >

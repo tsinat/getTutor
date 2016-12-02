@@ -41,6 +41,7 @@ class Header extends Component {
                 background: "transparent",
                 fontWeight: "bold",
                 borderBottom: "none",
+                margin:0
             },
             textStyle: {
                 color: "white",
