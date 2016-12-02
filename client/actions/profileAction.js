@@ -32,6 +32,6 @@ export function fetchUser() {
         })
         .catch(error => {
             console.log('error while fetching user:', error);
-        })
+        });
     }
 }

@@ -19,7 +19,7 @@ export default class HomePage extends Component {
         const temp = [0,1,2,3,4,5,6,7,8,9,11,12];
         const thunnailList = temp.map(thumbnail => {
             return <SingleUser key={thumbnail} style={styles.thumbnailStyle} />
-        })
+        });
         return thunnailList;
     }
     render() {
@@ -36,6 +36,6 @@ export default class HomePage extends Component {
                     {this.renderUsers()}
                 </div>
             </div>
-        )
+        );
     }
 }

@@ -11,7 +11,6 @@ function getStyles(){
         }
     }
 }
-
 const SingleUser = () => {
     const styles = getStyles();
     return (
