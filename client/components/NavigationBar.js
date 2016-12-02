@@ -131,8 +131,11 @@ class Header extends Component {
         const pathName = '';
         const history = createHistory();
         const unlisten = history.listen((location) => {
+            if(this.pathName != location.pathname){
+                document.body.scrollTop = 0;
+            }
             this.pathName = location.pathname;
-        })
+        });
         const styles = this.getStyles();
         const { collapsed, translate } = this.state;
         const navClass = collapsed ? "collapse" : "";

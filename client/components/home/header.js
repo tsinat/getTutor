@@ -18,7 +18,7 @@ function getStyles() {
         },
         headerTextStyle: {
             position: "absolute",
-            top: "30%",
+            top: "40%",
             left:0,
             zIndex: 1,
             width: "100%",
@@ -33,10 +33,13 @@ function getStyles() {
             fontSize: "0.9em",
             borderRadius: "10px",
             border: "none"
+        },
+        glyphiconStyle: {
+            marginTop:"60px",
         }
     }
 }
-const Header = () => {
+const Header = (props) => {
     const styles = getStyles();
     return (
         <div className="row" >
@@ -50,6 +53,9 @@ const Header = () => {
                     <h1>GetMentor</h1>
                     <h2>The easiest way to get local or online mentor</h2><br/>
                     <Link className="btn btn-default " style={styles.buttonStyle}>How it works?</Link>
+                    <div className="text-center" style={styles.glyphiconStyle}>
+                        <i className="glyphicon glyphicon-chevron-down" onClick={props.scrollUp}></i>
+                    </div>
                 </div>
             </div>
         </div>

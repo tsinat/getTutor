@@ -4,6 +4,10 @@ import SingleUser from '../common/singleUser';
 import Radium from 'radium';
 
 export default class HomePage extends Component {
+    constructor() {
+        super();
+        this.scrollUp = this.scrollUp.bind(this);
+    }
     getStyles() {
         return {
             thumbnailStyle: {
@@ -22,15 +26,19 @@ export default class HomePage extends Component {
         });
         return thunnailList;
     }
+    scrollUp() {
+
+    }
     render() {
         const styles = this.getStyles();
         return (
             <div>
-                <Header />
-                <div className="panel panel-default" style={styles.panelStyle}>
-                    <div className="panel-body">
+                <Header scrollUp={this.scrollUp}/>
+                <div className="" style={styles.panelStyle}>
+                    {/*<div className="panel-body">*/}
                         <h4 className="text-center">Some of the top rated mentors around you</h4>
-                    </div>
+                    {/*</div>*/}
+                    <hr />
                 </div>
                 <div className="container">
                     {this.renderUsers()}
