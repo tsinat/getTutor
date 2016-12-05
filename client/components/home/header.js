@@ -14,7 +14,7 @@ function getStyles() {
         containerVideo: {
             position: "relative",
             width: "100%",
-            marginTop: "-180px",
+            marginTop: "-160px",
         },
         headerTextStyle: {
             position: "absolute",

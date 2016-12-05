@@ -23,6 +23,7 @@ const compiler = webpack(webpackConfig);
 
 app.use(webpackMiddleware(compiler, {
     hot: true,
+    historyApiFallback: true,
     publicPath: webpackConfig.output.publicPath,
     noInfo: true
 }));
