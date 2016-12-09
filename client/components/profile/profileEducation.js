@@ -28,6 +28,10 @@ class ProfileEducation extends Component {
             }
         }
     }
+    handleUpdate(e) {
+        e.preventDefault();
+        this.props.updateProfile(this.state);
+    }
     renderItemOrEditField() {
         const styles = this.getStyles();
         if(this.state.editing !== true){
@@ -58,18 +62,32 @@ class ProfileEducation extends Component {
                             <ul className="list-group-item" style={styles.ulStyles}>
                                 <li >
                                     <label>School:</label>
-                                    <input name="firstName" type="text" className="form-control" defaultValue={this.props.data.education.school}/>
+                                    <input
+                                        name="firstName"
+                                        type="text"
+                                        className="form-control"
+                                        defaultValue={this.props.data.education.school}/>
                                 </li>
                                 <li className="">
                                     <label className="">Degree:</label>
-                                    <input name="lastName"  type="text" className="form-control" defaultValue={this.props.data.education.degree}/>
+                                    <input
+                                        name="lastName"
+                                        type="text"
+                                        className="form-control"
+                                        defaultValue={this.props.data.education.degree}/>
                                 </li>
                                 <li className="">
                                     <label>Field of Study:</label>
-                                    <input name="email" type="text" className="form-control" defaultValue={this.props.data.education.field}/>
+                                    <input
+                                        name="email"
+                                        type="text"
+                                        className="form-control"
+                                        defaultValue={this.props.data.education.field}/>
                                 </li><br />
                                 <li className="btn-group">
-                                    <button action="submit" className="btn btn-primary">Update</button>
+                                    <button
+                                        onClick={this.handleUpdate.bind(this)}
+                                        action="submit" className="btn btn-primary">Update</button>
                                     <button  className="btn btn-default">Cancel</button>
                                 </li>
                             </ul>

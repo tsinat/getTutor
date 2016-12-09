@@ -28,6 +28,10 @@ class ProfileBioList extends Component {
             }
         }
     }
+    handleUpdate(e) {
+        e.preventDefault();
+        this.props.updateProfile(this.state);
+    }
     renderItemOrEditField() {
         const styles = this.getStyles();
         if(this.state.editing !== true){
@@ -57,19 +61,36 @@ class ProfileBioList extends Component {
                             <ul className="list-group-item" style={styles.ulStyles}>
                                 <li >
                                     <label>First Name:</label>
-                                    <input name="firstName" type="text" className="form-control" defaultValue={this.props.data.firstName}/>
+                                    <input
+                                        name="firstName"
+                                        type="text"
+                                        className="form-control"
+                                        defaultValue={this.props.data.firstName}/>
                                 </li>
                                 <li className="">
                                     <label className="">Last Name:</label>
-                                    <input name="lastName"  type="text" className="form-control" defaultValue={this.props.data.lastName}/>
+                                    <input
+                                        name="lastName"
+                                        type="text"
+                                        className="form-control"
+                                        defaultValue={this.props.data.lastName}/>
                                 </li>
                                 <li className="">
                                     <label>Email:</label>
-                                    <input name="email" type="text" className="form-control" defaultValue={this.props.data.email}/>
+                                    <input
+                                        name="email"
+                                        type="text"
+                                        className="form-control"
+                                        defaultValue={this.props.data.email}/>
                                 </li><br />
                                 <li className="btn-group">
-                                    <button action="submit" className="btn btn-primary">Update</button>
-                                    <button  className="btn btn-default">Cancel</button>
+                                    <button
+                                        onClick={this.handleUpdate.bind(this)}
+                                        action="submit"
+                                        className="btn btn-primary">Update</button>
+                                    <button
+                                        onClick={this.toggleEditing}
+                                        className="btn btn-default">Cancel</button>
                                 </li>
                             </ul>
                         </form>
@@ -78,7 +99,8 @@ class ProfileBioList extends Component {
             );
         }
     }
-    toggleEditing(){
+    toggleEditing(e){
+        e.preventDefault();
         this.setState({editing: !this.state.editing});
     }
     render(){

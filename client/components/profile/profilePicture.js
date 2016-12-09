@@ -24,7 +24,6 @@ class ProfilePicture extends Component {
             },
             listItem: {
                 borderRadius: "20px 20px 0 0 ",
-                // border: "none",
                 borderBottom: "2px solid #FAFAFA"
             },
             imageStyle: {
@@ -35,6 +34,11 @@ class ProfilePicture extends Component {
             }
         }
     }
+    handleUpdate(e) {
+        e.preventDefault();
+        this.props.updateProfile(this.state);
+    }
+
     renderItemOrEditField() {
         const styles = this.getStyles();
         if(this.state.editing !== true){
@@ -58,11 +62,19 @@ class ProfilePicture extends Component {
                             <ul className="list-group-item" style={styles.ulStyles}>
                                 <li >
                                     <label><strong>Summary:</strong></label>
-                                    <textarea className="form-control" rows='5' defaultValue={this.props.data.summary}></textarea>
+                                    <textarea
+                                        className="form-control"
+                                        rows='5'
+                                        defaultValue={this.props.data.summary}></textarea>
                                 </li><br />
                                 <li className="btn-group">
-                                    <button action="submit" className="btn btn-primary">Update</button>
-                                    <button  className="btn btn-default" onClick={this.toggleEditing}>Cancel</button>
+                                    <button
+                                        onClick={this.handleChange.bind(this)}
+                                        action="submit"
+                                        className="btn btn-primary">Update</button>
+                                    <button
+                                        className="btn btn-default"
+                                        onClick={this.toggleEditing}>Cancel</button>
                                 </li>
                             </ul>
                         </form>

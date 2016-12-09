@@ -14,8 +14,9 @@ import ProfilePicture from './profilePicture';
    componentWillMount() {
        this.props.fetchUser();
    }
-   handleChange() {
-       // change handler will go here;
+
+   updateProfile(state){
+       console.log('will update profile from here', state);
    }
    render(){
      const data = {
@@ -29,26 +30,25 @@ import ProfilePicture from './profilePicture';
              field: "Computer Science"
          }
      }
-
      const { currentUser } = this.props;
-    //  console.log('users in render of profilepage:', currentUser.user);
      return(
          <div>
              <ProfilePicture
                  data={data}
-                 onChange={this.handleChange}
+                 updateProfile={this.updateProfile}
                  />
              <ProfileBioList
                  data={data}
-                 onChange={this.handleChange}
+                 updateProfile={this.updateProfile}
+                 updateProfile={this.updateProfile}
                  /><br />
              <ProfileSummary
                  data={data}
-                 onChange={this.handleChange}
+                 updateProfile={this.updateProfile}
                  /><br />
              <ProfileEducation
                  data={data}
-                 onChange={this.handleChange}
+                 updateProfile={this.updateProfile}
                  />
          </div>
      );
