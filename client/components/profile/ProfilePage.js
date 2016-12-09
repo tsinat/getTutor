@@ -11,7 +11,7 @@ import ProfilePicture from './profilePicture';
    constructor(){
      super();
    }
-   componentDidMount() {
+   componentWillMount() {
        this.props.fetchUser();
    }
    handleChange() {
@@ -31,7 +31,7 @@ import ProfilePicture from './profilePicture';
      }
 
      const { currentUser } = this.props;
-     console.log('users in render of profilepage:', currentUser.user);
+    //  console.log('users in render of profilepage:', currentUser.user);
      return(
          <div>
              <ProfilePicture

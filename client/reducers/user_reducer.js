@@ -8,7 +8,6 @@ export default function(state = {}, action) {
                 userData: actions.payload
             };
         case FETCH_MESSAGE:
-            console.log('user in reducer:', action.payload);
             return {
                 ...state,
                 user: action.payload
