@@ -35,9 +35,7 @@ export default class HomePage extends Component {
             <div>
                 <Header scrollUp={this.scrollUp}/>
                 <div className="" style={styles.panelStyle}>
-                    {/*<div className="panel-body">*/}
-                        <h4 className="text-center">Some of the top rated mentors around you</h4>
-                    {/*</div>*/}
+                    <h4 className="text-center">Some of the top rated mentors around you</h4>
                     <hr />
                 </div>
                 <div className="container">
