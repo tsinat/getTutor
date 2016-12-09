@@ -37,10 +37,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
+// app.use('/profile', require('./server/routes/router'));
+
+app.get('*', (req, res) => {
     res.render('index');
 });
+
 router(app);
+
 const server = http.createServer(app);
 
 server.listen(4000, () => console.log('Running on localhost://4000'))
