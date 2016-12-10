@@ -88,7 +88,9 @@ class ProfileEducation extends Component {
                                     <button
                                         onClick={this.handleUpdate.bind(this)}
                                         action="submit" className="btn btn-primary">Update</button>
-                                    <button  className="btn btn-default">Cancel</button>
+                                    <button
+                                        onClick={this.toggleEditing}
+                                        className="btn btn-default">Cancel</button>
                                 </li>
                             </ul>
                         </form>
@@ -97,7 +99,8 @@ class ProfileEducation extends Component {
             );
         }
     }
-    toggleEditing(){
+    toggleEditing(e){
+        e.preventDefault();
         this.setState({editing: !this.state.editing});
     }
     render(){

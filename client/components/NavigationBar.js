@@ -58,7 +58,7 @@ class Header extends Component {
                 // background: "#e67e22",
                 background: "#F05A50",
                 borderBottom: "none",
-                opacity:"0.9"
+                // opacity:"0.9"
             }
         }
     }

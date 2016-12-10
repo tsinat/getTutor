@@ -17,7 +17,7 @@ class ProfileSummary extends Component {
         };
         this.toggleEditing = this.toggleEditing.bind(this);
     }
-    
+
     getStyles() {
         return {
             ulStyles: {
@@ -80,7 +80,8 @@ class ProfileSummary extends Component {
             );
         }
     }
-    toggleEditing(){
+    toggleEditing(e){
+        e.preventDefault();
         this.setState({editing: !this.state.editing});
     }
     render(){
