@@ -14,7 +14,8 @@ export default class HomePage extends Component {
                 float: "left",
             },
             panelStyle: {
-                marginTop: 0
+                marginTop: 0,
+                padding:"5px"
             }
         }
     }
