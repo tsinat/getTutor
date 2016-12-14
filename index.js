@@ -28,19 +28,19 @@ app.use(webpackMiddleware(compiler, {
     noInfo: true
 }));
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
 app.use(webpackHotMiddleware(compiler));
 app.use(morgan('dev'));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname));
 
-// app.use('/profile', require('./server/routes/router'));
+app.get('/api/profile', (req, res) => {
+    res.send('you rock!');
+});
 
 app.get('*', (req, res) => {
-    res.render('index');
+    res.sendFile(path.resolve(__dirname, 'index.html'));
 });
 
 router(app);

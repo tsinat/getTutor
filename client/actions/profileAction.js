@@ -21,7 +21,7 @@ export function updateUser(userData) {
 }
 export function fetchUser() {
     return function(dispatch) {
-        axios.get(`${ROOT_URL}/profile`, {
+        axios.get(`${ROOT_URL}/api/profile`, {
             headers: { authorization: localStorage.getItem('token') }
         })
         .then(response => {

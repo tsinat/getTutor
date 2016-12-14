@@ -8,6 +8,7 @@ export default function(state = {}, action) {
                 userData: actions.payload
             };
         case FETCH_MESSAGE:
+            console.log('FETCH_MESSAGE:', action.payload);
             return {
                 ...state,
                 user: action.payload

@@ -6,7 +6,6 @@ export function signup(req, res, next){
     console.log('YEAHH', req.body);
     const email = req.body.email;
     const password = req.body.password;
-    console.log('password:', password);
 
     if(!email || !password) {
         res.status(400).send({error: 'you must provide email and password'});
