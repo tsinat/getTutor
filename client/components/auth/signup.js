@@ -11,8 +11,8 @@ const form =  reduxForm({
 });
 
 class Signup extends Component {
-    handleFormSubmit({firstName, lastName, email, status, password, passwordConfirm}) {
-        this.props.signupUser({ firstName, lastName, email, password , status});
+    handleFormSubmit(formProps) {
+        this.props.signupUser(formProps);
     }
     renderAlert() {
         if(this.props.errorMessage) {
@@ -62,6 +62,18 @@ class Signup extends Component {
                                 <option></option>
                                 <option>Mentor</option>
                                 <option>Mentee</option>
+                            </Field>
+                        </fieldset>
+                        <fieldset className="form-group">
+                            <label>Category:</label>
+                            <Field name="cateogry" component="select" className="form-control">
+                                <option></option>
+                                <option>Web Development</option>
+                                <option>Networking</option>
+                                <option>Graphic Design</option>
+                                <option>Academic Tutor</option>
+                                <option>Language Mentor</option>
+                                <option>Vocational Training</option>
                             </Field>
                         </fieldset>
                         <fieldset className="form-group">

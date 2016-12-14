@@ -58,7 +58,6 @@ class Header extends Component {
                 // background: "#e67e22",
                 background: "#F05A50",
                 borderBottom: "none",
-                // opacity:"0.9"
             }
         }
     }
@@ -139,7 +138,8 @@ class Header extends Component {
         const styles = this.getStyles();
         const { collapsed, translate } = this.state;
         const navClass = collapsed ? "collapse" : "";
-        const combinedStyle =  translate || this.pathName != '/' ? styles.translateStyle : styles.header;
+        const width = window.innerWidth || documentElement.clientWidth || body.clientWidth;
+        const combinedStyle =  (translate || this.pathName != '/' || width < 700  ) ? styles.translateStyle : styles.header;
         return (
             <nav className="navbar navbar-default navbar-fixed-top" role="navigation" style={combinedStyle}>
               <div className="container">

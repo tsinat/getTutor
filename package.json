@@ -50,6 +50,7 @@
     "redux-form": "^6.1.1",
     "redux-thunk": "^2.1.0",
     "shortid": "^2.2.6",
+    "smoothscroll": "^0.2.2",
     "validator": "^6.0.0"
   }
 }

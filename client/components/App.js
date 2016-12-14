@@ -7,8 +7,14 @@ import Radium from 'radium';
 class App extends Component {
     getStyles() {
         return {
+            pageStyle: {
+                marginLeft:0,
+                width: "100%",
+                overflow: "hidden",
+                height: "auto"
+            },
              containerStyle: {
-                // margin: 0,
+                margin: 0,
                 padding: 0,
                 width: "100%",
                 minHeight: "100vh",
@@ -25,7 +31,7 @@ class App extends Component {
     render(){
         const styles = this.getStyles();
         return (
-            <div>
+            <div style={styles.pageStyle}>
                 <Navigation />
                 <div className='container'  style={styles.containerStyle}>
                     <div className="row" style={styles.rowStyle}>

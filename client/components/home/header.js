@@ -6,10 +6,11 @@ function getStyles() {
     return {
         headerContainer: {
             position: "relative",
+            margin:0,
+            padding:0,
             width: "100%",
             zIndex: 0,
             marginRight: "-15px",
-            paddingBottom: 0,
         },
         containerVideo: {
             position: "relative",
@@ -35,11 +36,15 @@ function getStyles() {
             border: "none"
         },
         glyphiconStyle: {
+            background: "transparent",
             marginTop:"60px",
+            border:"none",
+            padding:"0 20"
         }
     }
 }
 const Header = (props) => {
+
     const styles = getStyles();
     return (
         <div className="row" >
@@ -52,10 +57,8 @@ const Header = (props) => {
                 <div style={styles.headerTextStyle} className="text-center">
                     <h1>GetMentor</h1>
                     <h2>The easiest way to get local or online mentor</h2><br/>
-                    <Link className="btn btn-default " style={styles.buttonStyle}>How it works?</Link>
-                    <div className="text-center" style={styles.glyphiconStyle}>
-                        <i className="glyphicon glyphicon-chevron-down" onClick={props.scrollUp}></i>
-                    </div>
+                    <Link className="btn btn-default " style={styles.buttonStyle}>How it works?</Link><br />
+                    <i className="glyphicon glyphicon-chevron-down" style={styles.glyphiconStyle} onClick={props.scrollUp}></i>
                 </div>
             </div>
         </div>
