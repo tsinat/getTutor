@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import Radium from 'radium';
 
+import ProfileEdu from '../common/commonProfileEducation';
+
 const form =  reduxForm({
     form: 'profileEducation',
     fields: [ 'firstName', 'lastName', 'email', 'educations'],
@@ -13,9 +15,14 @@ class ProfileEducation extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            editing: false
+            editing: false,
+            school: this.props.data.education.school,
+            degree: this.props.data.education.degree,
+            field: this.props.data.education.field
         };
         this.toggleEditing = this.toggleEditing.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
+        this.onChange = this.onChange.bind(this);
     }
     getStyles() {
         return {
@@ -24,35 +31,30 @@ class ProfileEducation extends Component {
             },
             listItem: {
                 borderRadius: 0,
-                // border: "none"
+                boxShadow: "1px 1px 1px lightgrey",
+                marginBottom:"40px"
             }
         }
     }
+
+    onChange(e) {
+        this.setState({[e.target.name]: e.target.value});
+    }
+
     handleUpdate(e) {
         e.preventDefault();
         this.props.updateProfile(this.state);
     }
+
     renderItemOrEditField() {
         const styles = this.getStyles();
         if(this.state.editing !== true){
             return (
-                <div className="row">
-                    <div className="list-group-item col-xs-10 col-xs-offset-1" onClick={this.toggleEditing} style={styles.listItem}>
-                        <span className="pull-right">
-                            <i className='glyphicon glyphicon-edit text-success' onClick={this.toggleEditing}></i>
-                        </span>
-                        <h4>Education</h4><hr />
-                        <p className="">
-                            <strong>School:</strong> {  this.props.data.education.school }
-                        </p>
-                        <p className="">
-                            <strong>Degree:</strong> {  this.props.data.education.degree }
-                        </p>
-                        <p className="">
-                            <strong>Field of Study:</strong> {  this.props.data.education.field}
-                        </p><br />
-                    </div>
-                </div>
+                <ProfileEdu
+                    toggleEditing={this.toggleEditing}
+                    data={this.props.data}
+                    styles={styles}
+                    />
             );
         } else {
             return (
@@ -63,7 +65,7 @@ class ProfileEducation extends Component {
                                 <li >
                                     <label>School:</label>
                                     <input
-                                        name="firstName"
+                                        name="school"
                                         type="text"
                                         className="form-control"
                                         defaultValue={this.props.data.education.school}/>
@@ -71,7 +73,7 @@ class ProfileEducation extends Component {
                                 <li className="">
                                     <label className="">Degree:</label>
                                     <input
-                                        name="lastName"
+                                        name="degree"
                                         type="text"
                                         className="form-control"
                                         defaultValue={this.props.data.education.degree}/>
@@ -79,14 +81,14 @@ class ProfileEducation extends Component {
                                 <li className="">
                                     <label>Field of Study:</label>
                                     <input
-                                        name="email"
+                                        name="field"
                                         type="text"
                                         className="form-control"
                                         defaultValue={this.props.data.education.field}/>
                                 </li><br />
                                 <li className="btn-group">
                                     <button
-                                        onClick={this.handleUpdate.bind(this)}
+                                        onClick={this.handleUpdate}
                                         action="submit" className="btn btn-primary">Update</button>
                                     <button
                                         onClick={this.toggleEditing}

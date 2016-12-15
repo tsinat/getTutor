@@ -13,17 +13,25 @@ class Footer extends Component {
                 height: "60px",
                 paddingTop: "20px",
                 textAlign: "center",
-                backgroundColor: "#f5f5f5",
+                backgroundColor: "#F05A50",
+                opacity: "0.7",
             },
             footerStyleUl: {
                 listStyleType: "none",
+                display: "inline",
+                width: "100%",
                 margin: 0,
                 padding: 0
             },
             footerLiStyle: {
                 display: "inline-block",
-                width: "100px",
+                minWidth:"100px",
                 color: "grey"
+            },
+            linkStyle: {
+                color: "white",
+                fontWeight: "bold",
+                textDecoration: "none"
             }
         }
     }
@@ -32,56 +40,64 @@ class Footer extends Component {
 
         if(this.props.authenticated){
             return [
-                <li className="nav-item" key={1}>
+                <li className="nav-item" key={1} style={styles.footerLiStyle}>
                     <Link
                         to='/categories'
                         className="nav-link"
-                        style={styles.footerLiStyle}>Categories</Link>
+                        style={styles.linkStyle}
+                        >Categories</Link>
                 </li>,
-                <li className="nav-item" key={2}>
+                <li className="nav-item" key={2} style={styles.footerLiStyle}>
                     <Link
                         to='/profile'
                         className="nav-link"
-                        style={styles.footerLiStyle}>Profile</Link>
+                        style={styles.linkStyle}
+                        >Profile</Link>
                 </li>,
-                <li className="nav-item" key={3}>
+                <li className="nav-item" key={3} style={styles.footerLiStyle}>
                     <Link
                         to='/signout'
                         className="nav-link"
-                        style={styles.footerLiStyle}>Sign Out</Link>
+                        style={styles.linkStyle}
+                        >Sign Out</Link>
                 </li>,
-                <li className="nav-item" key={4}>
+                <li className="nav-item" key={4} style={styles.footerLiStyle}>
                     <Link
                         to='/help'
                         className="nav-link"
-                        style={styles.footerLiStyle}>Help?</Link>
+                        style={styles.linkStyle}
+                        >Help?</Link>
                 </li>
             ];
         } else {
             return [
-                <li className="nav-item" key={1}>
+                <li className="nav-item" key={1} style={styles.footerLiStyle}>
                     <Link
                         to='/categories'
                         className="nav-link"
-                        style={styles.footerLiStyle} >Categories</Link>
+                        style={styles.linkStyle}
+                         >Categories</Link>
                 </li>,
-                <li className="nav-item" key={2}>
+                <li className="nav-item" key={2} style={styles.footerLiStyle}>
                     <Link
                         to='/signup'
                         className="nav-link"
-                        style={styles.footerLiStyle} >Sign Up</Link>
+                        style={styles.linkStyle}
+                         >Sign Up</Link>
                 </li>,
-                <li className="nav-item" key={3}>
+                <li className="nav-item" key={3} style={styles.footerLiStyle}>
                     <Link
                         to='/signin'
                         className="nav-link"
-                        style={styles.footerLiStyle} >Sign In</Link>
+                        style={styles.linkStyle}
+                         >Sign In</Link>
                 </li>,
-                <li className="nav-item" key={4}>
+                <li className="nav-item" key={4} style={styles.footerLiStyle}>
                     <Link
                         to='/help'
                         className="nav-link"
-                        style={styles.footerLiStyle} >Help?</Link>
+                        style={styles.linkStyle}
+                         >Help?</Link>
                 </li>
             ];
         }

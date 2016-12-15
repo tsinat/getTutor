@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import Radium from 'radium';
+import ProfilePic from '../common/commonProfilePicture';
 
 const form =  reduxForm({
     form: 'profilePicture',
@@ -16,6 +17,7 @@ class ProfilePicture extends Component {
             editing: false
         };
         this.toggleEditing = this.toggleEditing.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this)
     }
     getStyles() {
         return {
@@ -23,7 +25,8 @@ class ProfilePicture extends Component {
                 listStyle: "none"
             },
             listItem: {
-                borderRadius: "20px 20px 0 0 ",
+                marginTop: "40px",
+                borderRadius: 0,
                 borderBottom: "2px solid #FAFAFA"
             },
             imageStyle: {
@@ -43,16 +46,11 @@ class ProfilePicture extends Component {
         const styles = this.getStyles();
         if(this.state.editing !== true){
             return (
-                <div className="row">
-                    <div className="list-group-item col-xs-10 col-xs-offset-1" style={styles.listItem}>
-                        <div className="text-center circle">
-                            <img src="https://avatars0.githubusercontent.com/u/11866441?v=3" style={styles.imageStyle}/>
-                        </div>
-                        <p className="text-center">
-                            <button className='btn btn-default' onClick={this.toggleEditing}>Change Picture</button>
-                        </p>
-                    </div>
-                </div>
+                <ProfilePic
+                    styles={styles}
+                    toggleEditing={this.toggleEditing}
+                    data={this.props.data}
+                    />
             );
         } else {
             return (
@@ -69,7 +67,7 @@ class ProfilePicture extends Component {
                                 </li><br />
                                 <li className="btn-group">
                                     <button
-                                        onClick={this.handleChange.bind(this)}
+                                        onClick={this.handleUpdate}
                                         action="submit"
                                         className="btn btn-primary">Update</button>
                                     <button

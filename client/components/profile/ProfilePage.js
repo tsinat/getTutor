@@ -30,7 +30,6 @@ import ProfilePicture from './profilePicture';
              field: "Computer Science"
          }
      }
-    //  console.log('this.user:', this.props.currentUser.user);
      const { currentUser } = this.props;
      return(
          <div>

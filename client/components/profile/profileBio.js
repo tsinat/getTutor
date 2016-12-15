@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import Radium from 'radium';
 
+import ProfileBio from '../common/commonProfileBio';
+
 const form =  reduxForm({
     form: 'profileEdit',
     fields: [ 'firstName', 'lastName', 'email', 'educations'],
@@ -13,9 +15,14 @@ class ProfileBioList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            editing: false
+            editing: false,
+            firstName: this.props.data.firstName,
+            lastName: this.props.data.lastName,
+            email:this.props.data.email
         };
         this.toggleEditing = this.toggleEditing.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
+        this.onChange = this.onChange.bind(this);
     }
     getStyles() {
         return {
@@ -24,9 +31,12 @@ class ProfileBioList extends Component {
             },
             listItem: {
                 borderRadius: 0,
-                // border: "none"
+                boxShadow: "1px 1px 1px lightgrey"
             }
         }
+    }
+    onChange(e) {
+        this.setState({[e.target.name]: e.target.value});
     }
     handleUpdate(e) {
         e.preventDefault();
@@ -36,22 +46,10 @@ class ProfileBioList extends Component {
         const styles = this.getStyles();
         if(this.state.editing !== true){
             return (
-                <div className="row">
-                    <div className="list-group-item col-xs-10 col-xs-offset-1" onClick={this.toggleEditing} style={styles.listItem}>
-                        <span className="pull-right">
-                            <i className='glyphicon glyphicon-edit text-success' onClick={this.toggleEditing}></i>
-                        </span>
-                        <p className="">
-                            <strong>First Name:</strong> {  this.props.data.firstName }
-                        </p>
-                        <p className="">
-                            <strong>Last Name:</strong> {  this.props.data.lastName }
-                        </p>
-                        <p className="">
-                            <strong>Email:</strong> {  this.props.data.email }
-                        </p>
-                    </div>
-                </div>
+                <ProfileBio
+                    toggleEditing={this.toggleEditing}
+                    data={this.props.data}
+                    styles={styles}/>
             );
         } else {
             return (
@@ -65,7 +63,8 @@ class ProfileBioList extends Component {
                                         name="firstName"
                                         type="text"
                                         className="form-control"
-                                        defaultValue={this.props.data.firstName}/>
+                                        value={this.state.firstName}
+                                        onChange={this.onChange}/>
                                 </li>
                                 <li className="">
                                     <label className="">Last Name:</label>
@@ -73,7 +72,8 @@ class ProfileBioList extends Component {
                                         name="lastName"
                                         type="text"
                                         className="form-control"
-                                        defaultValue={this.props.data.lastName}/>
+                                        value={this.state.lastName}
+                                        onChange={this.onChange}/>
                                 </li>
                                 <li className="">
                                     <label>Email:</label>
@@ -81,11 +81,12 @@ class ProfileBioList extends Component {
                                         name="email"
                                         type="text"
                                         className="form-control"
-                                        defaultValue={this.props.data.email}/>
+                                        value={this.state.email}
+                                        onChange={this.onChange}/>
                                 </li><br />
                                 <li className="btn-group">
                                     <button
-                                        onClick={this.handleUpdate.bind(this)}
+                                        onClick={this.handleUpdate}
                                         action="submit"
                                         className="btn btn-primary">Update</button>
                                     <button

@@ -8,7 +8,6 @@ const requireSignin = passport.authenticate('local', { session: false});
 let router = express.Router();
 
 router.get('/profile', requireAuth, (req, res) => {
-    console.log(req.user);
     res.send(req.user);
 });
 router.post('/signin', requireSignin,  signin);

@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import Radium from 'radium';
 
+import ProfileSum from '../common/commonProfileSummary';
+
 const form =  reduxForm({
     form: 'profileSummary',
     fields: [ 'summary'],
@@ -13,9 +15,12 @@ class ProfileSummary extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            editing: false
+            editing: false,
+            summary: this.props.data.summary
         };
         this.toggleEditing = this.toggleEditing.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
+        this.onChange = this.onChange.bind(this);
     }
 
     getStyles() {
@@ -25,9 +30,13 @@ class ProfileSummary extends Component {
             },
             listItem: {
                 borderRadius: 0,
-                // border: "none"
+                boxShadow: "1px 1px 1px lightgrey"
             }
         }
+    }
+
+    onChange(e) {
+        this.setState({[e.target.name]: e.target.value});
     }
 
     handleUpdate(e) {
@@ -39,17 +48,11 @@ class ProfileSummary extends Component {
         const styles = this.getStyles();
         if(this.state.editing !== true){
             return (
-                <div className="row">
-                    <div className="list-group-item col-xs-10 col-xs-offset-1" onClick={this.toggleEditing} style={styles.listItem}>
-                        <span className="pull-right">
-                            <i className='glyphicon glyphicon-edit text-success' onClick={this.toggleEditing}></i>
-                        </span>
-                        <h4>Summary</h4><hr />
-                        <p className="">
-                            {this.props.data.summary}
-                        </p><br />
-                    </div>
-                </div>
+                <ProfileSum
+                    toggleEditing={this.toggleEditing}
+                    styles={styles}
+                    data={this.props.data}
+                    />
             );
         } else {
             return (
@@ -60,13 +63,15 @@ class ProfileSummary extends Component {
                                 <li >
                                     <label><strong>Summary:</strong></label>
                                     <textarea
+                                        name="summary"
                                         className="form-control"
                                         rows='5'
-                                        defaultValue={this.props.data.summary}></textarea>
+                                        value={this.state.summary}
+                                        onChange={this.onChange}></textarea>
                                 </li><br />
                                 <li className="btn-group">
                                     <button
-                                        onClick={this.handleUpdate.bind(this)}
+                                        onClick={this.handleUpdate}
                                         action="submit"
                                         className="btn btn-primary">Update</button>
                                     <button

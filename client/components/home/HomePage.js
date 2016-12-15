@@ -63,7 +63,6 @@ export default class HomePage extends Component {
         window.removeEventListener("resize", this.updateDimensions);
     }
     renderHeader() {
-        // console.log('width', window.width());
         if(this.state.width >= 868) {
             return <Header scrollUp={this.scrollUp}/>;
         } else return;
@@ -77,7 +76,7 @@ export default class HomePage extends Component {
         return thunnailList;
     }
     scrollUp() {
-        scroll.scrollTo(610);
+        scroll.scrollTo(590);
     }
     scrollToTop() {
         scroll.scrollToTop();

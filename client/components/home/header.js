@@ -15,7 +15,8 @@ function getStyles() {
         containerVideo: {
             position: "relative",
             width: "100%",
-            marginTop: "-160px",
+            margin:"0 auto",
+            marginTop: "-150px",
         },
         headerTextStyle: {
             position: "absolute",
@@ -48,7 +49,7 @@ const Header = (props) => {
     const styles = getStyles();
     return (
         <div className="row" >
-            <div className="col-sm-12" style={styles.headerContainer}>
+            <div className="col-sm-12 text-center" style={styles.headerContainer}>
                 <video
                     src="https://s3-us-west-2.amazonaws.com/coverr/mp4/Park-Traffic.mp4"
                     type="video/mp4" autoPlay="autoplay" loop
