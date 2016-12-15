@@ -10,7 +10,7 @@ import webpackMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 
 import webpackConfig from './webpack.config.dev.js';
-import router from './server/routes/router';
+import { router } from './server/routes/router';
 
 const MONGOURL = process.env.MONGODB_URI || 'mongodb://localhost/mentor';
 
@@ -35,15 +35,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname));
 
-app.get('/api/profile', (req, res) => {
-    res.send('you rock!');
-});
+app.use('/api', router);
 
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'index.html'));
 });
 
-router(app);
 
 const server = http.createServer(app);
 

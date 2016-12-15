@@ -21,7 +21,7 @@ class App extends Component {
                 height: "100%",
                 // background: "#FAFAFA",
                 background: "#F2F2F2",
-                paddingTop:"80px"
+                paddingTop:"55px"
             },
             rowStyle: {
                 background: "#FAFAFA"

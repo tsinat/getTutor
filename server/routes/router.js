@@ -5,13 +5,13 @@ import passport from 'passport';
 
 const requireAuth = passport.authenticate('jwt', { session: false });
 const requireSignin = passport.authenticate('local', { session: false});
+let router = express.Router();
 
-export default function(app) {
-    console.log('backend called');
-    app.get('/profile', requireAuth, (req, res) => {
-        console.log(req.user);
-        res.send(req.user);
-    });
-    app.post('/signin', requireSignin,  signin);
-    app.post('/signup', signup);
-}
+router.get('/profile', requireAuth, (req, res) => {
+    console.log(req.user);
+    res.send(req.user);
+});
+router.post('/signin', requireSignin,  signin);
+router.post('/signup', signup);
+
+export { router };
