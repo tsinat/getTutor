@@ -18,7 +18,7 @@ class ProfileBioList extends Component {
             editing: false,
             firstName: this.props.data.bio.firstName ,
             lastName: this.props.data.bio.lastName,
-            email: this.props.data.emai
+            email: this.props.data.email
         };
         this.toggleEditing = this.toggleEditing.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);

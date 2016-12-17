@@ -20,6 +20,7 @@
     "webpack-hot-middleware": "^2.12.2"
   },
   "dependencies": {
+    "aws-sdk": "^2.7.15",
     "axios": "^0.14.0",
     "babel-polyfill": "^6.16.0",
     "babel-preset-react": "^6.16.0",
@@ -28,6 +29,7 @@
     "body-parser": "^1.15.2",
     "classnames": "^2.2.5",
     "cors": "^2.8.1",
+    "dotenv": "^2.0.0",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
     "http": "0.0.0",
@@ -35,6 +37,7 @@
     "lodash": "^4.16.2",
     "mongoose": "^4.6.5",
     "morgan": "^1.7.0",
+    "multer": "^1.2.1",
     "passport": "^0.3.2",
     "passport-jwt": "^2.1.0",
     "passport-local": "^1.0.0",
@@ -51,6 +54,7 @@
     "redux-thunk": "^2.1.0",
     "shortid": "^2.2.6",
     "smoothscroll": "^0.2.2",
+    "uuid": "^3.0.1",
     "validator": "^6.0.0"
   }
 }
