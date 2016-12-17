@@ -16,9 +16,9 @@ class ProfileBioList extends Component {
         super(props);
         this.state = {
             editing: false,
-            firstName: this.props.data.firstName,
-            lastName: this.props.data.lastName,
-            email:this.props.data.email
+            firstName: this.props.data.bio.firstName ,
+            lastName: this.props.data.bio.lastName,
+            email: this.props.data.emai
         };
         this.toggleEditing = this.toggleEditing.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
@@ -40,7 +40,7 @@ class ProfileBioList extends Component {
     }
     handleUpdate(e) {
         e.preventDefault();
-        this.props.updateProfile(this.state);
+        this.props.updateProfile({bio:this.state});
     }
     renderItemOrEditField() {
         const styles = this.getStyles();
@@ -111,6 +111,10 @@ class ProfileBioList extends Component {
             </div>
         );
     }
+}
+ProfileBioList.defaultProps = {
+    firstName: "Please Insert your first name",
+    lastName: "please Insert your last name here"
 }
 
 export default connect(null)(form(ProfileBioList));

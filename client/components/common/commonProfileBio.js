@@ -8,16 +8,17 @@ const ProfileBio = (props) => {
                     <i className='glyphicon glyphicon-edit text-success' onClick={props.toggleEditing}></i>
                 </span>
                 <p className="">
-                    <strong>First Name:</strong> { props.data.firstName }
+                    <strong>First Name:</strong> { props.data.bio.firstName }
                 </p>
                 <p className="">
-                    <strong>Last Name:</strong> { props.data.lastName }
+                    <strong>Last Name:</strong> { props.data.bio.lastName }
                 </p>
                 <p className="">
                     <strong>Email:</strong> { props.data.email }
                 </p>
             </div>
         </div>
+
     );
 }
 

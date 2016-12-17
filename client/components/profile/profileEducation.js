@@ -43,7 +43,7 @@ class ProfileEducation extends Component {
 
     handleUpdate(e) {
         e.preventDefault();
-        this.props.updateProfile(this.state);
+        this.props.updateProfile({ education:this.state });
     }
 
     renderItemOrEditField() {
@@ -68,7 +68,8 @@ class ProfileEducation extends Component {
                                         name="school"
                                         type="text"
                                         className="form-control"
-                                        defaultValue={this.props.data.education.school}/>
+                                        onChange={this.onChange }
+                                        value={this.state.school}/>
                                 </li>
                                 <li className="">
                                     <label className="">Degree:</label>
@@ -76,7 +77,8 @@ class ProfileEducation extends Component {
                                         name="degree"
                                         type="text"
                                         className="form-control"
-                                        defaultValue={this.props.data.education.degree}/>
+                                        onChange={this.onChange }
+                                        value={this.state.degree}/>
                                 </li>
                                 <li className="">
                                     <label>Field of Study:</label>
@@ -84,7 +86,8 @@ class ProfileEducation extends Component {
                                         name="field"
                                         type="text"
                                         className="form-control"
-                                        defaultValue={this.props.data.education.field}/>
+                                        onChange={this.onChange }
+                                        value={this.state.field}/>
                                 </li><br />
                                 <li className="btn-group">
                                     <button

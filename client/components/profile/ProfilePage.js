@@ -10,48 +10,43 @@ import ProfilePicture from './profilePicture';
  class ProfilePage extends Component {
    constructor(){
      super();
+     this.updateProfile = this.updateProfile.bind(this);
    }
    componentWillMount() {
        this.props.fetchUser();
    }
 
-   updateProfile(state){
-       console.log('will update profile from here', state);
+   updateProfile(updateData){
+       updateData.currentUser = this.props.currentUser.user.email
+       this.props.updateUser(updateData);
    }
    render(){
-     const data = {
-         firstName: "Tsinat",
-         lastName: "Tesfalul",
-         email: "tsinatzeree@gmail.com",
-         summary: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.",
-         education: {
-             school: "Eritre Institute of Technology",
-             degree: "Bachelors",
-             field: "Computer Science"
-         }
-     }
      const { currentUser } = this.props;
-     return(
-         <div>
-             <ProfilePicture
-                 data={data}
-                 updateProfile={this.updateProfile}
-                 />
-             <ProfileBioList
-                 data={data}
-                 updateProfile={this.updateProfile}
-                 updateProfile={this.updateProfile}
-                 /><br />
-             <ProfileSummary
-                 data={data}
-                 updateProfile={this.updateProfile}
-                 /><br />
-             <ProfileEducation
-                 data={data}
-                 updateProfile={this.updateProfile}
-                 />
-         </div>
-     );
+     console.log('currentUser:', currentUser);
+     if(currentUser.user){
+         return(
+             <div>
+                 <ProfilePicture
+                     data={currentUser.user}
+                     updateProfile={this.updateProfile}
+                     />
+                 <ProfileBioList
+                     data={currentUser.user}
+                     updateProfile={this.updateProfile}
+                     updateProfile={this.updateProfile}
+                     /><br />
+                 <ProfileSummary
+                     data={currentUser.user}
+                     updateProfile={this.updateProfile}
+                     /><br />
+                 <ProfileEducation
+                     data={currentUser.user}
+                     updateProfile={this.updateProfile}
+                     />
+             </div>
+         );
+     }
+     else return <div></div>;
    }
  }
 function mapStateToProps(state) {

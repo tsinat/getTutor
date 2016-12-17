@@ -5,13 +5,15 @@ import { FETCH_MESSAGE, UPDATE_USER } from './types';
 const ROOT_URL =   'http://localhost:4000';
 
 export function updateUser(userData) {
+    console.log('userData:', userData);
     return function(dispatch) {
-        axios.post(`${ROOT_URL}/update`, userData)
+        axios.post(`${ROOT_URL}/api/update`, userData)
             .then(response => {
+                console.log('updated Data from server:', response.data);
                 dispatch({
                     type: UPDATE_USER,
                     payload: response.data
-                })
+                });
                 browserHistory.push('/profile');
             })
             .catch(error => {
