@@ -14,10 +14,16 @@ class ProfilePicture extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            editing: false
+            editing: false,
+            data_uri: null,
+            processing: false,
+            // filename: "",
+            // filetype: ""
         };
         this.toggleEditing = this.toggleEditing.bind(this);
-        this.handleUpdate = this.handleUpdate.bind(this)
+        this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFile = this.handleFile.bind(this);
     }
     getStyles() {
         return {
@@ -42,6 +48,32 @@ class ProfilePicture extends Component {
         this.props.updateProfile(this.state);
     }
 
+    handleSubmit(e) {
+        e.preventDefault();
+        console.log('file:', this.state);
+        let data = {
+            data_uri: this.state.data_uri,
+            filename: this.state.filename,
+            filetype: this.state.filetype
+      }
+      this.props.handleProfilePicture(data);
+    }
+
+    handleFile(e) {
+       const reader = new FileReader();
+       const file = e.target.files[0];
+
+       reader.onload = (upload) => {
+         this.setState({
+           data_uri: upload.target.result,
+           filename: file.name,
+           filetype: file.type
+         });
+       };
+
+       reader.readAsDataURL(file);
+     }
+
     renderItemOrEditField() {
         const styles = this.getStyles();
         if(this.state.editing !== true){
@@ -53,31 +85,34 @@ class ProfilePicture extends Component {
                     />
             );
         } else {
-            return (
-                <div className="row ">
-                    <div className="col-xs-10 col-xs-offset-1">
-                        <form>
-                            <ul className="list-group-item" style={styles.ulStyles}>
-                                <li >
-                                    <label><strong>Summary:</strong></label>
-                                    <textarea
-                                        className="form-control"
-                                        rows='5'
-                                        defaultValue={this.props.data.summary}></textarea>
-                                </li><br />
-                                <li className="btn-group">
-                                    <button
-                                        onClick={this.handleUpdate}
-                                        action="submit"
-                                        className="btn btn-primary">Update</button>
-                                    <button
-                                        className="btn btn-default"
-                                        onClick={this.toggleEditing}>Cancel</button>
-                                </li>
-                            </ul>
-                        </form>
-                    </div>
+            let processing;
+            let uploaded;
+
+            if (this.state.uploaded_uri) {
+              uploaded = (
+                <div>
+                  <h4>Image uploaded!</h4>
+                  <img className='image-preview' src={this.state.uploaded_uri} />
+                  <pre className='image-link-box'>{this.state.uploaded_uri}</pre>
                 </div>
+              );
+            }
+
+            if (this.state.processing) {
+              processing = "Processing image, hang tight";
+            }
+            return (
+                <div className='row text-center'>
+                   <div className='col-xs-10 col-xs-offset-1'>
+                     <label>Upload an image</label>
+                     <form className="list-group-item" onSubmit={this.handleSubmit} encType="multipart/form-data" style={styles.ulStyles}>
+                       <input type="file" onChange={this.handleFile} />
+                       <input disabled={this.state.processing} className='btn btn-primary' type="submit" value="Upload" />
+                       {processing}
+                     </form>
+                     {uploaded}
+                   </div>
+                 </div>
             );
         }
     }

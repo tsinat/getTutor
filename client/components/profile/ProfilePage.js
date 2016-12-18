@@ -11,6 +11,7 @@ import ProfilePicture from './profilePicture';
    constructor(){
      super();
      this.updateProfile = this.updateProfile.bind(this);
+     this.handleProfilePicture = this.handleProfilePicture.bind(this);
    }
    componentWillMount() {
        this.props.fetchUser();
@@ -19,6 +20,10 @@ import ProfilePicture from './profilePicture';
    updateProfile(updateData){
        updateData.currentUser = this.props.currentUser.user.email
        this.props.updateUser(updateData);
+   }
+   handleProfilePicture(data) {
+       const id = this.props.currentUser.user._id;
+       this.props.uploadPicture(data, id);
    }
    render(){
      const { currentUser } = this.props;
@@ -29,6 +34,7 @@ import ProfilePicture from './profilePicture';
                  <ProfilePicture
                      data={currentUser.user}
                      updateProfile={this.updateProfile}
+                     handleProfilePicture={this.handleProfilePicture}
                      />
                  <ProfileBioList
                      data={currentUser.user}
@@ -52,6 +58,22 @@ import ProfilePicture from './profilePicture';
 function mapStateToProps(state) {
     return {
         currentUser: state.currentUser
+    }
+}
+
+ProfilePage.defaultProps = {
+    currentUser: {
+        image: "https://avatars0.githubusercontent.com/u/11866441?v=3",
+        bio: {
+            firstName: "First Name",
+            lastName: "Last Name"
+        },
+        summary: "Please fill summary here",
+        education: {
+            school: "school",
+            field: "Field",
+            degree: "degree"
+        }
     }
 }
 

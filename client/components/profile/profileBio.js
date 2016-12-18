@@ -112,9 +112,21 @@ class ProfileBioList extends Component {
         );
     }
 }
+
 ProfileBioList.defaultProps = {
-    firstName: "Please Insert your first name",
-    lastName: "please Insert your last name here"
+    data: {
+        image: "https://avatars0.githubusercontent.com/u/11866441?v=3",
+        bio: {
+            firstName: "First Name",
+            lastName: "Last Name"
+        },
+        summary: "Please fill summary here",
+        education: {
+            school: "school",
+            field: "Field",
+            degree: "degree"
+        }
+    }
 }
 
 export default connect(null)(form(ProfileBioList));
