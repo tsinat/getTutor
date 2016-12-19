@@ -114,6 +114,7 @@ class ProfileBioList extends Component {
 }
 
 ProfileBioList.defaultProps = {
+    
     data: {
         image: "https://avatars0.githubusercontent.com/u/11866441?v=3",
         bio: {
