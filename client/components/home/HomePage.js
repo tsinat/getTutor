@@ -76,7 +76,7 @@ export default class HomePage extends Component {
         return thunnailList;
     }
     scrollUp() {
-        scroll.scrollTo(590);
+        scroll.scrollTo(595);
     }
     scrollToTop() {
         scroll.scrollToTop();
