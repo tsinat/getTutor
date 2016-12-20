@@ -130,6 +130,7 @@ class Header extends Component {
         const pathName = '';
         const history = createHistory();
         const unlisten = history.listen((location) => {
+            console.log('this.pathName:', this.pathName, location.pathname);
             if(this.pathName != location.pathname){
                 document.body.scrollTop = 0;
             }

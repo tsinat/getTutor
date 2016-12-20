@@ -9,13 +9,13 @@ const ProfileEdu = (props) => {
                 </span>
                 <h4>Education</h4><hr />
                 <p className="">
-                    <strong>School:</strong> { props.data.education.school }
+                    <strong>School:</strong> { props.data.education.school ? props.data.education.school : 'School you attended ?'}
                 </p>
                 <p className="">
-                    <strong>Degree:</strong> { props.data.education.degree }
+                    <strong>Degree:</strong> { props.data.education.degree ? props.data.education.degree : 'Degree completed ?' }
                 </p>
                 <p className="">
-                    <strong>Field of Study:</strong> { props.data.education.field}
+                    <strong>Field of Study:</strong> { props.data.education.field ? props.data.education.field : 'Field of study ?'}
                 </p><br />
             </div>
         </div>

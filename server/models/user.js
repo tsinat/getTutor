@@ -7,16 +7,19 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     email: { type: String, required: true, unique: true , lowercase: true },
     password: String,
-    image: String,
+    image: {
+        type: String,
+        default: "http://www.downstreambusiness.com/sites/dsb/files/editor_photo/profile-holder_10.png"
+    },
     bio: {
-        firstName: String,
-        lastName: String,
+        firstName: { type: String, default: null },
+        lastName: { type: String, default: null},
     },
     summary: String,
     education: {
-        school: String,
-        degree: String,
-        field: String
+        school: { type: String, default: null },
+        degree: { type: String, default: null },
+        field: { type: String, default: null }
     }
 });
 

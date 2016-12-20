@@ -61,20 +61,4 @@ function mapStateToProps(state) {
     }
 }
 
-ProfilePage.defaultProps = {
-    currentUser: {
-        image: "https://avatars0.githubusercontent.com/u/11866441?v=3",
-        bio: {
-            firstName: "First Name",
-            lastName: "Last Name"
-        },
-        summary: "Please fill summary here",
-        education: {
-            school: "school",
-            field: "Field",
-            degree: "degree"
-        }
-    }
-}
-
 export default connect(mapStateToProps, actions)(ProfilePage);

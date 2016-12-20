@@ -14,11 +14,19 @@ const form =  reduxForm({
 class ProfileBioList extends Component {
     constructor(props) {
         super(props);
+        const {
+             bio: {
+               firstName = '',
+               lastName = '',
+             } = {},
+             email = '',
+         } = this.props.data;
+
         this.state = {
             editing: false,
-            firstName: this.props.data.bio.firstName ,
-            lastName: this.props.data.bio.lastName,
-            email: this.props.data.email
+            firstName: firstName,
+            lastName: lastName,
+            email: email
         };
         this.toggleEditing = this.toggleEditing.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
@@ -34,6 +42,12 @@ class ProfileBioList extends Component {
                 boxShadow: "1px 1px 1px lightgrey"
             }
         }
+    }
+    componentDidMount() {
+        this.setState({
+            firstName: this.props.data.bio.firstName,
+            lastName: this.props.data.bio.lastName
+        });
     }
     onChange(e) {
         this.setState({[e.target.name]: e.target.value});
@@ -110,23 +124,6 @@ class ProfileBioList extends Component {
                 {this.renderItemOrEditField()}
             </div>
         );
-    }
-}
-
-ProfileBioList.defaultProps = {
-    
-    data: {
-        image: "https://avatars0.githubusercontent.com/u/11866441?v=3",
-        bio: {
-            firstName: "First Name",
-            lastName: "Last Name"
-        },
-        summary: "Please fill summary here",
-        education: {
-            school: "school",
-            field: "Field",
-            degree: "degree"
-        }
     }
 }
 

@@ -85,22 +85,6 @@ class ProfilePicture extends Component {
                     />
             );
         } else {
-            let processing;
-            let uploaded;
-
-            if (this.state.uploaded_uri) {
-              uploaded = (
-                <div>
-                  <h4>Image uploaded!</h4>
-                  <img className='image-preview' src={this.state.uploaded_uri} />
-                  <pre className='image-link-box'>{this.state.uploaded_uri}</pre>
-                </div>
-              );
-            }
-
-            if (this.state.processing) {
-              processing = "Processing image, hang tight";
-            }
             return (
                 <div className='row text-center'>
                    <div className='col-xs-10 col-xs-offset-1'>
@@ -108,16 +92,14 @@ class ProfilePicture extends Component {
                      <form className="list-group-item" onSubmit={this.handleSubmit} encType="multipart/form-data" style={styles.ulStyles}>
                        <input type="file" onChange={this.handleFile} />
                        <input disabled={this.state.processing} className='btn btn-primary' type="submit" value="Upload" />
-                       {processing}
                      </form>
-                     {uploaded}
                    </div>
                  </div>
             );
         }
     }
     toggleEditing(e){
-        e.preventDefault();
+        // e.preventDefault();
         this.setState({editing: !this.state.editing});
     }
     render(){
