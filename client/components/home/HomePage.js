@@ -3,6 +3,7 @@ import Radium from 'radium';
 import Scroll from 'react-scroll';
 import Header from './header';
 import SingleUser from '../common/singleUser';
+import PageContainer from 'react-page-transitions';
 
 let Link       = Scroll.Link;
 let Element    = Scroll.Element;
@@ -100,7 +101,7 @@ export default class HomePage extends Component {
                     <hr />
                 </div>
                 <div className="container">
-                    {this.renderUsers()}
+                  {this.renderUsers()}
                 </div>
             </div>
         );

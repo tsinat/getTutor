@@ -95,7 +95,7 @@ class Header extends Component {
                         onClick={this.toggleCollapse}
                         style={styles.textStyle}>Help?</Link>
                 </li>
-            ]
+            ];
         } else {
             return [
                 <li className="nav-item" key={1}>
@@ -122,7 +122,7 @@ class Header extends Component {
                         onClick={this.toggleCollapse}
                         style={styles.textStyle}>Help?</Link>
                 </li>
-            ]
+            ];
         }
 
     }

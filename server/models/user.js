@@ -12,14 +12,14 @@ const userSchema = new Schema({
         default: "http://www.downstreambusiness.com/sites/dsb/files/editor_photo/profile-holder_10.png"
     },
     bio: {
-        firstName: { type: String, default: null },
-        lastName: { type: String, default: null},
+        firstName: { type: String, default: "" },
+        lastName: { type: String, default: ""},
     },
     summary: String,
     education: {
-        school: { type: String, default: null },
-        degree: { type: String, default: null },
-        field: { type: String, default: null }
+        school: { type: String, default: "" },
+        degree: { type: String, default: "" },
+        field: { type: String, default: "" }
     }
 });
 

@@ -24,17 +24,15 @@ const getStyles = () => {
 const Category = (props) => {
     const style = getStyles();
     return (
-        <Link to={"#"} >
-            <div className="col-sm-6 col-md-4" style={style.category}>
-                <div className="thumbnail" style={style.thumbnailStyle}>
-                    <img src={props.category.image} alt="..." style={style.image}/>
-                    <div className="caption">
-                        <h3>{ props.category.title}</h3>
-                        <p>{props.category.desc}</p>
-                    </div>
+        <div className="col-sm-6 col-md-4" style={style.category}>
+            <div className="thumbnail" style={style.thumbnailStyle}>
+                <img src={props.category.image} alt="..." style={style.image}/>
+                <div className="caption">
+                    <h3>{ props.category.title}</h3>
+                    <p>{props.category.desc}</p>
                 </div>
             </div>
-        </Link>
+        </div>
     )
 }
 

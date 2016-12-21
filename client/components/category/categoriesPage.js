@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Radium from 'radium';
 import * as actions from '../../actions';
 import Category from './category';
+import { Link, browserHistory} from 'react-router';
 import categoryList from '../../data/categoriesData';
 
 class Categories extends Component {
@@ -17,7 +18,13 @@ class Categories extends Component {
     }
     renderCategory() {
         const list = categoryList.map((category, id) => {
-            return <Category category={category} key={id}/>;
+            return (
+                <Link to={`/categories/${category.path}`} key={id}>
+                    <div>
+                        <Category category={category} />
+                    </div>
+                </Link>
+            );
         });
         return list;
     }
