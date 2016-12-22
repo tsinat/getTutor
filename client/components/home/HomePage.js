@@ -3,7 +3,6 @@ import Radium from 'radium';
 import Scroll from 'react-scroll';
 import Header from './header';
 import SingleUser from '../common/singleUser';
-import PageContainer from 'react-page-transitions';
 
 let Link       = Scroll.Link;
 let Element    = Scroll.Element;
@@ -30,7 +29,7 @@ export default class HomePage extends Component {
         }
     }
     updateDimensions() {
-        var w = window,
+        let w = window,
           d = document,
           documentElement = d.documentElement,
           body = d.getElementsByTagName('body')[0],
@@ -96,7 +95,7 @@ export default class HomePage extends Component {
         return (
             <div>
                 {this.renderHeader()}
-                <div className="" style={styles.panelStyle}>
+                <div className="what" style={styles.panelStyle}>
                     <h4 className="text-center">Some of the top rated mentors around you</h4>
                     <hr />
                 </div>

@@ -15,8 +15,9 @@ import Signout from './components/auth/signout';
 export default (
     <Route path='/' component={App}>
         <IndexRoute  component={HomePage}/>
-        <Route path='categories' component={Categories} >
-            <Route path="/categories/:path" component={WebDevelopment} />
+        <Route path='categories'>
+            <IndexRoute  component={Categories}/>
+            <Route path="/categories/:id" component={WebDevelopment} />
         </Route>
         <Route path='profile' component={RequireAuth(Profile)} />
         <Route path='signin' component={Signin} />

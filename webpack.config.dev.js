@@ -2,7 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 
 export default {
-    devtools: 'eval-source-map',
+    devtool: 'eval-source-map',
     entry: [
         'webpack-hot-middleware/client',
         path.join(__dirname, '/client/index.js')
@@ -28,8 +28,8 @@ export default {
                 loaders: ["react-hot-loader/webpack",'babel'],
             },
             {
-                test: /\.css$/,
-                loader: 'style!css'
+              test: /\.css?$/,
+              loader: 'style!css'
             },
         ]
     },

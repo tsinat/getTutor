@@ -1,5 +1,8 @@
-body {
-    background-color: yellow !important;
+body, html {
+    background-color: red !important;
+}
+.what {
+    background: red !important;
 }
 .page-transition-enter {
   -webkit-transition: opacity 0.3s ease-in-out;

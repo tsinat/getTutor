@@ -19,7 +19,7 @@ class Categories extends Component {
     renderCategory() {
         const list = categoryList.map((category, id) => {
             return (
-                <Link to={`/categories/${category.path}`} key={id}>
+                <Link to={`/categories/${category.id}`} key={id}>
                     <div>
                         <Category category={category} />
                     </div>
