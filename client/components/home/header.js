@@ -10,13 +10,12 @@ function getStyles() {
             padding:0,
             width: "100%",
             zIndex: 0,
-            marginRight: "-15px",
+            marginBottom: "-5px",
         },
         containerVideo: {
             position: "relative",
             width: "100%",
-            margin:"0 auto",
-            marginTop: "-150px",
+            marginTop: "-80px",
         },
         headerTextStyle: {
             position: "absolute",
@@ -28,13 +27,14 @@ function getStyles() {
             fontSize: "2em"
         },
         buttonStyle: {
-            background: "#F05A50",
+            background: "white",
             opacity:0.8,
-            color: "white",
+            color: "#F05A50",
             fontWeight: "bold",
             fontSize: "0.9em",
-            borderRadius: "10px",
-            border: "none"
+            borderRadius: "5px",
+            border: "none",
+            padding: "10px 30px"
         },
         glyphiconStyle: {
             background: "transparent",
@@ -58,7 +58,7 @@ const Header = (props) => {
                 <div style={styles.headerTextStyle} className="text-center">
                     <h1>GetMentor</h1>
                     <h2>The easiest way to get local or online mentor</h2><br/>
-                    <Link className="btn btn-default " style={styles.buttonStyle}>How it works?</Link><br />
+                    <Link to="/signup" className="btn btn-default " style={styles.buttonStyle}>How it works ?</Link><br />
                     <i className="glyphicon glyphicon-chevron-down" style={styles.glyphiconStyle} onClick={props.scrollUp}></i>
                 </div>
             </div>

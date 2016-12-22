@@ -1,7 +1,9 @@
 import React, { Component} from 'react';
-import { Link , hashHistory} from 'react-router';
+import { hashHistory} from 'react-router';
+import {Link as ReactRouterLink} from 'react-router';
+const Link = Radium(ReactRouterLink);
 import { connect } from 'react-redux';
-import Radium from 'radium';
+import Radium, {style} from 'radium';
 import { createHistory } from 'history';
 
 class Header extends Component {
@@ -41,14 +43,17 @@ class Header extends Component {
                 background: "transparent",
                 fontWeight: "bold",
                 borderBottom: "none",
-                margin:0
+                margin:0,
+                marginTop: "10px"
             },
             textStyle: {
                 color: "white",
                 fontWeight: 1500,
                 fontSize:"1.3em",
                 ':hover': {
-                    color: "#FFF"
+                    backgroundColor: "#FFF",
+                    color: "#F05A50",
+                    borderRadius: "5px"
                 }
             },
             translateStyle: {

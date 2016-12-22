@@ -57,6 +57,7 @@ class ProfilePicture extends Component {
             filetype: this.state.filetype
       }
       this.props.handleProfilePicture(data);
+      this.toggleEditing();
     }
 
     handleFile(e) {

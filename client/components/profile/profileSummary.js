@@ -42,8 +42,12 @@ class ProfileSummary extends Component {
     handleUpdate(e) {
         e.preventDefault();
         this.props.updateProfile(this.state);
+        this.toggleEditing();
     }
-
+    toggleEditing(e){
+        // e.preventDefault();
+        this.setState({editing: !this.state.editing});
+    }
     renderItemOrEditField() {
         const styles = this.getStyles();
         if(this.state.editing !== true){

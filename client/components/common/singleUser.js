@@ -7,13 +7,15 @@ function getStyles(){
             borderRadius: 0,
             border: "none",
             padding: "10px",
-            border: "1px solid lightgrey",
+            background: "white",
+            boxShadow: "1px 1px 1px lightgrey",
+            border: "1px solid #ecf0f1",
             ":hover": {
                 background: "red"
             }
         },
         singleUserStyle: {
-            padding: "0 8px"
+            padding: "0 8px",
         },
         detail: {
             padding:"10px"
@@ -38,5 +40,6 @@ const SingleUser = () => {
             </div>
     );
 }
+
 
 export default SingleUser;

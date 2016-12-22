@@ -10,7 +10,7 @@ let Events     = Scroll.Events;
 let scroll     = Scroll.animateScroll;
 let scrollSpy  = Scroll.scrollSpy;
 
-export default class HomePage extends Component {
+class HomePage extends Component {
     constructor(props) {
         super(props);
         this.state = { width: null }
@@ -21,10 +21,14 @@ export default class HomePage extends Component {
         return {
             thumbnailStyle: {
                 float: "left",
+                ':hover': {
+                    background: "red"
+                }
             },
             panelStyle: {
-                marginTop: 0,
-                padding:"5px"
+                margin: 0,
+                marginBottom: "10px",
+                padding:"10px",
             }
         }
     }
@@ -70,13 +74,13 @@ export default class HomePage extends Component {
     renderUsers() {
         const styles = this.getStyles();
         const temp = [0,1,2,3,4,5,6,7,8,9,11,12];
-        const thunnailList = temp.map(thumbnail => {
+        const thunnailList = temp.map((thumbnail, index) => {
             return <SingleUser key={thumbnail} style={styles.thumbnailStyle} />
         });
         return thunnailList;
     }
     scrollUp() {
-        scroll.scrollTo(595);
+        scroll.scrollTo(665);
     }
     scrollToTop() {
         scroll.scrollToTop();
@@ -95,7 +99,7 @@ export default class HomePage extends Component {
         return (
             <div>
                 {this.renderHeader()}
-                <div className="what" style={styles.panelStyle}>
+                <div className="what" style={styles.panelStyle} key="me">
                     <h4 className="text-center">Some of the top rated mentors around you</h4>
                     <hr />
                 </div>
@@ -106,3 +110,6 @@ export default class HomePage extends Component {
         );
     }
 }
+
+HomePage = Radium(HomePage);
+export default HomePage;
