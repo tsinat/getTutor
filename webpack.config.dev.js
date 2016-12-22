@@ -2,13 +2,14 @@ import path from 'path';
 import webpack from 'webpack';
 
 export default {
-    devtool: 'eval-source-map',
+    devtools: 'eval-source-map',
     entry: [
         'webpack-hot-middleware/client',
         path.join(__dirname, '/client/index.js')
     ],
     output: {
         path: '/',
+        filename: 'bundle.js',
         publicPath: '/'
     },
     plugins: [
@@ -23,13 +24,12 @@ export default {
                 include:[
                     path.join(__dirname, 'client'),
                     path.join(__dirname, 'server/shared'),
-                    path.join(__dirname, 'public')
                 ],
                 loaders: ["react-hot-loader/webpack",'babel'],
             },
             {
               test: /\.css?$/,
-              loader: 'style!css'
+              loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]'
             },
         ]
     },

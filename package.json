@@ -50,12 +50,15 @@
     "react-page-transitions": "^1.2.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
+    "react-tools": "^0.10.0",
+    "react-transform": "0.0.3",
     "react-wysiwyg": "^2.2.1",
     "redux": "^3.6.0",
     "redux-form": "^6.1.1",
     "redux-thunk": "^2.1.0",
     "shortid": "^2.2.6",
     "smoothscroll": "^0.2.2",
+    "style-loader": "^0.13.1",
     "uuid": "^3.0.1",
     "validator": "^6.0.0"
   }
