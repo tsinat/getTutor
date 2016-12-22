@@ -27,8 +27,6 @@ class HomePage extends Component {
             },
             panelStyle: {
                 margin: 0,
-                marginBottom: "10px",
-                padding:"10px",
             }
         }
     }
@@ -100,7 +98,7 @@ class HomePage extends Component {
             <div>
                 {this.renderHeader()}
                 <div className="what" style={styles.panelStyle} key="me">
-                    <h4 className="text-center">Some of the top rated mentors around you</h4>
+                    <h3 className="text-center">Some of the top rated mentors around you</h3>
                     <hr />
                 </div>
                 <div className="container">

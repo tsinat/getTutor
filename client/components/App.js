@@ -14,14 +14,12 @@ class App extends Component {
                 height: "auto"
             },
              containerStyle: {
-                margin: 0,
                 padding: 0,
                 width: "100%",
                 minHeight: "100vh",
                 height: "100%",
-                // background: "#FAFAFA",
                 background: "#F2F2F2",
-                paddingTop:"55px"
+                paddingTop:"50px"
             },
             rowStyle: {
                 background: "#FAFAFA"
