@@ -19,6 +19,7 @@ class HomePage extends Component {
         this.scrollUp = this.scrollUp.bind(this);
         this.updateDimensions = this.updateDimensions.bind(this);
     }
+
     getStyles() {
         return {
             thumbnailStyle: {
@@ -32,6 +33,7 @@ class HomePage extends Component {
             }
         }
     }
+
     updateDimensions() {
         let w = window,
           d = document,
