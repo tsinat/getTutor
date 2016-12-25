@@ -6,7 +6,7 @@ export default function(state = {}, action) {
         console.log('UPDATE_USER:', action.payload);
             return {
                 ...state,
-                userData: actions.payload
+                user: actions.payload
             };
         case FETCH_MESSAGE:
             return {

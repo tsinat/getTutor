@@ -3,6 +3,8 @@ import Radium from 'radium';
 import Scroll from 'react-scroll';
 import Header from './header';
 import SingleUser from '../common/singleUser';
+import CSSModules from 'react-css-modules';
+import style from './home.css'
 
 let Link       = Scroll.Link;
 let Element    = Scroll.Element;
@@ -78,7 +80,7 @@ class HomePage extends Component {
         return thunnailList;
     }
     scrollUp() {
-        scroll.scrollTo(665);
+        scroll.scrollTo(700);
     }
     scrollToTop() {
         scroll.scrollToTop();

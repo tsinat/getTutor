@@ -56,6 +56,13 @@ class Header extends Component {
                     borderRadius: "5px"
                 }
             },
+            ulStyles: {
+                padding: "2px"
+            },
+            logo: {
+                color: "white",
+                fontSize: "1.8em"
+            },
             translateStyle: {
                 position: 'fixed',
                 top: 0,
@@ -63,6 +70,7 @@ class Header extends Component {
                 // background: "#e67e22",
                 background: "#F05A50",
                 borderBottom: "none",
+                transition: "0.3s ease-in-out",
             }
         }
     }
@@ -157,11 +165,11 @@ class Header extends Component {
                     <span className="icon-bar"></span>
                   </button>
                   <div className='navbar-header'>
-                        <Link to='/' className='navbar-brand' style={styles.textStyle}>GetMentor</Link>
+                        <Link to='/' className='navbar-brand' style={styles.logo} onClick={()=> window.reload()}>GetMentor</Link>
                   </div>
                 </div>
                 <div className={ "navbar-collapse " + navClass } id="bs-example-navbar-collapse-1">
-                  <ul className="nav navbar-nav navbar-right">
+                  <ul className="nav navbar-nav navbar-right" style={styles.ulStyles}>
                     { this.renderLinks() }
                   </ul>
                 </div>

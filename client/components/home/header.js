@@ -34,13 +34,14 @@ function getStyles() {
             fontSize: "0.9em",
             borderRadius: "5px",
             border: "none",
-            padding: "10px 30px"
+            padding: "7px 30px"
         },
         glyphiconStyle: {
             background: "transparent",
             marginTop:"60px",
             border:"none",
-            padding:"0 20"
+            padding:"0 20",
+            fontSize: "1.2em"
         }
     }
 }

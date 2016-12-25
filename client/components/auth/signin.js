@@ -25,7 +25,7 @@ class Signin extends Component {
     getStyles() {
         return {
             signinStyle: {
-
+                background: "inherit"
             },
             jumbotronStyle: {
                 borderRadius: 0,

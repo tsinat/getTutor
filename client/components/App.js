@@ -18,14 +18,17 @@ class App extends Component {
                 width: "100%",
                 minHeight: "100vh",
                 height: "100%",
-                background: "#F2F2F2",
-                paddingTop:"50px"
+                background: "#FAFAFA",
+                paddingTop:"80px"
             },
             rowStyle: {
-                background: "#FAFAFA"
+                background: "#FAFAFA",
             }
         }
     }
+    componentDidMount() {
+       this.setState({ mounted: true });
+   }
     render(){
         const styles = this.getStyles();
         return (
@@ -33,9 +36,7 @@ class App extends Component {
                 <Navigation />
                 <div className='container'  style={styles.containerStyle}>
                     <div className="row" style={styles.rowStyle}>
-                        <div className="col-lg-12">
-                            {this.props.children}
-                        </div>
+                        {this.props.children}
                     </div>
                 </div>
                 <Footer />
