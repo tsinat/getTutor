@@ -9,7 +9,7 @@ function getStyles(){
             padding: "10px",
             background: "white",
             boxShadow: "1px 1px 1px lightgrey",
-            border: "1px solid lightgrey",
+            // border: "1px solid lightgrey",
             ":hover": {
                 background: "red"
             }

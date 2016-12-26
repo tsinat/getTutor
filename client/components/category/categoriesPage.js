@@ -5,6 +5,8 @@ import * as actions from '../../actions';
 import Category from './category';
 import { Link, browserHistory} from 'react-router';
 import categoryList from '../../data/categoriesData';
+import CSSModules from 'react-css-modules';
+import category from './category.css'
 
 class Categories extends Component {
     getStyles() {
