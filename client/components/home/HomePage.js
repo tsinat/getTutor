@@ -24,6 +24,7 @@ class HomePage extends Component {
         return {
             thumbnailStyle: {
                 float: "left",
+                background:"red",
                 ':hover': {
                     background: "red"
                 }
@@ -77,7 +78,7 @@ class HomePage extends Component {
         const styles = this.getStyles();
         const temp = [0,1,2,3,4,5,6,7,8,9,11,12];
         const thunnailList = temp.map((thumbnail, index) => {
-            return <SingleUser key={thumbnail} style={styles.thumbnailStyle} />
+            return <SingleUser key={index} style={styles.thumbnailStyle} />
         });
         return thunnailList;
     }
