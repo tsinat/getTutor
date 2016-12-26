@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Radium from 'radium';
 import Scroll from 'react-scroll';
 import Header from './header';
-import SingleUser from '../common/singleUser';
+import SingleUserList from './singleUserList';
 import CSSModules from 'react-css-modules';
 import style from './home.css'
 
@@ -21,18 +21,7 @@ class HomePage extends Component {
     }
 
     getStyles() {
-        return {
-            thumbnailStyle: {
-                float: "left",
-                background:"red",
-                ':hover': {
-                    background: "red"
-                }
-            },
-            panelStyle: {
-                margin: 0,
-            }
-        }
+        return {}
     }
 
     updateDimensions() {
@@ -74,14 +63,14 @@ class HomePage extends Component {
             return <Header scrollUp={this.scrollUp}/>;
         } else return;
     }
-    renderUsers() {
-        const styles = this.getStyles();
-        const temp = [0,1,2,3,4,5,6,7,8,9,11,12];
-        const thunnailList = temp.map((thumbnail, index) => {
-            return <SingleUser key={index} style={styles.thumbnailStyle} />
-        });
-        return thunnailList;
-    }
+    // renderUsers() {
+    //     const styles = this.getStyles();
+    //     const temp = [0,1,2,3,4,5,6,7,8,9,11,12];
+    //     const thunnailList = temp.map((thumbnail, index) => {
+    //         return <SingleUser key={index} style={styles.thumbnailStyle} />
+    //     });
+    //     return thunnailList;
+    // }
     scrollUp() {
         scroll.scrollTo(700);
     }
@@ -106,9 +95,7 @@ class HomePage extends Component {
                     <h3 className="text-center">Some of the top rated mentors around you</h3>
                     <hr />
                 </div>
-                <div className="container">
-                  {this.renderUsers()}
-                </div>
+                <SingleUserList />
             </div>
         );
     }
