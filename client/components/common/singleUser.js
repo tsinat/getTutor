@@ -30,7 +30,7 @@ function getStyles(){
 const SingleUser = (props) => {
     const styles = getStyles();
     return (
-        <Link key={props.index}>
+        <Link to={`/userDetail/${props.user._id}`} key={props.index}>
             <div className="col-sm-6 col-md-3" style={styles.singleUserStyle} key={props.index+2}>
                 <div className="thumbnail" style={styles.thumbnailStyle} key={props.index+3}>
                     <img src={ props.user.image } alt="..." />

@@ -11,12 +11,12 @@ import Signin from './components/auth/signin';
 import Signup from './components/auth/signup';
 import RequireAuth from './components/auth/require_auth';
 import Signout from './components/auth/signout';
-import UserDetail from './components/userDetail/userDetailPage'
+import SingleUserDetail from './components/userDetail/userDetailPage';
 
 export default (
     <Route path='/' component={App}>
         <IndexRoute  component={HomePage}/>
-        <Route path='/userDetail/:id' component={UserDetail} />
+        <Route path='/userDetail/:id' component={SingleUserDetail} />
         <Route path='categories'>
             <IndexRoute  component={Categories}/>
             <Route path="/categories/:id" component={WebDevelopment} />

@@ -34,7 +34,6 @@ class HomePage extends Component {
 
           this.setState({width: width});
           console.log('width:', width);
-
     }
     componentWillMount () {
         this.props.fetchAllUsers();
@@ -52,7 +51,6 @@ class HomePage extends Component {
         });
 
         scrollSpy.update();
-
     }
     componentWillUnmount() {
         Events.scrollEvent.remove('begin');
