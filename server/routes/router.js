@@ -3,6 +3,7 @@ import multer from 'multer';
 
 import { signup, signin } from '../controllers/authentication';
 import { update } from '../controllers/profile';
+import { getAll } from '../controllers/users';
 import { uploadImage } from '../controllers/awsUpload';
 import passportService from '../services/passport';
 import passport from 'passport';
@@ -19,6 +20,7 @@ router.get('/profile', requireAuth, (req, res) => {
     res.send(req.user);
 });
 router.post('/update', update);
+router.get('/getall', getAll);
 router.put('/profile/image/:id',  upload.single('newFile'), uploadImage)
 
 export { router };
