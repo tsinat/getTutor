@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USERS } from './types';
+import { FETCH_USERS, SINGLE_USER } from './types';
 
 const ROOT_URL = 'http://localhost:4000';
 
@@ -14,6 +14,21 @@ export function fetchAllUsers() {
             })
             .catch(error => {
                 console.log('error white getting all users:', error);
+            })
+    }
+}
+
+export function getSingleUser(id) {
+    return function(dispatch) {
+        axios.get(`${ROOT_URL}/api/user/${id}`)
+            .then(response => {
+                dispatch({
+                    type: SINGLE_USER,
+                    payload: response.data
+                })
+            })
+            .catch(error => {
+                console.log('error white getting single user detail:', error);
             })
     }
 }

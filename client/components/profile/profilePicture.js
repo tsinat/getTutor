@@ -29,17 +29,6 @@ class ProfilePicture extends Component {
         return {
             ulStyles: {
                 listStyle: "none"
-            },
-            listItem: {
-                marginTop: "40px",
-                borderRadius: 0,
-                borderBottom: "2px solid #FAFAFA"
-            },
-            imageStyle: {
-                width:"150px",
-                height: "auto",
-                borderRadius: "50%",
-                border: "1px solid lightgrey",
             }
         }
     }

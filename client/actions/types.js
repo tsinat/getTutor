@@ -5,3 +5,4 @@ export const FETCH_MESSAGE='FETCH_MESSAGE';
 export const UPDATE_USER='UPDATE_USER';
 export const UPLOAD_PICTURE='UPLOAD_PICTURE';
 export const FETCH_USERS='FETCH_USERS';
+export const SINGLE_USER='SINGLE_USER';
