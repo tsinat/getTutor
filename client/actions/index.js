@@ -27,7 +27,7 @@ export function signupUser(formProps) {
                 browserHistory.push('/profile');
             })
             .catch(error => {
-                dispatch(authError('Bad signup Info'));
+                dispatch(authError('Please correct signup information'));
             });
     }
 }

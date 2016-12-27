@@ -53,11 +53,11 @@ class Header extends Component {
                 ':hover': {
                     backgroundColor: "#FFF",
                     color: "#F05A50",
-                    borderRadius: "5px"
+                    // borderRadius: "5px"
                 }
             },
             ulStyles: {
-                padding: "2px"
+                // padding: "2px"
             },
             logo: {
                 color: "white",

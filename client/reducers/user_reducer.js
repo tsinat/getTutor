@@ -1,4 +1,4 @@
-import { UPDATE_USER, FETCH_MESSAGE, FETCH_USERS, SINGLE_USER } from '../actions/types';
+import { UPDATE_USER, FETCH_MESSAGE, FETCH_USERS, SINGLE_USER, CATEGORY_USERS } from '../actions/types';
 
 export default function(state = {}, action) {
     switch (action.type) {
@@ -24,6 +24,12 @@ export default function(state = {}, action) {
             return {
                 ...state,
                 userDetail: action.payload
+            };
+        case CATEGORY_USERS:
+            console.log('fetch all users', action.payload);
+            return {
+                ...state,
+                cateogryUsers: action.payload
             };
     }
     return state;

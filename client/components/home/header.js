@@ -61,9 +61,9 @@ const Header = (props) => {
                     style={styles.containerVideo} key='b'>
                 </video>
                 <div style={styles.headerTextStyle} className="text-center" key='c'>
-                    <h1>GetMentor</h1>
-                    <h2>The easiest way to get local or online mentor</h2><br/>
-                    <Link to="/signup" className="btn btn-default " style={styles.buttonStyle} key='d'>How it works ?</Link><br />
+                    <h1 key='x'>GetMentor</h1>
+                    <h2 key='y'>The easiest way to get local or online mentor</h2><br/>
+                    <Link to="/signup" className="btn btn-default " style={styles.buttonStyle} key='d'>SignUp Now</Link><br />
                     <i className="glyphicon glyphicon-chevron-down" style={styles.glyphiconStyle} onClick={props.scrollUp} key='e'></i>
                 </div>
             </div>

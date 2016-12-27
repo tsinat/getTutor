@@ -23,6 +23,7 @@ function getStyles(){
             padding: "0 8px",
         },
         detail: {
+            textDecoration: "none",
             transition: "display .5s ease-in-out",
             padding: "10px",
             color: "black",

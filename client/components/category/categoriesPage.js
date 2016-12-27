@@ -16,6 +16,9 @@ class Categories extends Component {
                 height: "auto",
                 overflow: "scroll",
                 marginBottom: 0
+            },
+            headerStyle: {
+                marginTop: 0,
             }
         }
     }
@@ -32,7 +35,7 @@ class Categories extends Component {
         return list;
     }
     render() {
-        const style = this.getStyles();
+        const styles = this.getStyles();
         return (
             <ReactCSSTransitionGroup
                 component="div"
@@ -43,9 +46,9 @@ class Categories extends Component {
                 transitionLeave={false}>
                 <div className="container" key='1'>
                     <div className="" key='2'>
-                        <h4 className="text-center">Select the category of your interest</h4>
+                        <h2 className="text-center" style={styles.headerStyle}>Select the category of your interest</h2>
                     </div>
-                    {/*<hr />*/}
+                    <hr />
                     {this.renderCategory()}
                 </div>
             </ReactCSSTransitionGroup>

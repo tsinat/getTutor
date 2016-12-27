@@ -16,5 +16,14 @@ export function getSingleUser(req, res, next) {
             return next(err);
         }
         res.send(user);
-    })
+    });
+}
+
+export function getCategoryUsers(req, res, next) {
+    User.find({}, (err, user) => {
+        if(err) {
+            return next(err);
+        }
+        res.send(user);
+    });
 }

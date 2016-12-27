@@ -6,7 +6,7 @@ import HelpPage from './components/help/helpPage';
 import HomePage from './components/home/HomePage';
 import Profile from './components/profile/ProfilePage';
 import Categories from './components/category/categoriesPage';
-import WebDevelopment from './components/categoryDetail/webDevelopmentPage'
+import CategoryDetail from './components/categoryDetail/categoryDetailPage';
 import Signin from './components/auth/signin';
 import Signup from './components/auth/signup';
 import RequireAuth from './components/auth/require_auth';
@@ -19,7 +19,7 @@ export default (
         <Route path='/userDetail/:id' component={SingleUserDetail} />
         <Route path='categories'>
             <IndexRoute  component={Categories}/>
-            <Route path="/categories/:id" component={WebDevelopment} />
+            <Route path="/categories/:id" component={CategoryDetail} />
         </Route>
         <Route path='profile' component={RequireAuth(Profile)} />
         <Route path='signin' component={Signin} />
