@@ -83,11 +83,11 @@ class HomePage extends Component {
         return (
             <ReactCSSTransitionGroup
                 component="div"
-                transitionName="page-transition"
-                transitionEnterTimeout={500}
-                transitionAppearTimeout={600}
-                transitionLeaveTimeout={400}
-                transitionAppear={true}>
+                transitionName="example"
+                transitionAppearTimeout={500}
+                transitionAppear={true}
+                transitionEnter={false}
+                transitionLeave={false}>
                 {this.renderHeader()}
                 <div className="what" style={styles.panelStyle} key="me">
                     <h3 className="text-center" key='you'>Some of the top rated mentors around you</h3>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import * as actions from '../../actions/profileAction';
-
 import ProfileBioList from './profileBio';
 import ProfileSummary from './profileSummary';
 import ProfileEducation from './profileEducation';
@@ -30,7 +30,13 @@ import ProfilePicture from './profilePicture';
      console.log('currentUser:', currentUser);
      if(currentUser.user){
          return(
-             <div>
+             <ReactCSSTransitionGroup
+                 component="div"
+                 transitionName="example"
+                 transitionAppearTimeout={500}
+                 transitionAppear={true}
+                 transitionEnter={false}
+                 transitionLeave={false}>
                  <ProfilePicture
                      data={currentUser.user}
                      updateProfile={this.updateProfile}
@@ -49,7 +55,7 @@ import ProfilePicture from './profilePicture';
                      data={currentUser.user}
                      updateProfile={this.updateProfile}
                      />
-             </div>
+            </ReactCSSTransitionGroup>
          );
      }
      else return <div></div>;

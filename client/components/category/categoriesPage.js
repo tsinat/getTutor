@@ -36,11 +36,11 @@ class Categories extends Component {
         return (
             <ReactCSSTransitionGroup
                 component="div"
-                transitionName="page-transition"
-                transitionEnterTimeout={500}
-                transitionAppearTimeout={600}
-                transitionLeaveTimeout={400}
-                transitionAppear={true}>
+                transitionName="example"
+                transitionAppearTimeout={500}
+                transitionAppear={true}
+                transitionEnter={false}
+                transitionLeave={false}>
                 <div className="container" key='1'>
                     <div className="" key='2'>
                         <h4 className="text-center">Select the category of your interest</h4>
