@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 
 const HelpPage = () => {
         return (
-            <div>Help page wll go here...</div>
+            <div className="container">
+                <p>Help page wll go here...</p>    
+            </div>
             );
 }
 export default HelpPage;

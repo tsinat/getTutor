@@ -11,10 +11,12 @@ function getStyles(){
             border: "none",
             padding: "10px",
             background: "white",
-            // transition: "boxShadow .9s ease-in-out",
+            transition: "boxShadow .3s ease-in-out",
             boxShadow: "1px 1px 1px 1px lightgrey",
+            boxSizing: "border-box",
             ":hover": {
-                boxShadow: "5px 5px 5px 5px lightgrey",
+                boxShadow: "3px 3px 3px 3px lightgrey",
+                transform: "scale(1.01)"
             }
         },
         singleUserStyle: {

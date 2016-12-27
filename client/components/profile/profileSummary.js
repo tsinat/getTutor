@@ -27,10 +27,6 @@ class ProfileSummary extends Component {
         return {
             ulStyles: {
                 listStyle: "none"
-            },
-            listItem: {
-                borderRadius: 0,
-                boxShadow: "1px 1px 1px lightgrey"
             }
         }
     }

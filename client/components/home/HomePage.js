@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Radium from 'radium';
 import Scroll from 'react-scroll';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import * as actions from '../../actions/usersAction';
 import Header from './header';
 import SingleUserList from './singleUserList';
@@ -80,14 +81,20 @@ class HomePage extends Component {
     render() {
         const styles = this.getStyles();
         return (
-            <div>
+            <ReactCSSTransitionGroup
+                component="div"
+                transitionName="page-transition"
+                transitionEnterTimeout={500}
+                transitionAppearTimeout={600}
+                transitionLeaveTimeout={400}
+                transitionAppear={true}>
                 {this.renderHeader()}
                 <div className="what" style={styles.panelStyle} key="me">
-                    <h3 className="text-center">Some of the top rated mentors around you</h3>
+                    <h3 className="text-center" key='you'>Some of the top rated mentors around you</h3>
                     <hr />
                 </div>
-                <SingleUserList allUsers={this.props.allUsers}/>
-            </div>
+                <SingleUserList allUsers={this.props.allUsers} key='what'/>
+            </ReactCSSTransitionGroup>
         );
     }
 }

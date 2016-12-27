@@ -1,12 +1,15 @@
 import React from 'react';
 
 const ProfileBio = (props) => {
+    const styles = {
+        listItem: {
+            borderRadius: 0,
+            boxShadow: "1px 1px 1px lightgrey"
+        }
+    }
     return (
         <div className="row">
-            <div className="list-group-item col-xs-10 col-xs-offset-1" onClick={props.toggleEditing} style={props.styles.listItem}>
-                <span className="pull-right">
-                    <i className='glyphicon glyphicon-edit text-success' onClick={props.toggleEditing}></i>
-                </span>
+            <div className="list-group-item col-xs-10 col-xs-offset-1" onClick={props.toggleEditing} style={styles.listItem}>
                 <p className="">
                     <strong>First Name:</strong> { props.data.bio.firstName ? props.data.bio.firstName :  "Update your first name" }
                 </p>

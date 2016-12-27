@@ -8,7 +8,7 @@ export default {
         path.join(__dirname, '/client/index.js')
     ],
     output: {
-        path: '/',
+        path: __dirname,
         filename: 'bundle.js',
         publicPath: '/'
     },

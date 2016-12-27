@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Radium from 'radium';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import * as actions from '../../actions';
 import Category from './category';
 import { Link, browserHistory} from 'react-router';
@@ -33,15 +34,21 @@ class Categories extends Component {
     render() {
         const style = this.getStyles();
         return (
-            <div>
-                <div className="container">
-                    <div className="">
+            <ReactCSSTransitionGroup
+                component="div"
+                transitionName="page-transition"
+                transitionEnterTimeout={500}
+                transitionAppearTimeout={600}
+                transitionLeaveTimeout={400}
+                transitionAppear={true}>
+                <div className="container" key='1'>
+                    <div className="" key='2'>
                         <h4 className="text-center">Select the category of your interest</h4>
                     </div>
-                    <hr />
+                    {/*<hr />*/}
                     {this.renderCategory()}
                 </div>
-            </div>
+            </ReactCSSTransitionGroup>
         )
     }
 }

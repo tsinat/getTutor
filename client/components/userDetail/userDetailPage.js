@@ -14,15 +14,14 @@ class SingleUserDetail extends Component {
         if(this.props.userDetail) {
             return (
                     <div className="container">
-                        <p>Single User Detail will go here!</p>
                         <ProfilePicture
                             data={this.props.userDetail}/>
-                        {/*<ProfileBio
+                        <ProfileBio
                             data={this.props.userDetail}/>
                         <ProfileSummary
                             data={this.props.userDetail}/>
                         <ProfileEducation
-                            data={this.props.userDetail}/>*/}
+                            data={this.props.userDetail}/>
                     </div>
                 );
         } else {

@@ -61,7 +61,7 @@ class Header extends Component {
             },
             logo: {
                 color: "white",
-                fontSize: "1.8em"
+                fontSize: "1.8em",
             },
             translateStyle: {
                 position: 'fixed',
@@ -70,7 +70,7 @@ class Header extends Component {
                 // background: "#e67e22",
                 background: "#F05A50",
                 borderBottom: "none",
-                transition: "0.3s ease-in-out",
+                transition: "0.1s ease-in-out",
             }
         }
     }
@@ -164,7 +164,7 @@ class Header extends Component {
                     <span className="icon-bar"></span>
                   </button>
                   <div className='navbar-header'>
-                        <Link to='/' className='navbar-brand' style={styles.logo} onClick={()=> window.reload()}>GetMentor</Link>
+                        <Link to='/' className='navbar-brand' style={styles.logo}>GetMentor</Link>
                   </div>
                 </div>
                 <div className={ "navbar-collapse " + navClass } id="bs-example-navbar-collapse-1">

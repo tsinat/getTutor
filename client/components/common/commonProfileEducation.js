@@ -1,12 +1,16 @@
 import React from 'react';
 
 const ProfileEdu = (props) => {
+    const styles = {
+        listItem: {
+            borderRadius: 0,
+            boxShadow: "1px 1px 1px lightgrey",
+            marginBottom:"40px"
+        }
+    }
     return (
         <div className="row">
-            <div className="list-group-item col-xs-10 col-xs-offset-1" onClick={props.toggleEditing} style={props.styles.listItem}>
-                <span className="pull-right">
-                    <i className='glyphicon glyphicon-edit text-success' onClick={props.toggleEditing}></i>
-                </span>
+            <div className="list-group-item col-xs-10 col-xs-offset-1" onClick={props.toggleEditing} style={styles.listItem}>
                 <h4>Education</h4><hr />
                 <p className="">
                     <strong>School:</strong> { props.data.education.school ? props.data.education.school : 'School you attended ?'}
