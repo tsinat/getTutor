@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import * as actions from '../../actions/usersAction';
 import ProfileBio from '../common/commonProfileBio';
 import ProfileSummary from '../common/commonProfileSummary';
@@ -13,6 +14,13 @@ class SingleUserDetail extends Component {
     render(){
         if(this.props.userDetail) {
             return (
+                <ReactCSSTransitionGroup
+                    component="div"
+                    transitionName="example"
+                    transitionAppearTimeout={500}
+                    transitionAppear={true}
+                    transitionEnter={false}
+                    transitionLeave={false}>
                     <div className="container">
                         <ProfilePicture
                             data={this.props.userDetail}/>
@@ -23,6 +31,8 @@ class SingleUserDetail extends Component {
                         <ProfileEducation
                             data={this.props.userDetail}/>
                     </div>
+                </ReactCSSTransitionGroup>
+
                 );
         } else {
             return (<div></div>);
