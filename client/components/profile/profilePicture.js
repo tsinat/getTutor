@@ -88,7 +88,8 @@ class ProfilePicture extends Component {
             );
         }
     }
-    toggleEditing(){
+    toggleEditing(e){
+        e.preventDefault();
         this.setState({editing: !this.state.editing});
     }
     render(){

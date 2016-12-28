@@ -54,7 +54,7 @@ class ProfileBioList extends Component {
         this.toggleEditing();
     }
     toggleEditing(e){
-        // e.preventDefault();
+        e.preventDefault();
         this.setState({editing: !this.state.editing});
     }
     renderItemOrEditField() {
@@ -115,9 +115,7 @@ class ProfileBioList extends Component {
             );
         }
     }
-    toggleEditing(){
-        this.setState({editing: !this.state.editing});
-    }
+
     render(){
         return (
             <div>

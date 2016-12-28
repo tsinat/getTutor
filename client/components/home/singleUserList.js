@@ -22,8 +22,9 @@ class SingleUserList extends Component {
         }
     }
     render() {
+        const styles = this.getStyles();
         return(
-            <div className="container">
+            <div className="container" >
               {this.renderUsers()}
             </div>
         );

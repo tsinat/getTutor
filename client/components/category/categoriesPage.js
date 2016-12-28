@@ -18,7 +18,7 @@ class Categories extends Component {
                 marginBottom: 0
             },
             headerStyle: {
-                marginTop: 0,
+                marginTop: '-10px',
             }
         }
     }

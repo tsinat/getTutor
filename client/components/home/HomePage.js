@@ -64,7 +64,7 @@ class HomePage extends Component {
         } else return;
     }
     scrollUp() {
-        scroll.scrollTo(700);
+        scroll.scrollTo(705);
     }
     scrollToTop() {
         scroll.scrollToTop();
@@ -89,7 +89,7 @@ class HomePage extends Component {
                 transitionEnter={false}
                 transitionLeave={false}>
                 {this.renderHeader()}
-                <div className="what" style={styles.panelStyle} key="me">
+                <div className="" style={styles.panelStyle} key="me">
                     <h3 className="text-center" key='you'>Some of the top rated mentors around you</h3>
                     <hr />
                 </div>

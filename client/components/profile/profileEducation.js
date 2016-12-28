@@ -41,7 +41,8 @@ class ProfileEducation extends Component {
         this.props.updateProfile({ education:this.state });
         this.toggleEditing();
     }
-    toggleEditing(){
+    toggleEditing(e){
+        e.preventDefault();
         this.setState({editing: !this.state.editing});
     }
     renderItemOrEditField() {
@@ -102,9 +103,7 @@ class ProfileEducation extends Component {
             );
         }
     }
-    toggleEditing(){
-        this.setState({editing: !this.state.editing});
-    }
+
     render(){
         return (
             <div>

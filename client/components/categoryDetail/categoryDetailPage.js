@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import * as actions from '../../actions/usersAction';
 import SingleUserList from '../home/singleUserList';
+import Radium from 'radium';
 
 class CategoryDetail extends Component {
     constructor() {
         super();
         this.state = { searchPhrase: ''};
+    }
+    getStyles() {
+        return {
+            headerStyle: {
+                marginTop: '-10px'
+            }
+        }
     }
     componentWillMount() {
         const param = this.props.params.id.split('_');
@@ -24,12 +33,22 @@ class CategoryDetail extends Component {
         console.log(param);
     }
     render() {
+        const styles = this.getStyles();
         return(
-            <div className="container">
-                <h2 className="text-center">{this.state.searchPhrase}</h2>
-                <hr />
-                <SingleUserList allUsers={this.props.cateogryUsers} key='what'/>
-            </div>
+            <ReactCSSTransitionGroup
+                component="div"
+                transitionName="example"
+                transitionAppearTimeout={500}
+                transitionAppear={true}
+                transitionEnter={false}
+                transitionLeave={false}>
+                <div className="container">
+                    <h2 className="text-center" style={styles.headerStyle}>{this.state.searchPhrase}</h2>
+                    <hr />
+                    <SingleUserList allUsers={this.props.cateogryUsers} key='what'/>
+                </div>
+            </ReactCSSTransitionGroup>
+
         );
     }
 }

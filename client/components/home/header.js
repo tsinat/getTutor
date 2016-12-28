@@ -19,26 +19,15 @@ function getStyles() {
         },
         headerTextStyle: {
             position: "absolute",
-            top: "40%",
+            top: "50%",
             left:0,
             zIndex: 1,
             width: "100%",
             color: "white",
             fontSize: "2em"
         },
-        buttonStyle: {
-            background: "transparent",
-            opacity:0.8,
-            color: "#F05A50",
-            fontWeight: "bold",
-            fontSize: "0.9em",
-            borderRadius: "10px",
-            border: "5px solid white",
-            padding: "7px 30px",
-            ':hover': {
-                background: "white",
-                color: "#F05A50"
-            }
+        headerText : {
+            borderBottom: "5px solid #F05A50"
         },
         glyphiconStyle: {
             background: "transparent",
@@ -61,9 +50,8 @@ const Header = (props) => {
                     style={styles.containerVideo} key='b'>
                 </video>
                 <div style={styles.headerTextStyle} className="text-center" key='c'>
-                    <h1 key='x'>GetMentor</h1>
-                    <h2 key='y'>The easiest way to get local or online mentor</h2><br/>
-                    <Link to="/signup" className="btn btn-default " style={styles.buttonStyle} key='d'>SignUp Now</Link><br />
+                    <h1 key='x' ><span style={styles.headerText}>GetMentor</span></h1>
+                    <h2 key='y'>The easiest way to get local or online mentor</h2>
                     <i className="glyphicon glyphicon-chevron-down" style={styles.glyphiconStyle} onClick={props.scrollUp} key='e'></i>
                 </div>
             </div>
