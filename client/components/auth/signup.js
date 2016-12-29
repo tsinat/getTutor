@@ -8,8 +8,16 @@ import Radium from 'radium';
 const form =  reduxForm({
     form: 'signup',
     fields: [ 'firstName', 'lastName', 'email', 'password', 'passwordConfirm'],
-    // validate
+    // validate: validate
 });
+
+const renderField = field => (
+    <div>
+      <label>{field.input.label}</label>
+      <input {...field.input}/>
+      {field.touched && field.error && <div className="error">{field.error}</div>}
+    </div>
+);
 
 class Signup extends Component {
     handleFormSubmit(formProps) {
@@ -37,7 +45,7 @@ class Signup extends Component {
     }
     render() {
         const styles = this.getStyles();
-        const { handleSubmit, fields: { email, password, passwordConfirm }} = this.props;
+        const { handleSubmit, fields: { firstName, lastName, email, status, password, passwordConfirm }} = this.props;
         return (
             <ReactCSSTransitionGroup
                 component="div"
