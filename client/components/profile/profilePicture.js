@@ -80,7 +80,7 @@ class ProfilePicture extends Component {
                    <div className='col-xs-10 col-xs-offset-1'>
                      <label>Upload an image</label>
                      <form className="list-group-item" onSubmit={this.handleSubmit} encType="multipart/form-data" style={styles.ulStyles}>
-                       <input type="file" onChange={this.handleFile} />
+                       <input type="file"  onChange={this.handleFile} />
                        <input disabled={this.state.processing} className='btn btn-primary' type="submit" value="Upload" />
                      </form>
                    </div>
@@ -89,7 +89,7 @@ class ProfilePicture extends Component {
         }
     }
     toggleEditing(e){
-        e.preventDefault();
+        e.preventDefault()
         this.setState({editing: !this.state.editing});
     }
     render(){

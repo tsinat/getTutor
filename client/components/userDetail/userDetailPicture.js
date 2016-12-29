@@ -1,7 +1,6 @@
-import React from 'react';
-import Radium from 'radium';
+import React, { Component } from 'react';
 
-const ProfilePic = (props) => {
+const UserDetailPic = (props) => {
     const styles = {
         listItem: {
             marginTop: "40px",
@@ -21,12 +20,9 @@ const ProfilePic = (props) => {
                 <div className="text-center circle">
                     <img src={props.data.image} style={styles.imageStyle}/>
                 </div>
-                <div className="text-center">
-                    <button className="btn btn-default" onClick={props.toggleEditing}>Change Picture</button>
-                </div>
             </div>
         </div>
     );
 }
 
-export default ProfilePic;
+export default UserDetailPic;

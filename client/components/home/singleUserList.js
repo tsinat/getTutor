@@ -5,7 +5,12 @@ import Radium from 'radium';
 
 class SingleUserList extends Component {
     getStyles() {
-        return {}
+        return {
+            containerStyle: {
+                width: "80%",
+                margin: "0 auto"
+            }
+        }
     }
     renderUsers() {
         const styles = this.getStyles();
@@ -24,7 +29,7 @@ class SingleUserList extends Component {
     render() {
         const styles = this.getStyles();
         return(
-            <div className="container" >
+            <div className="" style={styles.containerStyle}>
               {this.renderUsers()}
             </div>
         );

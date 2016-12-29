@@ -12,7 +12,7 @@ function getStyles(){
             padding: "15px",
             background: "white",
             transition: "boxShadow .3s ease-in-out",
-            boxShadow: "1px 1px 1px 1px lightgrey",
+            boxShadow: "1px 1px 1px lightgrey",
             boxSizing: "border-box",
             ":hover": {
                 boxShadow: "3px 3px 3px 3px lightgrey",
@@ -21,7 +21,7 @@ function getStyles(){
         },
         singleUserStyle: {
             padding: "0 8px",
-            width: "20%"
+            // width: "20%"
         },
         detail: {
             textDecoration: "none",
@@ -35,7 +35,7 @@ const SingleUser = (props) => {
     const styles = getStyles();
     return (
         <Link to={`/userDetail/${props.user._id}`} key={props.index}>
-            <div className="col-sm-6 col-md-2" style={styles.singleUserStyle} key={props.index+2}>
+            <div className="col-sm-6 col-md-3" style={styles.singleUserStyle} key={props.index+2}>
                 <div className="thumbnail" style={styles.thumbnailStyle} key={props.index+3}>
                     <img src={ props.user.image } alt="..." />
                     <div className="caption">

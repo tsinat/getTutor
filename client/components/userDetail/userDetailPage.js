@@ -5,7 +5,7 @@ import * as actions from '../../actions/usersAction';
 import ProfileBio from '../common/commonProfileBio';
 import ProfileSummary from '../common/commonProfileSummary';
 import ProfileEducation from '../common/commonProfileEducation';
-import ProfilePicture from '../common/commonProfilePicture';
+import UserDetailPic from './userDetailPicture';
 
 class SingleUserDetail extends Component {
     componentDidMount() {
@@ -22,7 +22,7 @@ class SingleUserDetail extends Component {
                     transitionEnter={false}
                     transitionLeave={false}>
                     <div className="container">
-                        <ProfilePicture
+                        <UserDetailPic
                             data={this.props.userDetail}/>
                         <ProfileBio
                             data={this.props.userDetail}/>

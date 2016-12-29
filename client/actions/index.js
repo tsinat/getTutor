@@ -13,7 +13,7 @@ export function signinUser({ email, password }) {
                 browserHistory.push('/profile');
             })
             .catch(error => {
-                dispatch(authError('Bad Login Info'));
+                dispatch(authError("The Login info doesn't match"));
             });
     }
 }
