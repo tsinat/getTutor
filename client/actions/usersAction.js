@@ -10,12 +10,12 @@ export function fetchAllUsers() {
                 dispatch({
                     type: FETCH_USERS,
                     payload: response.data
-                })
+                });
             })
             .catch(error => {
                 console.log('error white getting all users:', error);
             });
-    }
+    };
 }
 export function getSingleUser(id) {
     return function(dispatch) {
@@ -24,25 +24,24 @@ export function getSingleUser(id) {
                 dispatch({
                     type: SINGLE_USER,
                     payload: response.data
-                })
+                });
             })
             .catch(error => {
                 console.log('error white getting single user detail:', error);
             });
-    }
+    };
 }
 export function getCategoryUsers(phrase) {
     return function(dispatch) {
         axios.get(`${ROOT_URL}/api/users/${phrase}`)
             .then(response => {
-                console.log('cateogry:', response.data);
                 dispatch({
                     type: CATEGORY_USERS,
                     payload: response.data
-                })
+                });
             })
             .catch(error => {
                 console.log('error white getting category users:', error);
             });
-    }
+    };
 }

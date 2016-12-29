@@ -3,8 +3,8 @@ import Radium from 'radium';
 import {Link as ReactRouterLink} from 'react-router';
 const Link = Radium(ReactRouterLink);
 
-function getStyles(){
-    return {
+const SingleUser = (props) => {
+    const styles = {
         thumbnailStyle:{
             cursor: "pointer",
             borderRadius: 0,
@@ -15,13 +15,12 @@ function getStyles(){
             boxShadow: "1px 1px 1px lightgrey",
             boxSizing: "border-box",
             ":hover": {
-                boxShadow: "3px 3px 3px 3px lightgrey",
+                boxShadow: "2px 2px 2px 2px lightgrey",
                 transform: "scale(1.01)"
             }
         },
         singleUserStyle: {
             padding: "0 8px",
-            // width: "20%"
         },
         detail: {
             textDecoration: "none",
@@ -29,10 +28,7 @@ function getStyles(){
             padding: "10px",
             color: "black",
         }
-    }
-}
-const SingleUser = (props) => {
-    const styles = getStyles();
+    };
     return (
         <Link to={`/userDetail/${props.user._id}`} key={props.index}>
             <div className="col-sm-6 col-md-3" style={styles.singleUserStyle} key={props.index+2}>

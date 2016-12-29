@@ -8,28 +8,28 @@ export function signinUser({ email, password }) {
     return function(dispatch) {
         axios.post(`${ROOT_URL}/api/signin`, { email, password })
             .then(response => {
-                dispatch({type: AUTH_USER})
-                localStorage.setItem('token', response.data.token)
+                dispatch({type: AUTH_USER});
+                localStorage.setItem('token', response.data.token);
                 browserHistory.push('/profile');
             })
             .catch(error => {
                 dispatch(authError("The Login info doesn't match"));
             });
-    }
+    };
 }
 export function signupUser(formProps) {
     console.log('formProps:', formProps);
     return function(dispatch) {
         axios.post(`${ROOT_URL}/api/signup`, formProps)
             .then(response => {
-                dispatch({type: AUTH_USER})
-                localStorage.setItem('token', response.data.token)
+                dispatch({type: AUTH_USER});
+                localStorage.setItem('token', response.data.token);
                 browserHistory.push('/profile');
             })
             .catch(error => {
                 dispatch(authError('Please correct signup information'));
             });
-    }
+    };
 }
 export function signoutUser() {
     localStorage.removeItem('token');
@@ -37,7 +37,6 @@ export function signoutUser() {
         type: SIGN_OUT
     }
 }
-
 export function authError(error) {
     return {
         type: AUTH_ERROR,

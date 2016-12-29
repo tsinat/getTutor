@@ -42,7 +42,7 @@ class CategoryDetail extends Component {
                 transitionAppear={true}
                 transitionEnter={false}
                 transitionLeave={false}>
-                <div className="container">
+                <div className="">
                     <h2 className="text-center" style={styles.headerStyle}>{this.state.searchPhrase}</h2>
                     <hr />
                     <SingleUserList allUsers={this.props.cateogryUsers} key='what'/>

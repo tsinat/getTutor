@@ -51,7 +51,7 @@ const Header = (props) => {
                 </video>
                 <div style={styles.headerTextStyle} className="text-center" key='c'>
                     <h1 key='x' ><span style={styles.headerText}>GetMentor</span></h1>
-                    <h2 key='y'>The easiest way to find local or online mentor</h2>
+                    <h2 key='y'>The easiest way to find local or remote mentor</h2>
                     <i className="glyphicon glyphicon-chevron-down" style={styles.glyphiconStyle} onClick={props.scrollUp} key='e'></i>
                 </div>
             </div>

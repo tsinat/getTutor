@@ -5,7 +5,6 @@ import { FETCH_MESSAGE, UPDATE_USER, UPLOAD_PICTURE } from './types';
 const ROOT_URL =   'http://localhost:4000';
 
 export function updateUser(userData) {
-    console.log('userData:', userData);
     return function(dispatch) {
         axios.post(`${ROOT_URL}/api/update`, userData)
             .then(response => {
@@ -19,7 +18,7 @@ export function updateUser(userData) {
             .catch(error => {
                 console.log("error while updating user:", error);
             });
-    }
+    };
 }
 export function fetchUser() {
     return function(dispatch) {
@@ -35,11 +34,9 @@ export function fetchUser() {
         .catch(error => {
             console.log('error while fetching user:', error);
         });
-    }
+    };
 }
-
 export function uploadPicture(data, id) {
-    console.log('yes!!!');
     return function(dispatch) {
         axios.put(`${ROOT_URL}/api/profile/image/${id}`, data, {
             headers: { authorization: localStorage.getItem('token') }
@@ -54,5 +51,5 @@ export function uploadPicture(data, id) {
         .catch(error => {
             console.log('error while uploading picture:', error);
         });
-    }
+    };
 }
