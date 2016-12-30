@@ -50,7 +50,7 @@ class Signup extends Component {
                 transitionEnter={false}
                 transitionLeave={false}>
                 <div className="row " style={styles.signupStyle}>
-                    <div className="col-xs-6 col-xs-offset-3 jumbotron" style={styles.jambotronStyle}>
+                    <div className="col-xs-8 col-xs-offset-2 jumbotron" style={styles.jambotronStyle}>
                         <form onSubmit={handleSubmit( this.handleFormSubmit.bind(this))}>
                             <fieldset className="form-group">
                                 <label>First Name:</label>

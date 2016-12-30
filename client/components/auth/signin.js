@@ -3,10 +3,11 @@ import { Field, reduxForm } from 'redux-form';
 import Radium from 'radium';
 import  { connect } from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 import  * as actions from '../../actions';
 import InputField from '../common/inputField';
 import validate from '../common/validation';
-import Modal from '../common/modal';
+
 
 const form =  reduxForm({
     form: 'signin',
@@ -51,7 +52,7 @@ class Signin extends Component {
                 transitionEnter={false}
                 transitionLeave={false}>
                 <div className="row " style={styles.signinStyle}>
-                    <div className="col-xs-6 col-xs-offset-3 jumbotron" style={styles.jumbotronStyle}>
+                    <div className="col-xs-8 col-xs-offset-2 jumbotron" style={styles.jumbotronStyle}>
                         <form onSubmit={handleSubmit( this.handleFormSubmit.bind(this))}>
                             <fieldset className="form-group">
                                 <label>Email:</label>

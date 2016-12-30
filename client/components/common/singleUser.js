@@ -14,6 +14,7 @@ const SingleUser = (props) => {
             transition: "boxShadow .3s ease-in-out",
             boxShadow: "1px 1px 1px lightgrey",
             boxSizing: "border-box",
+            float: "left",
             ":hover": {
                 boxShadow: "2px 2px 2px 2px lightgrey",
                 transform: "scale(1.01)"
