@@ -16,7 +16,9 @@ import ProfilePicture from './profilePicture';
    componentWillMount() {
        this.props.fetchUser();
    }
-
+   // componentDidReceiveProps() {
+   //     this.props.fetchUser();
+   // }
    updateProfile(updateData){
        updateData.currentUser = this.props.currentUser.user.email
        this.props.updateUser(updateData);

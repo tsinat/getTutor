@@ -41,8 +41,7 @@ class ProfileEducation extends Component {
         this.props.updateProfile({ education:this.state });
         this.toggleEditing();
     }
-    toggleEditing(e){
-        e.preventDefault();
+    toggleEditing(){
         this.setState({editing: !this.state.editing});
     }
     renderItemOrEditField() {

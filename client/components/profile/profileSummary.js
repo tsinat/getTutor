@@ -35,13 +35,12 @@ class ProfileSummary extends Component {
         this.setState({[e.target.name]: e.target.value});
     }
 
-    handleUpdate(e) {
+    handleUpdate() {
         e.preventDefault();
         this.props.updateProfile(this.state);
         this.toggleEditing();
     }
-    toggleEditing(e){
-        e.preventDefault();
+    toggleEditing(){
         this.setState({editing: !this.state.editing});
     }
     renderItemOrEditField() {

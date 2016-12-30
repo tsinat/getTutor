@@ -53,8 +53,7 @@ class ProfileBioList extends Component {
         this.props.updateProfile({bio:this.state});
         this.toggleEditing();
     }
-    toggleEditing(e){
-        e.preventDefault();
+    toggleEditing(){
         this.setState({editing: !this.state.editing});
     }
     renderItemOrEditField() {

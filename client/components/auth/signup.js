@@ -4,8 +4,9 @@ import  { connect } from 'react-redux';
 import Radium from 'radium';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import  * as actions from '../../actions';
-import InputField from './inputField';
-import SelectField from './selectField';
+import InputField from '../common/inputField';
+import SelectField from '../common/selectField';
+import validate from '../common/validation';
 
 const form =  reduxForm({
     form: 'signup',
@@ -73,7 +74,7 @@ class Signup extends Component {
                             </fieldset>
                             <fieldset className="form-group">
                                 <label>Category:</label>
-                                <Field name="cateogry" component={SelectField}>
+                                <Field name="category" component={SelectField}>
                                     <option></option>
                                     <option>Web Development</option>
                                     <option>Networking</option>
@@ -97,44 +98,8 @@ class Signup extends Component {
                     </div>
                 </div>
         </ReactCSSTransitionGroup>
-
         );
     }
-}
-function validate(formProps) {
-    const errors = {};
-
-    if (!formProps.firstName) {
-      errors.firstName = 'Please enter a first name';
-    }
-    if (!formProps.lastName) {
-      errors.lastName = 'Please enter a last name';
-    }
-    if (!formProps.email) {
-      errors.email = 'Please enter a email';
-    }
-
-    if (!formProps.password) {
-      errors.password = 'Please enter a password';
-    }
-
-    if (!formProps.status) {
-      errors.status = 'Please select a status';
-    }
-
-    if (!formProps.category) {
-      errors.category = 'Please select a category';
-    }
-
-    if (!formProps.passwordConfirm) {
-      errors.passwordConfirm = 'Please enter a password Confirmation'
-    }
-
-    if(formProps.password !== formProps.passwordConfirm) {
-        errors.password = "Password must match"
-    }
-
-    return errors;
 }
 
 function mapStateToProps(state) {

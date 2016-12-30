@@ -9,7 +9,7 @@ import { AUTH_USER } from './actions/types';
 
 import routes from './routes'
 
-const store = createStore(
+export const store = createStore(
     rootReducer,
     compose(
         applyMiddleware(thunk),
