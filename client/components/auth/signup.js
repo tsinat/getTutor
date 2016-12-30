@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import  * as actions from '../../actions';
 import  { connect } from 'react-redux';
 import Radium from 'radium';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import  * as actions from '../../actions';
+import InputField from './inputField';
+import SelectField from './selectField';
 
 const form =  reduxForm({
     form: 'signup',
     fields: [ 'firstName', 'lastName', 'email', 'password', 'passwordConfirm'],
-    // validate: validate
+    validate
 });
-
-const renderField = field => (
-    <div>
-      <label>{field.input.label}</label>
-      <input {...field.input}/>
-      {field.touched && field.error && <div className="error">{field.error}</div>}
-    </div>
-);
 
 class Signup extends Component {
     handleFormSubmit(formProps) {
@@ -45,7 +39,7 @@ class Signup extends Component {
     }
     render() {
         const styles = this.getStyles();
-        const { handleSubmit, fields: { firstName, lastName, email, status, password, passwordConfirm }} = this.props;
+        const { handleSubmit, fields: { firstName, lastName, email, status, category, password, passwordConfirm }} = this.props;
         return (
             <ReactCSSTransitionGroup
                 component="div"
@@ -59,22 +53,19 @@ class Signup extends Component {
                         <form onSubmit={handleSubmit( this.handleFormSubmit.bind(this))}>
                             <fieldset className="form-group">
                                 <label>First Name:</label>
-                                <Field name="firstName" component="input" type="text" className="form-control"/>
-                                {/*{email.touched && email.error && <div className="error">{email.error}</div>}*/}
+                                <Field name="firstName" component={InputField} type="text" />
                             </fieldset>
                             <fieldset className="form-group">
                                 <label>Last Name:</label>
-                                <Field name="lastName" component="input" type="text" className="form-control"/>
-                                {/*{email.touched && email.error && <div className="error">{email.error}</div>}*/}
+                                <Field name="lastName" component={InputField} type="text" />
                             </fieldset>
                             <fieldset className="form-group">
                                 <label>Email:</label>
-                                <Field name="email" component="input" type="text" className="form-control"/>
-                                {/*{email.touched && email.error && <div className="error">{email.error}</div>}*/}
+                                <Field name="email" component={InputField} type="email" />
                             </fieldset>
                             <fieldset className="form-group">
                                 <label>Mentor/Mentee:</label>
-                                <Field name="status" component="select" className="form-control">
+                                <Field name="status" component={SelectField}>
                                     <option></option>
                                     <option>Mentor</option>
                                     <option>Mentee</option>
@@ -82,7 +73,7 @@ class Signup extends Component {
                             </fieldset>
                             <fieldset className="form-group">
                                 <label>Category:</label>
-                                <Field name="cateogry" component="select" className="form-control">
+                                <Field name="cateogry" component={SelectField}>
                                     <option></option>
                                     <option>Web Development</option>
                                     <option>Networking</option>
@@ -94,12 +85,11 @@ class Signup extends Component {
                             </fieldset>
                             <fieldset className="form-group">
                                 <label>Password:</label>
-                                <Field name="password" component="input" type="password" className="form-control"/>
-                                {}
+                                <Field name="password" component={InputField} type="password" />
                             </fieldset>
                             <fieldset className="form-group">
                                 <label>Confirm Password:</label>
-                                <Field name="passwordConfirmation" component="input" type="password" className="form-control"/>
+                                <Field name="passwordConfirm" component={InputField} type="password"/>
                             </fieldset>
                             { this.renderAlert() }
                             <button action="submit" className="btn btn-primary">Sign up</button>
@@ -128,8 +118,16 @@ function validate(formProps) {
       errors.password = 'Please enter a password';
     }
 
+    if (!formProps.status) {
+      errors.status = 'Please select a status';
+    }
+
+    if (!formProps.category) {
+      errors.category = 'Please select a category';
+    }
+
     if (!formProps.passwordConfirm) {
-      errors.passwordConfirm = 'Please enter a passwordConfirm'
+      errors.passwordConfirm = 'Please enter a password Confirmation'
     }
 
     if(formProps.password !== formProps.passwordConfirm) {

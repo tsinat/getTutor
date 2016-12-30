@@ -1,24 +1,16 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import Radium from 'radium';
+import  { connect } from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import  * as actions from '../../actions';
-import  { connect } from 'react-redux';
-import Radium from 'radium';
+import InputField from './inputField';
 
 const form =  reduxForm({
     form: 'signin',
     fields: ['email', 'password'],
     validate
 });
-
-const renderInput = field => (
-    <div>
-        <input {...field.input} type={field.type} className="form-control"/>
-        {field.meta.touched &&
-         field.meta.error &&
-         <span className="text-danger">{field.meta.error}</span>}
-    </div>
-  );
 
 class Signin extends Component {
     handleFormSubmit({email, password}) {
@@ -61,11 +53,11 @@ class Signin extends Component {
                         <form onSubmit={handleSubmit( this.handleFormSubmit.bind(this))}>
                             <fieldset className="form-group">
                                 <label>Email:</label>
-                                <Field name="email" component={renderInput} type="email" />
+                                <Field name="email" component={InputField} type="email" />
                             </fieldset>
                             <fieldset className="form-group">
                                 <label>Password:</label>
-                                    <Field name="password" component={renderInput} type="password" />
+                                    <Field name="password" component={InputField} type="password" />
                             </fieldset>
                             { this.renderAlert() }
                             <button action="submit" className="btn btn-primary">Sign in</button>
