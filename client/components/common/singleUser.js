@@ -5,7 +5,7 @@ const Link = Radium(ReactRouterLink);
 
 const SingleUser = (props) => {
     const styles = {
-        thumbnailStyle:{
+        thumbnailStyle: {
             cursor: "pointer",
             borderRadius: 0,
             border: "none",
@@ -21,26 +21,26 @@ const SingleUser = (props) => {
             }
         },
         singleUserStyle: {
-            padding: "0 8px",
+            padding: "0 8px"
         },
         detail: {
             textDecoration: "none",
             transition: "display .5s ease-in-out",
             padding: "10px",
-            color: "black",
+            color: "black"
         }
     };
     return (
         <Link to={`/userDetail/${props.user._id}`} key={props.index}>
-            <div className="col-sm-6 col-md-3" style={styles.singleUserStyle} key={props.index+2}>
-                <div className="thumbnail" style={styles.thumbnailStyle} key={props.index+3}>
-                    <img src={ props.user.image } alt="..." />
+            <div className="col-sm-6 col-md-3" style={styles.singleUserStyle} key={props.index + 2}>
+                <div className="thumbnail" style={styles.thumbnailStyle} key={props.index + 3}>
+                    <img src={props.user.image} alt="..."/>
                     <div className="caption">
                         <h4>{props.user.firstName} {props.user.lastName}</h4>
                         <span>Job Title | @companyName</span>
                     </div>
-                    <div className="detail" style={styles.detail} key={props.index+1}>
-                        <span>Phone Number 1234567895</span><br />
+                    <div className="detail" style={styles.detail} key={props.index + 1}>
+                        <span>Phone Number 1234567895</span><br/>
                         <span>{props.user.email}</span>
                     </div>
                 </div>
@@ -48,6 +48,5 @@ const SingleUser = (props) => {
         </Link>
     );
 }
-
 
 export default SingleUser;

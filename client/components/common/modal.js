@@ -1,7 +1,7 @@
-import React , { Component } from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import { store } from '../../index.js';
-import { Provider } from 'react-redux';
+import {store} from '../../index.js';
+import {Provider} from 'react-redux';
 
 class Modal extends Component {
     componentDidMount() {
@@ -21,15 +21,13 @@ class Modal extends Component {
     }
     _render() {
         ReactDOM.render(
-            <Provider store={ store} >
-                <div>{this.props.children}</div>
-            </Provider>,
-            this.modalTarget
-        );
+            <Provider store={store}>
+            <div>{this.props.children}</div>
+        </Provider>, this.modalTarget);
     }
 
     render() {
-        return <noScript />;
+        return <noScript/>;
     }
 }
 

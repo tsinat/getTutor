@@ -24,6 +24,7 @@ class ProfileEducation extends Component {
         this.handleUpdate = this.handleUpdate.bind(this);
         this.onChange = this.onChange.bind(this);
     }
+    
     getStyles() {
         return {
             ulStyles: {
@@ -41,9 +42,11 @@ class ProfileEducation extends Component {
         this.props.updateProfile({ education:this.state });
         this.toggleEditing();
     }
+    
     toggleEditing(){
         this.setState({editing: !this.state.editing});
     }
+    
     renderItemOrEditField() {
         const styles = this.getStyles();
         if(this.state.editing !== true){

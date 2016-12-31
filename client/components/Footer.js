@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Radium from 'radium';
 
 class Footer extends Component {
+    
     getStyles() {
         return {
             footerStyle: {
@@ -36,6 +37,7 @@ class Footer extends Component {
             }
         }
     }
+    
     renderLinks() {
         const styles = this.getStyles();
 
@@ -104,6 +106,7 @@ class Footer extends Component {
         }
 
     }
+    
     render() {
         const styles = this.getStyles();
         return (
@@ -118,6 +121,7 @@ class Footer extends Component {
 
     }
 }
+
 function mapStateToProps(state) {
     return {
         authenticated: state.auth.authenticated

@@ -17,6 +17,7 @@ export function fetchAllUsers() {
             });
     };
 }
+
 export function getSingleUser(id) {
     return function(dispatch) {
         axios.get(`${ROOT_URL}/api/user/${id}`)
@@ -31,6 +32,7 @@ export function getSingleUser(id) {
             });
     };
 }
+
 export function getCategoryUsers(phrase) {
     return function(dispatch) {
         axios.get(`${ROOT_URL}/api/users/${phrase}`)

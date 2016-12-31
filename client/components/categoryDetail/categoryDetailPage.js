@@ -10,6 +10,7 @@ class CategoryDetail extends Component {
         super();
         this.state = { searchPhrase: ''};
     }
+    
     getStyles() {
         return {
             headerStyle: {
@@ -17,6 +18,7 @@ class CategoryDetail extends Component {
             }
         }
     }
+    
     componentWillMount() {
         const param = this.props.params.id.split('_');
         let phrase = "";
@@ -32,6 +34,7 @@ class CategoryDetail extends Component {
         console.log(this.state.searchPhrase);
         console.log(param);
     }
+    
     render() {
         const styles = this.getStyles();
         return(
@@ -52,6 +55,7 @@ class CategoryDetail extends Component {
         );
     }
 }
+
 function mapStateToProps(state) {
     return {
         cateogryUsers: state.currentUser.cateogryUsers

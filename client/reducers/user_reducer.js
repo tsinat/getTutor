@@ -1,9 +1,9 @@
-import { UPDATE_USER, FETCH_MESSAGE, FETCH_USERS, SINGLE_USER, CATEGORY_USERS } from '../actions/types';
+import {UPDATE_USER, FETCH_MESSAGE, FETCH_USERS, SINGLE_USER, CATEGORY_USERS} from '../actions/types';
 
 export default function(state = {}, action) {
     switch (action.type) {
         case UPDATE_USER:
-        console.log('UPDATE_USER:', action.payload);
+            console.log('UPDATE_USER:', action.payload);
             return {
                 ...state,
                 user: actions.payload

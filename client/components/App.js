@@ -5,6 +5,7 @@ import Footer from './Footer';
 import Radium from 'radium';
 
 class App extends Component {
+
     getStyles() {
         return {
             pageStyle: {
@@ -26,9 +27,11 @@ class App extends Component {
             }
         }
     }
+
     componentDidMount() {
        this.setState({ mounted: true });
-   }
+    }
+
     render(){
         const styles = this.getStyles();
         return (

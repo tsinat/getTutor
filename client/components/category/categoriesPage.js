@@ -10,6 +10,7 @@ import CSSModules from 'react-css-modules';
 import category from './category.css'
 
 class Categories extends Component {
+    
     getStyles() {
         return {
             categoryStyle: {
@@ -22,6 +23,7 @@ class Categories extends Component {
             }
         }
     }
+    
     renderCategory() {
         const list = categoryList.map((category, id) => {
             return (
@@ -34,6 +36,7 @@ class Categories extends Component {
         });
         return list;
     }
+    
     render() {
         const styles = this.getStyles();
         return (

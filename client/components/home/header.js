@@ -2,8 +2,9 @@ import React from 'react';
 import Radium from 'radium';
 import { Link } from 'react-router';
 
-function getStyles() {
-    return {
+const Header = (props) => {
+
+    const styles = {
         headerContainer: {
             position: "relative",
             margin:0,
@@ -36,11 +37,8 @@ function getStyles() {
             padding:"0 20",
             fontSize: "1.2em"
         }
-    }
-}
-const Header = (props) => {
-
-    const styles = getStyles();
+    };
+    
     return (
         <div className="row" key='x'>
             <div className="col-sm-12 text-center" style={styles.headerContainer} key='a'>

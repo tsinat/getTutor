@@ -1,34 +1,39 @@
-import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
+import React, {Component} from 'react';
+import {Field, reduxForm} from 'redux-form';
 import Radium from 'radium';
-import  { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-import  * as actions from '../../actions';
+import * as actions from '../../actions';
 import InputField from '../common/inputField';
 import validate from '../common/validation';
 
-
-const form =  reduxForm({
+const form = reduxForm({
     form: 'signin',
-    fields: ['email', 'password'],
+    fields: [
+        'email', 'password'
+    ],
     validate
 });
 
 class Signin extends Component {
+    
     handleFormSubmit({email, password}) {
-        console.log('email and password:',{email, password});
-        this.props.signinUser({ email, password });
+        console.log('email and password:', {email, password});
+        this.props.signinUser({email, password});
     }
+    
     renderAlert() {
-        if(this.props.errorMessage) {
+        if (this.props.errorMessage) {
             return (
                 <div className="alert alert-danger">
-                    <strong>Opps!</strong> {this.props.errorMessage }
+                    <strong>Opps!</strong>
+                    {this.props.errorMessage}
                 </div>
             );
         }
     }
+    
     getStyles() {
         return {
             signinStyle: {
@@ -40,9 +45,16 @@ class Signin extends Component {
             }
         }
     }
+    
     render() {
         const styles = this.getStyles();
-        const { handleSubmit, fields: { email, password } } = this.props;
+        const {
+            handleSubmit,
+            fields: {
+                email,
+                password
+            }
+        } = this.props;
         return (
             <ReactCSSTransitionGroup
                 component="div"
@@ -53,16 +65,16 @@ class Signin extends Component {
                 transitionLeave={false}>
                 <div className="row " style={styles.signinStyle}>
                     <div className="col-xs-8 col-xs-offset-2 jumbotron" style={styles.jumbotronStyle}>
-                        <form onSubmit={handleSubmit( this.handleFormSubmit.bind(this))}>
+                        <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
                             <fieldset className="form-group">
                                 <label>Email:</label>
-                                <Field name="email" component={InputField} type="email" />
+                                <Field name="email" component={InputField} type="email"/>
                             </fieldset>
                             <fieldset className="form-group">
                                 <label>Password:</label>
-                                    <Field name="password" component={InputField} type="password" />
+                                <Field name="password" component={InputField} type="password"/>
                             </fieldset>
-                            { this.renderAlert() }
+                            {this.renderAlert()}
                             <button action="submit" className="btn btn-primary">Sign in</button>
                         </form>
                     </div>
@@ -73,10 +85,7 @@ class Signin extends Component {
 }
 
 function mapStateToProps(state) {
-    return {
-        errorMessage: state.auth.error,
-        auth: state.auth.authenticated
-    };
+    return {errorMessage: state.auth.error, auth: state.auth.authenticated};
 }
 
 export default connect(mapStateToProps, actions)(form(Signin));

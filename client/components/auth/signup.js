@@ -15,9 +15,11 @@ const form =  reduxForm({
 });
 
 class Signup extends Component {
+
     handleFormSubmit(formProps) {
         this.props.signupUser(formProps);
     }
+
     renderAlert() {
         if(this.props.errorMessage) {
             return (
@@ -27,6 +29,7 @@ class Signup extends Component {
             );
         }
     }
+
     getStyles() {
         return {
             signupStyle: {
@@ -38,9 +41,17 @@ class Signup extends Component {
             }
         }
     }
+
     render() {
         const styles = this.getStyles();
-        const { handleSubmit, fields: { firstName, lastName, email, status, category, password, passwordConfirm }} = this.props;
+        const { handleSubmit,
+            fields: { firstName,
+                lastName, 
+                email, 
+                status, 
+                category, 
+                password, 
+                passwordConfirm }} = this.props;
         return (
             <ReactCSSTransitionGroup
                 component="div"
@@ -97,7 +108,7 @@ class Signup extends Component {
                         </form>
                     </div>
                 </div>
-        </ReactCSSTransitionGroup>
+            </ReactCSSTransitionGroup>
         );
     }
 }

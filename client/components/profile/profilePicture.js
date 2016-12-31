@@ -17,14 +17,13 @@ class ProfilePicture extends Component {
             editing: false,
             data_uri: null,
             processing: false,
-            // filename: "",
-            // filetype: ""
         };
         this.toggleEditing = this.toggleEditing.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
     }
+
     getStyles() {
         return {
             ulStyles: {
@@ -32,6 +31,7 @@ class ProfilePicture extends Component {
             }
         }
     }
+
     handleUpdate(e) {
         e.preventDefault();
         this.props.updateProfile(this.state);
@@ -88,9 +88,11 @@ class ProfilePicture extends Component {
             );
         }
     }
+    
     toggleEditing(){
         this.setState({editing: !this.state.editing});
     }
+    
     render(){
         return (
             <div>
