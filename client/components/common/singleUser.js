@@ -12,11 +12,11 @@ const SingleUser = (props) => {
             padding: "15px",
             background: "white",
             transition: "boxShadow .3s ease-in-out",
-            boxShadow: "1px 1px 1px lightgrey",
+            boxShadow: "1px 1px 1px #ecf0f1",
             boxSizing: "border-box",
             float: "left",
             ":hover": {
-                boxShadow: "2px 2px 2px 2px lightgrey",
+                boxShadow: "2px 2px 2px 2px #ecf0f1",
                 transform: "scale(1.01)"
             }
         },

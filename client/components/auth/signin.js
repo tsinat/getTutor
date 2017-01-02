@@ -17,12 +17,12 @@ const form = reduxForm({
 });
 
 class Signin extends Component {
-    
+
     handleFormSubmit({email, password}) {
         console.log('email and password:', {email, password});
         this.props.signinUser({email, password});
     }
-    
+
     renderAlert() {
         if (this.props.errorMessage) {
             return (
@@ -33,19 +33,21 @@ class Signin extends Component {
             );
         }
     }
-    
+
     getStyles() {
         return {
             signinStyle: {
-                background: "inherit"
+                background: "inherit",
             },
             jumbotronStyle: {
                 borderRadius: 0,
-                background: "white"
+                background: "white",
+                marginTop: "40px",
+                boxShadow: "5px 5px 5px 5px #ecf0f1"
             }
         }
     }
-    
+
     render() {
         const styles = this.getStyles();
         const {

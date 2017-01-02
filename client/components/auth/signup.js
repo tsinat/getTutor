@@ -37,7 +37,8 @@ class Signup extends Component {
             },
             jambotronStyle: {
                 borderRadius: 0,
-                background: "white"
+                background: "white",
+                boxShadow: "5px 5px 5px 5px #ecf0f1"
             }
         }
     }
@@ -46,11 +47,11 @@ class Signup extends Component {
         const styles = this.getStyles();
         const { handleSubmit,
             fields: { firstName,
-                lastName, 
-                email, 
-                status, 
-                category, 
-                password, 
+                lastName,
+                email,
+                status,
+                category,
+                password,
                 passwordConfirm }} = this.props;
         return (
             <ReactCSSTransitionGroup
