@@ -16,7 +16,7 @@ class App extends Component {
             },
              containerStyle: {
                 padding: 0,
-                width: "100%",
+                // width: "100%",
                 minHeight: "100vh",
                 height: "100%",
                 background: "#FAFAFA",
@@ -37,7 +37,7 @@ class App extends Component {
         return (
             <div style={styles.pageStyle}>
                 <Navigation />
-                <div className='container'  style={styles.containerStyle}>
+                <div className=''  style={styles.containerStyle}>
                     <div className="row" style={styles.rowStyle}>
                         {this.props.children}
                     </div>

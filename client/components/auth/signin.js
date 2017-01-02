@@ -65,20 +65,22 @@ class Signin extends Component {
                 transitionAppear={true}
                 transitionEnter={false}
                 transitionLeave={false}>
-                <div className="row " style={styles.signinStyle}>
-                    <div className="col-xs-8 col-xs-offset-2 jumbotron" style={styles.jumbotronStyle}>
-                        <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-                            <fieldset className="form-group">
-                                <label>Email:</label>
-                                <Field name="email" component={InputField} type="email"/>
-                            </fieldset>
-                            <fieldset className="form-group">
-                                <label>Password:</label>
-                                <Field name="password" component={InputField} type="password"/>
-                            </fieldset>
-                            {this.renderAlert()}
-                            <button action="submit" className="btn btn-primary">Sign in</button>
-                        </form>
+                <div className="container">
+                    <div className="row " style={styles.signinStyle}>
+                        <div className="col-xs-8 col-xs-offset-2 jumbotron" style={styles.jumbotronStyle}>
+                            <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+                                <fieldset className="form-group">
+                                    <label>Email:</label>
+                                    <Field name="email" component={InputField} type="email"/>
+                                </fieldset>
+                                <fieldset className="form-group">
+                                    <label>Password:</label>
+                                    <Field name="password" component={InputField} type="password"/>
+                                </fieldset>
+                                {this.renderAlert()}
+                                <button action="submit" className="btn btn-primary">Sign in</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </ReactCSSTransitionGroup>

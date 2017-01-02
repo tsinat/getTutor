@@ -4,16 +4,15 @@ import SingleUser from '../common/singleUser';
 import Radium from 'radium';
 
 class SingleUserList extends Component {
-    
+
     getStyles() {
         return {
             containerStyle: {
-                width: "80%",
                 margin: "0 auto"
             }
         }
     }
-    
+
     renderUsers() {
         const styles = this.getStyles();
         if (this.props.allUsers) {
@@ -23,11 +22,11 @@ class SingleUserList extends Component {
             return thunnailList;
         }
     }
-    
+
     render() {
         const styles = this.getStyles();
         return (
-            <div className="" style={styles.containerStyle}>
+            <div className="container" style={styles.containerStyle}>
                 {this.renderUsers()}
             </div>
         );

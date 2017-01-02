@@ -38,12 +38,12 @@ class HomePage extends Component {
         this.setState({width: width});
         console.log('width:', width);
     }
-    
+
     componentWillMount() {
         this.props.fetchAllUsers();
         this.updateDimensions();
     }
-    
+
     componentDidMount() {
         window.addEventListener("resize", this.updateDimensions);
 
@@ -57,40 +57,40 @@ class HomePage extends Component {
 
         scrollSpy.update();
     }
-    
+
     componentWillUnmount() {
         Events.scrollEvent.remove('begin');
         Events.scrollEvent.remove('end');
         window.removeEventListener("resize", this.updateDimensions);
     }
-    
+
     renderHeader() {
         if (this.state.width >= 868) {
             return <Header scrollUp={this.scrollUp}/>;
         } else
             return;
         }
-        
+
     scrollUp() {
         scroll.scrollTo(705);
     }
-    
+
     scrollToTop() {
         scroll.scrollToTop();
     }
-    
+
     scrollToBottom() {
         scroll.scrollToBottom();
     }
-    
+
     scrollTo() {
         scroll.scrollTo(100);
     }
-    
+
     scrollMore() {
         scroll.scrollMore(100);
     }
-    
+
     render() {
         const styles = this.getStyles();
         return (
