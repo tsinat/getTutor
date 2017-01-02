@@ -10,15 +10,15 @@ class CategoryDetail extends Component {
         super();
         this.state = { searchPhrase: ''};
     }
-    
+
     getStyles() {
         return {
             headerStyle: {
                 marginTop: '-10px'
             }
-        }
+        };
     }
-    
+
     componentWillMount() {
         const param = this.props.params.id.split('_');
         let phrase = "";
@@ -34,7 +34,7 @@ class CategoryDetail extends Component {
         console.log(this.state.searchPhrase);
         console.log(param);
     }
-    
+
     render() {
         const styles = this.getStyles();
         return(

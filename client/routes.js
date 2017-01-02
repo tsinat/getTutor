@@ -26,5 +26,5 @@ export default (
         <Route path='signup' component={Signup} />
         <Route path='signout' component={Signout} />
         <Route path='help' component={HelpPage} />
-    </Route>
+    </Route> 
 );
