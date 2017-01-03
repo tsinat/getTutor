@@ -8,7 +8,7 @@ class SingleUserList extends Component {
     getStyles() {
         return {
             containerStyle: {
-                margin: "0 auto"
+                margin: "0 auto",
             }
         }
     }

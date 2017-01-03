@@ -32,7 +32,7 @@ class ProfileBioList extends Component {
         this.handleUpdate = this.handleUpdate.bind(this);
         this.onChange = this.onChange.bind(this);
     }
-    
+
     getStyles() {
         return {
             ulStyles: {
@@ -40,28 +40,28 @@ class ProfileBioList extends Component {
             }
         }
     }
-    
+
     componentDidMount() {
         this.setState({
             firstName: this.props.data.bio.firstName,
             lastName: this.props.data.bio.lastName
         });
     }
-    
+
     onChange(e) {
         this.setState({[e.target.name]: e.target.value});
     }
-    
+
     handleUpdate(e) {
         e.preventDefault();
         this.props.updateProfile({bio:this.state});
         this.toggleEditing();
     }
-    
+
     toggleEditing(){
         this.setState({editing: !this.state.editing});
     }
-    
+
     renderItemOrEditField() {
         const styles = this.getStyles();
         if(this.state.editing !== true){
@@ -74,7 +74,7 @@ class ProfileBioList extends Component {
         } else {
             return (
                 <div className="row ">
-                    <div className="col-xs-10 col-xs-offset-1">
+                    <div className="col-xs-12">
                         <form>
                             <ul className="list-group-item" style={styles.ulStyles}>
                                 <li >

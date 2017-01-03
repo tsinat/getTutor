@@ -16,7 +16,6 @@ class App extends Component {
             },
              containerStyle: {
                 padding: 0,
-                // width: "100%",
                 minHeight: "100vh",
                 height: "100%",
                 background: "#FAFAFA",

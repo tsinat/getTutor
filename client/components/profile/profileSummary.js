@@ -40,11 +40,11 @@ class ProfileSummary extends Component {
         this.props.updateProfile(this.state);
         this.toggleEditing();
     }
-    
+
     toggleEditing(){
         this.setState({editing: !this.state.editing});
     }
-    
+
     renderItemOrEditField() {
         const styles = this.getStyles();
         if(this.state.editing !== true){
@@ -58,7 +58,7 @@ class ProfileSummary extends Component {
         } else {
             return (
                 <div className="row ">
-                    <div className="col-xs-10 col-xs-offset-1">
+                    <div className="col-xs-12">
                         <form>
                             <ul className="list-group-item" style={styles.ulStyles}>
                                 <li >

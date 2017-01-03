@@ -77,7 +77,7 @@ class ProfilePicture extends Component {
         } else {
             return (
                 <div className='row text-center'>
-                   <div className='col-xs-10 col-xs-offset-1'>
+                   <div className='col-xs-12'>
                      <label>Upload an image</label>
                      <form className="list-group-item" onSubmit={this.handleSubmit} encType="multipart/form-data" style={styles.ulStyles}>
                        <input type="file" onChange={this.handleFile} />
@@ -88,11 +88,11 @@ class ProfilePicture extends Component {
             );
         }
     }
-    
+
     toggleEditing(){
         this.setState({editing: !this.state.editing});
     }
-    
+
     render(){
         return (
             <div>

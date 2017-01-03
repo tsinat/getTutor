@@ -106,7 +106,7 @@ class Signup extends Component {
                                     <Field name="passwordConfirm" component={InputField} type="password"/>
                                 </fieldset>
                                 { this.renderAlert() }
-                                <button action="submit" className="btn btn-primary">Sign up</button>
+                                <button action="submit" className="btn btn-primary btn-block">Sign up</button>
                             </form>
                         </div>
                     </div>

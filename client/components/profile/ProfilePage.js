@@ -13,24 +13,24 @@ import ProfilePicture from './profilePicture';
      this.updateProfile = this.updateProfile.bind(this);
      this.handleProfilePicture = this.handleProfilePicture.bind(this);
    }
-   
+
    componentWillMount() {
        this.props.fetchUser();
    }
    // componentDidReceiveProps() {
    //     this.props.fetchUser();
    // }
-   
+
    updateProfile(updateData){
        updateData.currentUser = this.props.currentUser.user.email
        this.props.updateUser(updateData);
    }
-   
+
    handleProfilePicture(data) {
        const id = this.props.currentUser.user._id;
        this.props.uploadPicture(data, id);
    }
-   
+
    render(){
      const { currentUser } = this.props;
      console.log('currentUser:', currentUser);
@@ -43,31 +43,33 @@ import ProfilePicture from './profilePicture';
                  transitionAppear={true}
                  transitionEnter={false}
                  transitionLeave={false}>
-                 <ProfilePicture
-                     data={currentUser.user}
-                     updateProfile={this.updateProfile}
-                     handleProfilePicture={this.handleProfilePicture}
-                     />
-                 <ProfileBioList
-                     data={currentUser.user}
-                     updateProfile={this.updateProfile}
-                     updateProfile={this.updateProfile}
-                     /><br />
-                 <ProfileSummary
-                     data={currentUser.user}
-                     updateProfile={this.updateProfile}
-                     /><br />
-                 <ProfileEducation
-                     data={currentUser.user}
-                     updateProfile={this.updateProfile}
-                     />
+                 <div className="container">
+                     <ProfilePicture
+                         data={currentUser.user}
+                         updateProfile={this.updateProfile}
+                         handleProfilePicture={this.handleProfilePicture}
+                         />
+                     <ProfileBioList
+                         data={currentUser.user}
+                         updateProfile={this.updateProfile}
+                         updateProfile={this.updateProfile}
+                         /><br />
+                     <ProfileSummary
+                         data={currentUser.user}
+                         updateProfile={this.updateProfile}
+                         /><br />
+                     <ProfileEducation
+                         data={currentUser.user}
+                         updateProfile={this.updateProfile}
+                         />
+                 </div>
             </ReactCSSTransitionGroup>
          );
      }
      else return <div></div>;
    }
  }
- 
+
 function mapStateToProps(state) {
     return {
         currentUser: state.currentUser
