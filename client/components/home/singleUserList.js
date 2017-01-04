@@ -8,12 +8,14 @@ class SingleUserList extends Component {
     getStyles() {
         return {
             containerStyle: {
-                margin: "0 auto",
+                // margin: "0 auto",
             },
             ulStyles: {
-                height: "auto",
+                paddingLeft: 0,
+                minHeight: "100vh",
                 columnCount: 5,
-                columnGap: "1em"
+                columnGap: "1em",
+                overfloaw: "visible"
             }
         }
     }
@@ -23,7 +25,7 @@ class SingleUserList extends Component {
         if (this.props.allUsers) {
             const thunnailList = this.props.allUsers.map((user, index) => {
                 return (
-                        <SingleUser user={user} index={index} key={index}/>
+                    <SingleUser user={user} index={index} key={index}/>
                 );
             });
             return thunnailList;

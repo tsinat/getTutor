@@ -74,14 +74,16 @@ class Signin extends Component {
                     <div className="row " style={styles.signinStyle}>
                         <div className="col-xs-8 col-xs-offset-2 jumbotron" style={styles.jumbotronStyle}>
                             <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-                                <fieldset className="form-group">
-                                    <label>Email:</label>
-                                    <Field name="email" component={InputField} type="email"/>
-                                </fieldset>
-                                <fieldset className="form-group">
-                                    <label>Password:</label>
-                                    <Field name="password" component={InputField} type="password"/>
-                                </fieldset>
+                                <div className="row">
+                                    <fieldset className="form-group col-xs-6">
+                                        <label>Email:</label>
+                                        <Field name="email" component={InputField} type="email"/>
+                                    </fieldset>
+                                    <fieldset className="form-group col-xs-6">
+                                        <label>Password:</label>
+                                        <Field name="password" component={InputField} type="password"/>
+                                    </fieldset>
+                                </div>
                                 {this.renderAlert()}
                                 <button action="submit" className="btn btn-primary btn-block">Sign in</button>
                             </form>
