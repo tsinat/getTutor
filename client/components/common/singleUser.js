@@ -14,15 +14,15 @@ const SingleUser = (props) => {
             transition: "boxShadow .3s ease-in-out",
             boxShadow: "1px 1px 1px #ecf0f1",
             boxSizing: "border-box",
-            minHeight: "400px",
+            minHeight: "300px",
             border: "0.5px solid lightgrey",
             ":hover": {
-                boxShadow: "2px 2px 2px 2px #ecf0f1",
-                transform: "scale(1.01)"
+                boxShadow: "5px 5px 5px 5px #ecf0f1",
+                // transform: "scale(1.01)"
             }
         },
         singleUserStyle: {
-            padding: "0 8px",
+            // padding: "0 8px",
         },
         detail: {
             textDecoration: "none",
@@ -32,8 +32,9 @@ const SingleUser = (props) => {
         }
     };
     return (
+        // col-sm-6 col-md-3
         <Link to={`/userDetail/${props.user._id}`} key={props.index}>
-            <div className="col-sm-6 col-md-3" style={styles.singleUserStyle} key={props.index + 2}>
+            <div className="" style={styles.singleUserStyle} key={props.index + 2}>
                 <div className="thumbnail" style={styles.thumbnailStyle} key={props.index + 3}>
                     <img src={props.user.image} alt="..."/>
                     <div className="caption">
@@ -41,7 +42,7 @@ const SingleUser = (props) => {
                         <span>Job Title | @companyName</span>
                     </div>
                     <div className="detail" style={styles.detail} key={props.index + 1}>
-                        {/*<span>Phone Number 1234567895</span><br/>*/}
+                        <span>Phone Number 1234567895</span><br/>
                         <span>{props.user.email}</span>
                     </div>
                 </div>

@@ -17,6 +17,11 @@ const form = reduxForm({
 });
 
 class Signin extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { showSignin: false };
+    }
 
     handleFormSubmit({email, password}) {
         console.log('email and password:', {email, password});
