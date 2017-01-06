@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USERS, SINGLE_USER, CATEGORY_USERS} from './types';
+import { FETCH_USERS, SINGLE_USER, CATEGORY_USERS } from './types';
 
 const ROOT_URL = 'http://localhost:4000';
 
