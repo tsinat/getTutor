@@ -17,14 +17,19 @@ class HomePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            width: null
+            width: null,
+            // height: 0
         }
         this.scrollUp = this.scrollUp.bind(this);
         this.updateDimensions = this.updateDimensions.bind(this);
     }
 
     getStyles() {
-        return {}
+        return {
+            panelStyle: {
+                padding: "5px"
+            }
+        }
     }
 
     updateDimensions() {
@@ -45,6 +50,8 @@ class HomePage extends Component {
     }
 
     componentDidMount() {
+        // const el =  document.getElementById('test');
+
         window.addEventListener("resize", this.updateDimensions);
 
         Events.scrollEvent.register('begin', function(to, element) {
@@ -56,6 +63,7 @@ class HomePage extends Component {
         });
 
         scrollSpy.update();
+        // this.setState({height: el.getBoundingClientRect().top});
     }
 
     componentWillUnmount() {
@@ -72,7 +80,8 @@ class HomePage extends Component {
         }
 
     scrollUp() {
-        scroll.scrollTo(705);
+        const scrollT = (screen.height > 800) ? screen.height: screen.height * 0.88;
+        scroll.scrollTo(scrollT);
     }
 
     scrollToTop() {
@@ -102,7 +111,7 @@ class HomePage extends Component {
                 transitionEnter={false}
                 transitionLeave={false}>
                 {this.renderHeader()}
-                <div className="" style={styles.panelStyle} key="me">
+                <div id="test" style={styles.panelStyle} key="me" onClick={this.scrollToTop()}>
                     <h3 className="text-center" key='you'>Some of the top rated mentors around you</h3>
                     <hr/>
                 </div>

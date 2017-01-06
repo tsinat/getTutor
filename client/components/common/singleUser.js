@@ -14,7 +14,7 @@ const SingleUser = (props) => {
             transition: "boxShadow .3s ease-in-out",
             boxShadow: "1px 1px 1px #ecf0f1",
             boxSizing: "border-box",
-            minHeight: "300px",
+            minHeight: "200px",
             border: "0.5px solid lightgrey",
             ":hover": {
                 boxShadow: "5px 5px 5px 5px #ecf0f1",
@@ -38,6 +38,8 @@ const SingleUser = (props) => {
                 <div className="thumbnail" style={styles.thumbnailStyle} key={props.index + 3}>
                     <img src={props.user.image} alt="..."/>
                     <div className="caption">
+                        <h4>{props.user.bio.firstName} {props.user.bio.lastName}</h4>
+                        <h4>{props.user.bio.firstName} {props.user.bio.lastName}</h4>
                         <h4>{props.user.bio.firstName} {props.user.bio.lastName}</h4>
                         <span>Job Title | @companyName</span>
                     </div>

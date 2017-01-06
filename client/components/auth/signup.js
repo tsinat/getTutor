@@ -101,16 +101,14 @@ class Signup extends Component {
                                         </Field>
                                     </fieldset>
                                 </div>
-                                <div className="row">
-                                    <fieldset className="form-group col-xs-6">
-                                        <label>Password:</label>
-                                        <Field name="password" component={InputField} type="password" />
-                                    </fieldset>
-                                    <fieldset className="form-group col-xs-6">
-                                        <label>Confirm Password:</label>
-                                        <Field name="passwordConfirm" component={InputField} type="password"/>
-                                    </fieldset>
-                                </div>
+                                <fieldset className="form-group ">
+                                    <label>Password:</label>
+                                    <Field name="password" component={InputField} type="password" />
+                                </fieldset>
+                                <fieldset className="form-group ">
+                                    <label>Confirm Password:</label>
+                                    <Field name="passwordConfirm" component={InputField} type="password"/>
+                                </fieldset>
                                 { this.renderAlert() }
                                 <button action="submit" className="btn btn-primary btn-block">Sign up</button>
                             </form>
