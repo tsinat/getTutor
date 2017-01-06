@@ -111,7 +111,7 @@ class HomePage extends Component {
                 transitionEnter={false}
                 transitionLeave={false}>
                 {this.renderHeader()}
-                <div id="test" style={styles.panelStyle} key="me" onClick={this.scrollToTop()}>
+                <div className="" id="test" style={styles.panelStyle} key="me" onClick={this.scrollToTop()}>
                     <h3 className="text-center" key='you'>Some of the top rated mentors around you</h3>
                     <hr/>
                 </div>

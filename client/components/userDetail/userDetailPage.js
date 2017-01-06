@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Radium from 'radium';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import * as actions from '../../actions/usersAction';
 import ProfileBio from '../common/commonProfileBio';
@@ -11,7 +12,15 @@ class SingleUserDetail extends Component {
     componentDidMount() {
         this.props.getSingleUser(this.props.params.id);
     }
+    getStyles() {
+        return {
+            containerStyle: {
+                width: "80%"
+            }
+        }
+    }
     render(){
+        const styles = this.getStyles();
         if(this.props.userDetail) {
             return (
                 <ReactCSSTransitionGroup
@@ -21,7 +30,7 @@ class SingleUserDetail extends Component {
                     transitionAppear={true}
                     transitionEnter={false}
                     transitionLeave={false}>
-                    <div className="container">
+                    <div className="container" style={styles.containerStyle}>
                         <UserDetailPic
                             data={this.props.userDetail}/>
                         <ProfileBio

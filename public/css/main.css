@@ -1,6 +1,8 @@
-/*.what {
-    background: white !important;
-}*/
+* {
+   margin: 0;
+   padding: 0;
+   border: 0;
+ }
 .example-enter {
   opacity: 0.01;
 }
