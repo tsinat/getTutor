@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import {Field, reduxForm} from 'redux-form';
+import React, { Component } from 'react';
+import { Field, reduxForm } from 'redux-form';
 import Radium from 'radium';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import * as actions from '../../actions';
