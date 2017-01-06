@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Link, browserHistory} from 'react-router';
+import React, { Component } from 'react';
+import { Link, browserHistory } from 'react-router';
 import SingleUser from '../common/singleUser';
 import Radium from 'radium';
 

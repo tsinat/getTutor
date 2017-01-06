@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Radium from 'radium';
 import Scroll from 'react-scroll';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';

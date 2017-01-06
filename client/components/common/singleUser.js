@@ -1,6 +1,6 @@
 import React from 'react';
 import Radium from 'radium';
-import {Link as ReactRouterLink} from 'react-router';
+import { Link as ReactRouterLink } from 'react-router';
 const Link = Radium(ReactRouterLink);
 
 const SingleUser = (props) => {
