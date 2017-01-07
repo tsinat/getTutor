@@ -29,6 +29,10 @@
   transition: opacity .5s ease-in;
 }
 
+.active {
+    background-color: #FFF !important;
+    color: #F05A50 !important;
+}
 .ulStyles {
     padding-left: 0;
     padding-bottom: 40px;
@@ -36,7 +40,7 @@
     -moz-column-count: 4;
     -webkit-column-count: 4;
     column-count: 4;
-    column-gap: 1em;
+    column-gap: 1.2em;
     /*break-inside: avoid-column;*/
 }
 .singleUserStyle {

@@ -28,6 +28,10 @@ class HomePage extends Component {
         return {
             panelStyle: {
                 padding: "5px"
+            },
+            headerStyle: {
+                borderBottom: "1px solid lightgrey",
+                paddingBottom: "20px"
             }
         }
     }
@@ -112,8 +116,7 @@ class HomePage extends Component {
                 transitionLeave={false}>
                 {this.renderHeader()}
                 <div className="" id="test" style={styles.panelStyle} key="me" onClick={this.scrollToTop()}>
-                    <h3 className="text-center" key='you'>Some of the top rated mentors around you</h3>
-                    <hr/>
+                    <h3 className="text-center" key='you' style={styles.headerStyle}>Some of the top rated mentors around you</h3>
                 </div>
                 <SingleUserList allUsers={this.props.allUsers} key='what'/>
             </ReactCSSTransitionGroup>

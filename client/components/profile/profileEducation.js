@@ -43,7 +43,8 @@ class ProfileEducation extends Component {
         this.toggleEditing();
     }
 
-    toggleEditing(){
+    toggleEditing(e){
+        e.preventDefault();
         this.setState({editing: !this.state.editing});
     }
 

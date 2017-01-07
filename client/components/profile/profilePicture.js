@@ -7,7 +7,6 @@ import ProfilePic from '../common/commonProfilePicture';
 const form =  reduxForm({
     form: 'profilePicture',
     fields: [ 'summary'],
-    // validate
 });
 
 class ProfilePicture extends Component {
@@ -46,7 +45,7 @@ class ProfilePicture extends Component {
             filetype: this.state.filetype
       }
       this.props.handleProfilePicture(data);
-      this.toggleEditing();
+      this.toggleEditing(e);
     }
 
     handleFile(e) {
@@ -62,6 +61,11 @@ class ProfilePicture extends Component {
        };
 
        reader.readAsDataURL(file);
+     }
+
+     toggleEditing(e){
+         e.preventDefault();
+         this.setState({editing: !this.state.editing});
      }
 
     renderItemOrEditField() {
@@ -81,16 +85,17 @@ class ProfilePicture extends Component {
                      <label>Upload an image</label>
                      <form className="list-group-item" onSubmit={this.handleSubmit} encType="multipart/form-data" style={styles.ulStyles}>
                        <input type="file" onChange={this.handleFile} />
-                       <input disabled={this.state.processing} className='btn btn-primary' type="submit" value="Upload" />
+                       <div className="btn-group">
+                           <input disabled={this.state.processing} className='btn btn-primary' type="submit" value="Upload" />
+                           <button
+                               onClick={this.toggleEditing}
+                               className="btn btn-default">Cancel</button>
+                       </div>
                      </form>
                    </div>
                  </div>
             );
         }
-    }
-
-    toggleEditing(){
-        this.setState({editing: !this.state.editing});
     }
 
     render(){

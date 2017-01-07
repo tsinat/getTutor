@@ -2,7 +2,7 @@
 import { browserHistory } from 'react-router';
 import { FETCH_MESSAGE, UPDATE_USER, UPLOAD_PICTURE } from './types';
 
-const ROOT_URL = 'http://localhost:4000';
+const ROOT_URL = 'http://localhost:3000';
 
 export function updateUser(userData) {
     return function(dispatch) {

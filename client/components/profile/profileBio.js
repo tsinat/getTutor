@@ -8,7 +8,6 @@ import ProfileBio from '../common/commonProfileBio';
 const form =  reduxForm({
     form: 'profileEdit',
     fields: [ 'firstName', 'lastName', 'email', 'educations'],
-    // validate
 });
 
 class ProfileBioList extends Component {
@@ -49,6 +48,7 @@ class ProfileBioList extends Component {
     }
 
     onChange(e) {
+        e.preventDefault();
         this.setState({[e.target.name]: e.target.value});
     }
 

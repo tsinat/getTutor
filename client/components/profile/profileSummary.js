@@ -8,7 +8,6 @@ import ProfileSum from '../common/commonProfileSummary';
 const form =  reduxForm({
     form: 'profileSummary',
     fields: [ 'summary'],
-    // validate
 });
 
 class ProfileSummary extends Component {
@@ -41,7 +40,8 @@ class ProfileSummary extends Component {
         this.toggleEditing();
     }
 
-    toggleEditing(){
+    toggleEditing(e){
+        e.preventDefault();
         this.setState({editing: !this.state.editing});
     }
 

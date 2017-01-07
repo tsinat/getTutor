@@ -5,6 +5,7 @@ const Link = Radium(ReactRouterLink);
 import { connect } from 'react-redux';
 import Radium, {style} from 'radium';
 import { createHistory } from 'history';
+import classNames from 'classnames';
 
 class Header extends Component {
     constructor(props){
@@ -57,7 +58,6 @@ class Header extends Component {
                 ':hover': {
                     backgroundColor: "#FFF",
                     color: "#F05A50",
-                    // borderRadius: "5px"
                 }
             },
             ulStyles: {
@@ -71,7 +71,6 @@ class Header extends Component {
                 position: 'fixed',
                 top: 0,
                 fontWeight: "bold",
-                // background: "#F05A50",
                 background: "#F05A50",
                 borderBottom: "none",
                 transition: "0.1s ease-in-out",
@@ -86,31 +85,40 @@ class Header extends Component {
 
     renderLinks() {
         const styles = this.getStyles();
+        const pathName = location.pathname;
+        console.log(pathName);
+        const btnSignup = classNames({ 'nav-link': true,  'active': pathName == "/signup" });
+        const btnSignin = classNames({ 'nav-link': true,  'active': pathName == "/signin" });
+        const btnCategories = classNames({ 'nav-link': true,  'active': pathName == "/categories" });
+        const btnProfile = classNames({ 'nav-link': true,  'active': pathName == "/profile" });
+        const btnSignout = classNames({ 'nav-link': true,  'active': pathName == "/signout" });
+        const btnHelp = classNames({ 'nav-link': true,  'active': pathName == "/help" });
+
         if(this.props.authenticated){
             return [
                 <li className="nav-item" key={1} >
                     <Link
-                        to='/categories' className="nav-link"
+                        to='/categories' className={btnCategories}
                         onClick={this.toggleCollapse}
                         style={styles.textStyle}>Categories
                     </Link>
                 </li>,
                 <li className="nav-item" key={2}>
                     <Link
-                        to='/profile' className="nav-link"
+                        to='/profile' className={btnProfile}
                         onClick={this.toggleCollapse}
                         style={styles.textStyle}>Profile</Link>
 
                 </li>,
                 <li className="nav-item" key={4}>
                     <Link
-                        to='/signout' className="nav-link"
+                        to='/signout' className={btnSignout}
                         onClick={this.toggleCollapse}
                         style={styles.textStyle}>Sign Out</Link>
                 </li>,
                 <li className="nav-item" key={5}>
                     <Link
-                        to='/help' className="nav-link"
+                        to='/help' className={btnHelp}
                         onClick={this.toggleCollapse}
                         style={styles.textStyle}>Help?</Link>
                 </li>
@@ -119,25 +127,25 @@ class Header extends Component {
             return [
                 <li className="nav-item" key={1}>
                     <Link
-                        to='/categories' className="nav-link"
+                        to='/categories' className={btnCategories}
                         onClick={this.toggleCollapse}
                         style={styles.textStyle}>Categories</Link>
                 </li>,
                 <li className="nav-item" key={2}>
                     <Link
-                        to='/signup' className="nav-link"
+                        to='/signup' className={btnSignup}
                         onClick={this.toggleCollapse}
                         style={styles.textStyle}>Sign Up</Link>
                 </li>,
                 <li className="nav-item" key={3}>
                     <Link
-                        to='/signin' className="nav-link"
+                        to='/signin' className={btnSignin}
                         onClick={this.toggleCollapse}
                         style={styles.textStyle}>Sign In</Link>
                 </li>,
                 <li className="nav-item" key={4}>
                     <Link
-                        to='/help' className="nav-link"
+                        to='/help' className={btnHelp}
                         onClick={this.toggleCollapse}
                         style={styles.textStyle}>Help?</Link>
                 </li>
@@ -160,7 +168,6 @@ class Header extends Component {
         const navClass = collapsed ? "collapse" : "";
         const width = window.innerWidth || documentElement.clientWidth || body.clientWidth;
         const combinedStyle =  (translate || this.pathName != '/' || width < 700  ) ? styles.translateStyle : styles.header;
-
         return (
             <nav className="navbar navbar-default navbar-fixed-top" role="navigation" style={combinedStyle}>
               <div className="container">
@@ -172,7 +179,7 @@ class Header extends Component {
                     <span className="icon-bar"></span>
                   </button>
                   <div className='navbar-header'>
-                        <Link to='/' className='navbar-brand' style={styles.logo}>GetMentor</Link>
+                        <Link to='/' className='navbar-brand' style={styles.logo} onClick={this.renderLinks}>GetMentor</Link>
                   </div>
                 </div>
                 <div className={ "navbar-collapse " + navClass } id="bs-example-navbar-collapse-1">

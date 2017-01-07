@@ -43,7 +43,7 @@ const Header = (props) => {
         <div className="row" key='x'>
             <div className="col-sm-12 text-center" style={styles.headerContainer} key='a'>
                 <video
-                    src="https://s3-us-west-2.amazonaws.com/coverr/mp4/Park-Traffic.mp4"
+                    src="../../public/videos/Park-Traffic.mp4"
                     type="video/mp4" autoPlay="autoplay" loop
                     style={styles.containerVideo} key='b'>
                 </video>

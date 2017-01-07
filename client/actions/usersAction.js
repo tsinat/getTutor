@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { FETCH_USERS, SINGLE_USER, CATEGORY_USERS } from './types';
 
-const ROOT_URL = 'http://localhost:4000';
+const ROOT_URL = 'http://localhost:3000';
 
 export function fetchAllUsers() {
     return function(dispatch) {
