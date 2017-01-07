@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Radium from 'radium';
 
 class Footer extends Component {
-    
+
     getStyles() {
         return {
             footerStyle: {
@@ -14,8 +14,7 @@ class Footer extends Component {
                 height: "60px",
                 paddingTop: "20px",
                 textAlign: "center",
-                // backgroundColor: "#F05A50",
-                backgroundColor: "",
+                backgroundColor: "#EFF0F2",
                 opacity: "0.7",
             },
             footerStyleUl: {
@@ -37,7 +36,7 @@ class Footer extends Component {
             }
         }
     }
-    
+
     renderLinks() {
         const styles = this.getStyles();
 
@@ -106,7 +105,7 @@ class Footer extends Component {
         }
 
     }
-    
+
     render() {
         const styles = this.getStyles();
         return (
