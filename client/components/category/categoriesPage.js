@@ -6,24 +6,25 @@ import * as actions from '../../actions';
 import Category from './category';
 import { Link, browserHistory} from 'react-router';
 import categoryList from '../../data/categoriesData';
-import CSSModules from 'react-css-modules';
-import category from './category.css'
+
 
 class Categories extends Component {
-    
+
     getStyles() {
         return {
             categoryStyle: {
                 height: "auto",
+                width: "80%",
                 overflow: "scroll",
                 marginBottom: 0
             },
             headerStyle: {
-                marginTop: '-10px',
+                marginTop: 0,
+                padding: 0
             }
         }
     }
-    
+
     renderCategory() {
         const list = categoryList.map((category, id) => {
             return (
@@ -36,7 +37,7 @@ class Categories extends Component {
         });
         return list;
     }
-    
+
     render() {
         const styles = this.getStyles();
         return (
@@ -47,7 +48,7 @@ class Categories extends Component {
                 transitionAppear={true}
                 transitionEnter={false}
                 transitionLeave={false}>
-                <div className="container" key='1'>
+                <div className="container" key='1' style={styles.categoryStyle}>
                     <div className="" key='2'>
                         <h2 className="text-center" style={styles.headerStyle}>Select the category of your interest</h2>
                     </div>

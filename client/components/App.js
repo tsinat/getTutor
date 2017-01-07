@@ -18,11 +18,13 @@ class App extends Component {
                 padding: 0,
                 minHeight: "100vh",
                 height: "100%",
-                background: "#FAFAFA",
+                background: "red",
                 paddingTop:"80px"
             },
             rowStyle: {
-                background: "#FAFAFA",
+                marginTop:"-30px",
+                paddingTop: "15px",
+                background: "white",
             }
         }
     }

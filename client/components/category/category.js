@@ -13,6 +13,7 @@ const Category = (props) => {
             borderBottom: "1px solid lightgrey"
         },
         thumbnailStyle: {
+            background:"#EFF0F2",
             border: "none",
             borderRadius: 0,
             padding:0,

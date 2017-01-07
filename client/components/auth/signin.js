@@ -43,12 +43,13 @@ class Signin extends Component {
         return {
             signinStyle: {
                 background: "inherit",
+                height: "100vh"
             },
             jumbotronStyle: {
                 borderRadius: 0,
-                background: "white",
+                background: "#EFF0F2",
                 marginTop: "40px",
-                boxShadow: "5px 5px 5px 5px #ecf0f1"
+                boxShadow: "5px 5px 5px 5px lightgrey"
             }
         }
     }

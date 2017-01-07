@@ -38,7 +38,7 @@ const Header = (props) => {
             fontSize: "1.2em"
         }
     };
-    
+
     return (
         <div className="row" key='x'>
             <div className="col-sm-12 text-center" style={styles.headerContainer} key='a'>

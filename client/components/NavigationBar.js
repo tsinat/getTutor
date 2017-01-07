@@ -16,15 +16,15 @@ class Header extends Component {
         this.toggleCollapse = this.toggleCollapse.bind(this);
         this.handleScroll = this.handleScroll.bind(this);
     }
-    
+
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
     }
-    
+
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
     }
-    
+
     handleScroll(e) {
         const scrollTop = e.srcElement.body.scrollTop;
 
@@ -38,7 +38,7 @@ class Header extends Component {
             });
         }
     }
-    
+
     getStyles(){
         return {
             header: {
@@ -71,19 +71,19 @@ class Header extends Component {
                 position: 'fixed',
                 top: 0,
                 fontWeight: "bold",
-                // background: "#e67e22",
+                // background: "#F05A50",
                 background: "#F05A50",
                 borderBottom: "none",
                 transition: "0.1s ease-in-out",
             }
         }
     }
-    
+
     toggleCollapse() {
         const collapsed = !this.state.collapsed;
         this.setState({collapsed});
     }
-    
+
     renderLinks() {
         const styles = this.getStyles();
         if(this.props.authenticated){
@@ -145,7 +145,7 @@ class Header extends Component {
         }
 
     }
-    
+
     render() {
         const pathName = '';
         const history = createHistory();
@@ -160,7 +160,7 @@ class Header extends Component {
         const navClass = collapsed ? "collapse" : "";
         const width = window.innerWidth || documentElement.clientWidth || body.clientWidth;
         const combinedStyle =  (translate || this.pathName != '/' || width < 700  ) ? styles.translateStyle : styles.header;
-        
+
         return (
             <nav className="navbar navbar-default navbar-fixed-top" role="navigation" style={combinedStyle}>
               <div className="container">

@@ -10,14 +10,13 @@ const SingleUser = (props) => {
             borderRadius: 0,
             border: "none",
             padding: "15px",
-            background: "white",
+            background: "#EFF0F2",
             transition: "boxShadow .3s ease-in-out",
             boxShadow: "1px 1px 1px #ecf0f1",
             boxSizing: "border-box",
             minHeight: "200px",
-            border: "0.5px solid lightgrey",
             ":hover": {
-                boxShadow: "5px 5px 5px 5px #ecf0f1",
+                boxShadow: "5px 5px 5px 5px lightgrey",
                 // transform: "scale(1.01)"
             }
         },
