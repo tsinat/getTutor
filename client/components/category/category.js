@@ -5,7 +5,7 @@ import Radium from 'radium';
 const Category = (props) => {
     const styles = {
         category: {
-            marginBottom: "20px",
+            marginBottom: "10px",
         },
         image: {
             width: "100%",
