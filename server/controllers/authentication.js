@@ -6,6 +6,7 @@ export function signup(req, res, next){
     console.log('YEAHH', req.body);
     const email = req.body.email;
     const password = req.body.password;
+    const addUser = req.body;
 
     if(!email || !password) {
         res.status(400).send({error: 'you must provide email and password'});
@@ -17,10 +18,7 @@ export function signup(req, res, next){
         if(user) {
             return res.status(400).send({ error: 'A user with the same email already exist'});
         }
-        let newUser = new User({
-            email: email,
-            password: password
-        });
+        let newUser = new User(addUserhy66);
         newUser.save((err) => {
             if(err){
                 return next(err);

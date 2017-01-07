@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import Radium from 'radium';
 import * as actions from '../../actions/profileAction';
 import ProfileBioList from './profileBio';
 import ProfileSummary from './profileSummary';
@@ -21,6 +22,16 @@ import ProfilePicture from './profilePicture';
    //     this.props.fetchUser();
    // }
 
+   getStyles() {
+       return {
+           containerStyle: {
+               width: "80%",
+               height: "100vh",
+               background: "white"
+           }
+       }
+   }
+
    updateProfile(updateData){
        updateData.currentUser = this.props.currentUser.user.email
        this.props.updateUser(updateData);
@@ -33,7 +44,8 @@ import ProfilePicture from './profilePicture';
 
    render(){
      const { currentUser } = this.props;
-     console.log('currentUser:', currentUser);
+     const styles = this.getStyles();
+
      if(currentUser.user){
          return(
              <ReactCSSTransitionGroup
@@ -43,7 +55,7 @@ import ProfilePicture from './profilePicture';
                  transitionAppear={true}
                  transitionEnter={false}
                  transitionLeave={false}>
-                 <div className="container">
+                 <div className="container" style={styles.containerStyle}>
                      <ProfilePicture
                          data={currentUser.user}
                          updateProfile={this.updateProfile}

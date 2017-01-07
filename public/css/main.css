@@ -7,6 +7,15 @@
   opacity: 0.01;
 }
 
+.btn-primary {
+    background: #F05A50 !important;
+    border: 1px solid #F05A50 !important;
+}
+.btn-primary:focus{
+    background: #F05A50 !important;
+    border: 1px solid #F05A50 !important;
+}
+
 .example-enter.example-enter-active {
   opacity: 1;
   transition: opacity 500ms ease-in;
@@ -47,6 +56,7 @@
     display: block;
     overflow: visibile;
     break-inside: avoid;
+    padding-bottom: 5px;
 }
 @media (max-width: 992px) {
     .ulStyles {
