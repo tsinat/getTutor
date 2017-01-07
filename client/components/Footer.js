@@ -47,28 +47,32 @@ class Footer extends Component {
                         to='/categories'
                         className="nav-link"
                         style={styles.linkStyle}
-                        >Categories</Link>
+                        >Categories
+                    </Link>
                 </li>,
                 <li className="nav-item" key={2} style={styles.footerLiStyle}>
                     <Link
                         to='/profile'
                         className="nav-link"
                         style={styles.linkStyle}
-                        >Profile</Link>
+                        >Profile
+                    </Link>
                 </li>,
                 <li className="nav-item" key={3} style={styles.footerLiStyle}>
                     <Link
                         to='/signout'
                         className="nav-link"
                         style={styles.linkStyle}
-                        >Sign Out</Link>
+                        >Sign Out
+                    </Link>
                 </li>,
                 <li className="nav-item" key={4} style={styles.footerLiStyle}>
                     <Link
                         to='/help'
                         className="nav-link"
                         style={styles.linkStyle}
-                        >Help?</Link>
+                        >Help?
+                    </Link>
                 </li>
             ];
         } else {
@@ -78,28 +82,32 @@ class Footer extends Component {
                         to='/categories'
                         className="nav-link"
                         style={styles.linkStyle}
-                         >Categories</Link>
+                         >Categories
+                     </Link>
                 </li>,
                 <li className="nav-item" key={2} style={styles.footerLiStyle}>
                     <Link
                         to='/signup'
                         className="nav-link"
                         style={styles.linkStyle}
-                         >Sign Up</Link>
+                         >Sign Up
+                     </Link>
                 </li>,
                 <li className="nav-item" key={3} style={styles.footerLiStyle}>
                     <Link
                         to='/signin'
                         className="nav-link"
                         style={styles.linkStyle}
-                         >Sign In</Link>
+                         >Sign In
+                     </Link>
                 </li>,
                 <li className="nav-item" key={4} style={styles.footerLiStyle}>
                     <Link
                         to='/help'
                         className="nav-link"
                         style={styles.linkStyle}
-                         >Help?</Link>
+                         >Help?
+                     </Link>
                 </li>
             ];
         }
