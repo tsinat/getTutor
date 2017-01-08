@@ -7,3 +7,4 @@ export const UPLOAD_PICTURE='UPLOAD_PICTURE';
 export const FETCH_USERS='FETCH_USERS';
 export const SINGLE_USER='SINGLE_USER';
 export const CATEGORY_USERS='CATEGORY_USERS';
+export const ROOT_URL='http://ec2-54-153-123-125.us-west-1.compute.amazonaws.com/'

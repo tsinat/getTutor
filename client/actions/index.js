@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { AUTH_USER, AUTH_ERROR, SIGN_OUT } from './types';
+import { AUTH_USER, AUTH_ERROR, SIGN_OUT, ROOT_URL } from './types';
 
-const ROOT_URL = 'http://localhost:3000';
+// const ROOT_URL = 'http://localhost:3000';
 
 export function signinUser({email, password}) {
     return function(dispatch) {

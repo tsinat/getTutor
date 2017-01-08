@@ -22,6 +22,7 @@ mongoose.connect(MONGOURL, err => {
 
 const app = express();
 const compiler = webpack(webpackConfig);
+const PORT = process.env.PORT || 3000;
 
 app.use(webpackMiddleware(compiler, {
     hot: true,
@@ -46,4 +47,4 @@ app.get('*', (req, res) => {
 
 const server = http.createServer(app);
 
-server.listen(3000, () => console.log('Running on localhost://3000'))
+server.listen(PORT, () => console.log(`Running on localhost://${PORT}`))

@@ -1,8 +1,8 @@
  import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { FETCH_MESSAGE, UPDATE_USER, UPLOAD_PICTURE } from './types';
+import { FETCH_MESSAGE, UPDATE_USER, UPLOAD_PICTURE, ROOT_URL } from './types';
 
-const ROOT_URL = 'http://localhost:3000';
+// const ROOT_URL = 'http://localhost:3000';
 
 export function updateUser(userData) {
     return function(dispatch) {
