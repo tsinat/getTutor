@@ -33,6 +33,7 @@ import ProfilePicture from './profilePicture';
    }
 
    updateProfile(updateData){
+       console.log('updateData:', updateData);
        updateData.currentUser = this.props.currentUser.user.email
        this.props.updateUser(updateData);
    }

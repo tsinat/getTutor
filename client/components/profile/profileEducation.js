@@ -40,7 +40,7 @@ class ProfileEducation extends Component {
     handleUpdate(e) {
         e.preventDefault();
         this.props.updateProfile({ education:this.state });
-        this.toggleEditing();
+        this.toggleEditing(e);
     }
 
     toggleEditing(e){
