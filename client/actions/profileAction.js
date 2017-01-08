@@ -1,12 +1,10 @@
  import axios from 'axios';
 import { browserHistory } from 'react-router';
-import { FETCH_MESSAGE, UPDATE_USER, UPLOAD_PICTURE, ROOT_URL } from './types';
-
-// const ROOT_URL = 'http://localhost:3000';
+import { FETCH_MESSAGE, UPDATE_USER, UPLOAD_PICTURE } from './types';
 
 export function updateUser(userData) {
     return function(dispatch) {
-        axios.post(`${ROOT_URL}/api/update`, userData).then(response => {
+        axios.post(`/api/update`, userData).then(response => {
             console.log('updated Data from server:', response.data);
             dispatch({
                 type: UPDATE_USER,
@@ -21,7 +19,7 @@ export function updateUser(userData) {
 
 export function fetchUser() {
     return function(dispatch) {
-        axios.get(`${ROOT_URL}/api/profile`, {
+        axios.get(`/api/profile`, {
             headers: {
                 authorization: localStorage.getItem('token')
             }
@@ -38,7 +36,7 @@ export function fetchUser() {
 
 export function uploadPicture(data, id) {
     return function(dispatch) {
-        axios.put(`${ROOT_URL}/api/profile/image/${id}`, data, {
+        axios.put(`/api/profile/image/${id}`, data, {
             headers: {
                 authorization: localStorage.getItem('token')
             }

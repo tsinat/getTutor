@@ -1,11 +1,9 @@
 import axios from 'axios';
-import { FETCH_USERS, SINGLE_USER, CATEGORY_USERS, ROOT_URL } from './types';
-
-// const ROOT_URL = 'http://localhost:3000';
+import { FETCH_USERS, SINGLE_USER, CATEGORY_USERS } from './types';
 
 export function fetchAllUsers() {
     return function(dispatch) {
-        axios.get(`${ROOT_URL}/api/users/getall`)
+        axios.get(`/api/users/getall`)
             .then(response => {
                 dispatch({
                     type: FETCH_USERS,
@@ -20,7 +18,7 @@ export function fetchAllUsers() {
 
 export function getSingleUser(id) {
     return function(dispatch) {
-        axios.get(`${ROOT_URL}/api/user/${id}`)
+        axios.get(`/api/user/${id}`)
             .then(response => {
                 dispatch({
                     type: SINGLE_USER,
@@ -35,7 +33,7 @@ export function getSingleUser(id) {
 
 export function getCategoryUsers(phrase) {
     return function(dispatch) {
-        axios.get(`${ROOT_URL}/api/users/${phrase}`)
+        axios.get(`/api/users/${phrase}`)
             .then(response => {
                 dispatch({
                     type: CATEGORY_USERS,
