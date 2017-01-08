@@ -18,9 +18,6 @@ import ProfilePicture from './profilePicture';
    componentWillMount() {
        this.props.fetchUser();
    }
-   // componentDidReceiveProps() {
-   //     this.props.fetchUser();
-   // }
 
    getStyles() {
        return {
