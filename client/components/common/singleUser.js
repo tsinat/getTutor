@@ -31,19 +31,17 @@ const SingleUser = (props) => {
         }
     };
     return (
-        // col-sm-6 col-md-3
         <Link to={`/userDetail/${props.user._id}`} key={props.index}>
             <div className="" style={styles.singleUserStyle} key={props.index + 2}>
                 <div className="thumbnail" style={styles.thumbnailStyle} key={props.index + 3}>
                     <img src={props.user.image} alt="..."/>
                     <div className="caption">
-                        <h4>{props.user.bio.firstName} {props.user.bio.lastName}</h4>
-                        <h4>{props.user.bio.firstName} {props.user.bio.lastName}</h4>
-                        <h4>{props.user.bio.firstName} {props.user.bio.lastName}</h4>
+                        <h4 className="text-center">{props.user.bio.firstName} {props.user.bio.lastName}</h4>
+                        <h4>{props.user.category}</h4>
                         <span>Job Title | @companyName</span>
                     </div>
                     <div className="detail" style={styles.detail} key={props.index + 1}>
-                        <span>Phone Number 1234567895</span><br/>
+                        <span>Number 1234567895</span><br/>
                         <span>{props.user.email}</span>
                     </div>
                 </div>

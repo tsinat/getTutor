@@ -2,7 +2,10 @@ import User from '../models/user';
 
 export function getAll(req, res, next) {
     console.log('wow it works');
-    User.find({}, (err, users) => {
+    User.find({})
+        .where('status').equals("mentor")
+        .limit(20)
+        .exec((err, users) => {
         if (err) {
             return next(err);
         }
@@ -20,7 +23,12 @@ export function getSingleUser(req, res, next) {
 }
 
 export function getCategoryUsers(req, res, next) {
-    User.find({}, (err, user) => {
+    console.log('category users:', req.params.category);
+    const phrase = req.params.category;
+    User.find({})
+        .where('category').equals(phrase)
+        .exec((err, user) => {
+            console.log("user:", user);
         if (err) {
             return next(err);
         }

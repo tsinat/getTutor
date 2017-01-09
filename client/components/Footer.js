@@ -14,9 +14,7 @@ class Footer extends Component {
                 height: "60px",
                 paddingTop: "20px",
                 textAlign: "center",
-                // backgroundColor: "#EFF0F2",
-                backgroundColor: "#F05A50",
-                opacity: "0.7",
+                backgroundColor: "#EFF0F2",
             },
             footerStyleUl: {
                 listStyleType: "none",
@@ -31,8 +29,7 @@ class Footer extends Component {
                 color: "grey"
             },
             linkStyle: {
-                // color: "#F05A50",
-                color: "white",
+                color: "#F05A50",
                 fontWeight: "bold",
                 textDecoration: "none"
             }

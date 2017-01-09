@@ -9,7 +9,6 @@ const Subscribe = (props) => {
             width: "100%",
             height: "160px",
             paddingTop: "60px",
-            marginTop: "-40px",
             overflow: "hidden"
         },
         inputStyle: {
@@ -20,7 +19,7 @@ const Subscribe = (props) => {
         <div style={styles.imageStyle}>
             <form className="row">
                 <div className="col-xs-5 col-xs-offset-2 col-md-4 col-md-offset-3">
-                    <input className="form-control" type="text"  style={styles.inputStyle}/>
+                    <input className="form-control" type="text"  style={styles.inputStyle} placeholder=" Please enter your email"/>
                 </div>
                 <div className="col-xs-3 col-md-2">
                     <button className="btn btn-primary btn-block " style={styles.inputStyle}>Subscribe</button>
