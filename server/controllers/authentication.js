@@ -18,7 +18,7 @@ export function signup(req, res, next){
         if(user) {
             return res.status(400).send({ error: 'A user with the same email already exist'});
         }
-        let newUser = new User(addUserhy66);
+        let newUser = new User(addUser);
         newUser.save((err) => {
             if(err){
                 return next(err);

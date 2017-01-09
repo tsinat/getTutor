@@ -2,7 +2,7 @@ import React from 'react';
 
 const pathName = location.pathname;
 
-function renderSumary(props) {
+const renderSumary = (props) => {
     if(pathName == "/profile") {
         return props.data.summary ? props.data.summary :  "Please Write Profile summary ";
     } else {

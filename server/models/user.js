@@ -21,7 +21,8 @@ const userSchema = new Schema({
         degree: { type: String, default: "" },
         field: { type: String, default: "" }
     },
-    category: {type: String, default: ""}
+    category: {type: String, default: ""},
+    status: {type: String, default: ""}
 });
 
 userSchema.pre('save', function(next) {
