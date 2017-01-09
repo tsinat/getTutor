@@ -6,6 +6,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import * as actions from '../../actions/usersAction';
 import Header from './header';
 import SingleUserList from './singleUserList';
+import Subscribe from './subscribe';
 
 let Link = Scroll.Link;
 let Element = Scroll.Element;
@@ -119,6 +120,7 @@ class HomePage extends Component {
                     <h3 className="text-center" key='you' style={styles.headerStyle}>Some of the top rated mentors around you</h3>
                 </div>
                 <SingleUserList allUsers={this.props.allUsers} key='what'/>
+                <Subscribe  key="sub"/>
             </ReactCSSTransitionGroup>
         );
     }
