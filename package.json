@@ -57,6 +57,7 @@
     "react-page-transitions": "^1.2.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
+    "react-scroll": "^1.4.4",
     "react-tools": "^0.10.0",
     "react-transform": "0.0.3",
     "react-wysiwyg": "^2.2.1",

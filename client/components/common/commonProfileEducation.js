@@ -7,11 +7,14 @@ const ProfileEdu = (props) => {
             marginBottom:"40px"
         }
     }
+    const pathName = location.pathname;
+
     return (
         <div className="row">
             <div className="list-group-item col-xs-12"
                 onClick={props.toggleEditing}
                 style={styles.listItem}>
+                {(pathName== '/profile') && <span className="glyphicon glyphicon-edit pull-right"></span>}
                 <h4>Education</h4><hr />
                 <p className="">
                     <strong>School:</strong> { props.data.education.school ? props.data.education.school : 'School you attended ?'}
@@ -21,7 +24,7 @@ const ProfileEdu = (props) => {
                 </p>
                 <p className="">
                     <strong>Field of Study:</strong> { props.data.education.field ? props.data.education.field : 'Field of study ?'}
-                </p><br />
+                </p>
             </div>
         </div>
     );

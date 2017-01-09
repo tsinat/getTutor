@@ -14,7 +14,7 @@ class CategoryDetail extends Component {
     getStyles() {
         return {
             headerStyle: {
-                marginTop: '-10px'
+                marginTop: 0
             }
         };
     }

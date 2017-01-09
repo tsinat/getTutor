@@ -6,6 +6,7 @@ const ProfileBio = (props) => {
             borderRadius: 0,
         }
     }
+    const pathName = location.pathname;
     return (
         <div className="row">
             <div className="list-group-item col-xs-12"
@@ -13,6 +14,7 @@ const ProfileBio = (props) => {
                 style={styles.listItem}>
                 <p className="">
                     <strong>First Name:</strong> { props.data.bio.firstName ? props.data.bio.firstName :  "Update your first name" }
+                    {(pathName== '/profile') && <span className="glyphicon glyphicon-edit pull-right"></span>}
                 </p>
                 <p className="">
                     <strong>Last Name:</strong> { props.data.bio.lastName ? props.data.bio.lastName: "Update your last name" }

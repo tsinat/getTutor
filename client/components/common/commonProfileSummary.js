@@ -1,5 +1,15 @@
 import React from 'react';
 
+const pathName = location.pathname;
+
+function renderSumary(props) {
+    if(pathName == "/profile") {
+        return props.data.summary ? props.data.summary :  "Please Write Profile summary ";
+    } else {
+        return props.data.summary ? props.data.summary :  "No Profile summary found "
+    }
+}
+
 const ProfileSum = (props) => {
     const styles = {
         listItem: {
@@ -11,9 +21,10 @@ const ProfileSum = (props) => {
             <div className="list-group-item col-xs-12"
                 onClick={ props.toggleEditing}
                 style={styles.listItem}>
+                {(pathName== '/profile') && <span className="glyphicon glyphicon-edit pull-right"></span>}
                 <h4>Summary</h4><hr />
                 <p className="">
-                    { props.data.summary ? props.data.summary : 'Please write shord summary about your self and experience'}
+                    { renderSumary(props)}
                 </p><br />
             </div>
         </div>
