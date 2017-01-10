@@ -22,7 +22,7 @@ const userSchema = new Schema({
         field: { type: String, default: "" }
     },
     category: {type: String, default: "", trim: true},
-    status: {type: String, default: "", trim: true}
+    status: {type: String, default: "", tolowercase:true, trim: true}
 });
 
 userSchema.pre('save', function(next) {

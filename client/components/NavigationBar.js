@@ -72,6 +72,7 @@ class Header extends Component {
                 top: 0,
                 fontWeight: "bold",
                 background: "#F05A50",
+                // background: "#0AB2BD",
                 borderBottom: "none",
                 transition: "0.1s ease-in-out",
             }

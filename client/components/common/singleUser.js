@@ -16,12 +16,23 @@ const SingleUser = (props) => {
             boxSizing: "border-box",
             minHeight: "200px",
             ":hover": {
-                boxShadow: "5px 5px 5px 5px lightgrey",
+                boxShadow: "3px 3px 3px lightgrey",
                 // transform: "scale(1.01)"
+                textDecoration: "none",
+                cursor: "pointer"
             }
         },
         singleUserStyle: {
             // padding: "0 8px",
+        },
+        nameStyle: {
+            color:"#F05A50",
+            opacity: 0.5,
+            marginTop: 0,
+            textDecoration: "none"
+        },
+        hrStyle: {
+            margin: 0,
         },
         detail: {
             textDecoration: "none",
@@ -36,12 +47,12 @@ const SingleUser = (props) => {
                 <div className="thumbnail" style={styles.thumbnailStyle} key={props.index + 3}>
                     <img src={props.user.image} alt="..."/>
                     <div className="caption">
-                        <h4 className="text-center">{props.user.bio.firstName} {props.user.bio.lastName}</h4>
+                        <h4 className="text-center" style={styles.nameStyle}>{props.user.bio.firstName} {props.user.bio.lastName}</h4>
+                        <hr style={styles.hrStyle}/>
                         <h4>{props.user.category}</h4>
                         <span>Job Title | @companyName</span>
                     </div>
                     <div className="detail" style={styles.detail} key={props.index + 1}>
-                        <span>Number 1234567895</span><br/>
                         <span>{props.user.email}</span>
                     </div>
                 </div>

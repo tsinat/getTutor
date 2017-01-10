@@ -43,6 +43,7 @@ const ProfileEdu = (props) => {
             marginBottom:"40px"
         }
     }
+    const pathName = location.pathname;
 
     return (
         <div className="row">
