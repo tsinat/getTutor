@@ -1,8 +1,8 @@
 import React from 'react';
 
-const pathName = location.pathname;
-
 const renderSumary = (props) => {
+    const pathName = location.pathname;
+
     if(pathName == "/profile") {
         return props.data.summary ? props.data.summary :  "Please Write Profile summary ";
     } else {
@@ -16,6 +16,8 @@ const ProfileSum = (props) => {
             borderRadius: 0,
         }
     }
+    const pathName = location.pathname;
+
     return (
         <div className="row">
             <div className="list-group-item col-xs-12"
