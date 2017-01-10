@@ -34,6 +34,9 @@ const SingleUser = (props) => {
         hrStyle: {
             margin: 0,
         },
+        textStyle: {
+            textDecoration: "none"
+        },
         detail: {
             textDecoration: "none",
             transition: "display .5s ease-in-out",
@@ -42,7 +45,7 @@ const SingleUser = (props) => {
         }
     };
     return (
-        <Link to={`/userDetail/${props.user._id}`} key={props.index}>
+        <Link to={`/userDetail/${props.user._id}`} key={props.index} style={styles.textStyle}>
             <div className="" style={styles.singleUserStyle} key={props.index + 2}>
                 <div className="thumbnail" style={styles.thumbnailStyle} key={props.index + 3}>
                     <img src={props.user.image} alt="..."/>
@@ -50,7 +53,7 @@ const SingleUser = (props) => {
                         <h4 className="text-center" style={styles.nameStyle}>{props.user.bio.firstName} {props.user.bio.lastName}</h4>
                         <hr style={styles.hrStyle}/>
                         <h4>{props.user.category}</h4>
-                        <span>Job Title | @companyName</span>
+                        <span style={styles.textStyle}>Job Title | @companyName</span>
                     </div>
                     <div className="detail" style={styles.detail} key={props.index + 1}>
                         <span>{props.user.email}</span>
