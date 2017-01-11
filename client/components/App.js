@@ -11,7 +11,7 @@ class App extends Component {
             pageStyle: {
                 marginLeft:0,
                 width: "100%",
-                overflow: "scroll",
+                overflow: "hidden",
                 height: "auto"
             },
              containerStyle: {
