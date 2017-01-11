@@ -46,6 +46,7 @@ class Signin extends Component {
                 height: "100vh"
             },
             jumbotronStyle: {
+                padding: "40px",
                 borderRadius: 0,
                 background: "#EFF0F2",
                 marginTop: "40px",
@@ -73,14 +74,14 @@ class Signin extends Component {
                 transitionLeave={false}>
                 <div className="container">
                     <div className="row " style={styles.signinStyle}>
-                        <div className="col-xs-8 col-xs-offset-2 jumbotron" style={styles.jumbotronStyle}>
+                        <div className="col-xs-12  col-md-8 col-md-offset-2 jumbotron" style={styles.jumbotronStyle}>
                             <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
                                 <div className="row">
-                                    <fieldset className="form-group col-xs-6">
+                                    <fieldset className="form-group col-xs-12 col-md-6">
                                         <label>Email:</label>
                                         <Field name="email" component={InputField} type="email"/>
                                     </fieldset>
-                                    <fieldset className="form-group col-xs-6">
+                                    <fieldset className="form-group col-xs-12 col-md-6">
                                         <label>Password:</label>
                                         <Field name="password" component={InputField} type="password"/>
                                     </fieldset>

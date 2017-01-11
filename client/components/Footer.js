@@ -26,7 +26,7 @@ class Footer extends Component {
             },
             footerLiStyle: {
                 display: "inline-block",
-                minWidth:"100px",
+                minWidth:"80px",
                 color: "grey"
             },
             linkStyle: {

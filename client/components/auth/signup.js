@@ -45,6 +45,7 @@ class Signup extends Component {
                 height: "100vh"
             },
             jambotronStyle: {
+                padding: "40px",
                 borderRadius: 0,
                 background: "#EFF0F2",
                 marginTop: "40px",
@@ -73,14 +74,14 @@ class Signup extends Component {
                 transitionLeave={false}>
                 <div className="container">
                     <div className="row " style={styles.signupStyle}>
-                        <div className="col-xs-8 col-xs-offset-2 jumbotron" style={styles.jambotronStyle}>
+                        <div className="col-xs-12  col-md-8 col-md-offset-2 jumbotron" style={styles.jambotronStyle}>
                             <form onSubmit={handleSubmit( this.handleFormSubmit.bind(this))}>
                                 <div className="row">
-                                    <fieldset className="form-group col-xs-6">
+                                    <fieldset className="form-group col-xs-12 col-md-6">
                                         <label>First Name:</label>
                                         <Field name="firstName" component={InputField} type="text" />
                                     </fieldset>
-                                    <fieldset className="form-group col-xs-6">
+                                    <fieldset className="form-group col-xs-12 col-md-6">
                                         <label>Last Name:</label>
                                         <Field name="lastName" component={InputField} type="text" />
                                     </fieldset>
@@ -90,7 +91,7 @@ class Signup extends Component {
                                     <Field name="email" component={InputField} type="email" />
                                 </fieldset>
                                 <div className="row">
-                                    <fieldset className="form-group col-xs-6">
+                                    <fieldset className="form-group col-xs-12 col-md-6">
                                         <label>Mentor/Mentee:</label>
                                         <Field name="status" component={SelectField}>
                                             <option></option>
@@ -98,7 +99,7 @@ class Signup extends Component {
                                             <option>Mentee</option>
                                         </Field>
                                     </fieldset>
-                                    <fieldset className="form-group col-xs-6">
+                                    <fieldset className="form-group col-xs-12 col-md-6">
                                         <label>Category:</label>
                                         <Field name="category" component={SelectField}>
                                             <option></option>
