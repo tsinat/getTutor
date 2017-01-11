@@ -14,7 +14,12 @@ class CategoryDetail extends Component {
     getStyles() {
         return {
             headerStyle: {
-                marginTop: 0
+                width: "100%",
+                marginTop: "-25px",
+                marginBottom: "20px",
+                background: "white",
+                padding: "5px",
+                borderBottom: "1px solid lightgrey",
             }
         };
     }
@@ -45,9 +50,10 @@ class CategoryDetail extends Component {
                 transitionAppear={true}
                 transitionEnter={false}
                 transitionLeave={false}>
+                <div style={styles.headerStyle}>
+                    <h2 className="text-center" >{this.state.searchPhrase}</h2>
+                </div>
                 <div className="">
-                    <h2 className="text-center" style={styles.headerStyle}>{this.state.searchPhrase}</h2>
-                    <hr />
                     <SingleUserList allUsers={this.props.cateogryUsers} key='what'/>
                 </div>
             </ReactCSSTransitionGroup>

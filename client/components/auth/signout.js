@@ -7,8 +7,13 @@ class Signout extends Component {
         this.props.signoutUser();
     }
     render() {
+        const styles = {
+            containerStyle: {
+                height: "100vh"
+            }
+        }
         return (
-            <div className="container">
+            <div className="container" style={styles.containerStyle}>
                 Sorry to see you go ... Please visit us again
             </div>
         );
