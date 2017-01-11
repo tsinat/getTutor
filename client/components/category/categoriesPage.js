@@ -52,7 +52,7 @@ class Categories extends Component {
                 transitionEnter={false}
                 transitionLeave={false}>
                 <div className="" key='2' style={styles.headerStyle}>
-                    <h2 className="text-center" >Select category of your interest</h2>
+                    <h3 className="text-center" >Select category of your interest</h3>
                 </div>
                 <div className="container" key='1' style={styles.categoryStyle}>
                     {this.renderCategory()}
