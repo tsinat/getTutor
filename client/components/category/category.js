@@ -9,15 +9,18 @@ const Category = (props) => {
         },
         image: {
             width: "100%",
-            height: "150px",
-            borderBottom: "1px solid lightgrey"
+            height: "100%",
+            borderBottom: "1px solid lightgrey",
+            position: 'absolute'
         },
         thumbnailStyle: {
             background:"#EFF0F2",
             border: "none",
             borderRadius: 0,
             padding:0,
-            boxShadow: "1px 1px 1px lightgrey"
+            boxShadow: "1px 1px 1px lightgrey",
+            position: 'relative',
+            overflow: 'hidden'
         }
     };
 
