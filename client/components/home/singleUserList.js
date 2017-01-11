@@ -9,7 +9,7 @@ class SingleUserList extends Component {
         return {
             containerStyle: {
                 margin: "0 auto",
-                width: "80%"
+                width: "90%"
             }
         }
     }

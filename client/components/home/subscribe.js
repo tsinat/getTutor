@@ -11,17 +11,21 @@ const Subscribe = (props) => {
             paddingTop: "60px",
             overflow: "hidden"
         },
+        colStyle: {
+            paddingRight: 0
+        },
         inputStyle: {
-            height: "40px"
+            height: "40px",
+            marginRight: 0
         }
     }
     return (
         <div style={styles.imageStyle}>
             <form className="row">
-                <div className="col-xs-5 col-xs-offset-2 col-md-4 col-md-offset-3">
+                <div className="col-xs-6 col-xs-offset-1 col-md-4 col-md-offset-3" style={styles.colStyle}>
                     <input className="form-control" type="text"  style={styles.inputStyle} placeholder=" Please enter your email"/>
                 </div>
-                <div className="col-xs-3 col-md-2">
+                <div className="col-xs-4 col-md-2">
                     <button className="btn btn-primary btn-block " style={styles.inputStyle}>Subscribe</button>
                 </div>
             </form>
