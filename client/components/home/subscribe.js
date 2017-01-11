@@ -16,7 +16,15 @@ const Subscribe = (props) => {
         },
         inputStyle: {
             height: "40px",
-            marginRight: 0
+            marginRight: 0,
+        },
+        btnStyle: {
+            height: "40px",
+            marginRight: 0,
+            backgroundColor: "transparent",
+            color: "#FFFFFF",
+            border: "2px solid #F05A50",
+            fontWeight: "bold"
         }
     }
     return (
@@ -26,7 +34,7 @@ const Subscribe = (props) => {
                     <input className="form-control" type="text"  style={styles.inputStyle} placeholder=" Please enter your email"/>
                 </div>
                 <div className="col-xs-4 col-md-2">
-                    <button className="btn btn-primary btn-block " style={styles.inputStyle}>Subscribe</button>
+                    <button className="btn btn-block " style={styles.btnStyle}>Subscribe</button>
                 </div>
             </form>
         </div>
