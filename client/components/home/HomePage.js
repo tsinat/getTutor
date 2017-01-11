@@ -32,7 +32,9 @@ class HomePage extends Component {
             },
             headerStyle: {
                 borderBottom: "1px solid lightgrey",
-                paddingBottom: "20px"
+                padding: "20px",
+                marginTop: "-10px",
+                background: "#FFFFFF"
             }
         }
     }

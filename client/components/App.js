@@ -11,20 +11,19 @@ class App extends Component {
             pageStyle: {
                 marginLeft:0,
                 width: "100%",
-                overflow: "hidden",
+                overflow: "scroll",
                 height: "auto"
             },
              containerStyle: {
                 padding: 0,
                 minHeight: "100vh",
                 height: "100%",
-                // background: "red",
-                paddingTop:"80px"
+                paddingTop:"80px",
             },
             rowStyle: {
                 marginTop:"-30px",
                 paddingTop: "15px",
-                background: "white",
+                background: "#F4F4EF",
             }
         }
     }

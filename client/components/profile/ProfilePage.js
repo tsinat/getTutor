@@ -11,7 +11,7 @@ import ProfilePicture from './profilePicture';
  class ProfilePage extends Component {
    constructor(){
      super();
-     
+
      this.updateProfile = this.updateProfile.bind(this);
      this.handleProfilePicture = this.handleProfilePicture.bind(this);
    }
@@ -23,9 +23,10 @@ import ProfilePicture from './profilePicture';
    getStyles() {
        return {
            containerStyle: {
-               width: "80%",
+               padding: "0 40px",
                height: "100vh",
-               background: "white"
+               background: "white",
+               marginTop: "-20px"
            }
        }
    }

@@ -7,11 +7,18 @@ const UserDetailPic = (props) => {
             borderRadius: 0,
             borderBottom: "2px solid #FAFAFA"
         },
-        imageStyle: {
-            width:"150px",
-            height: "auto",
+        imgContainer: {
+            position: "relative",
+            overflow: "hidden",
+            textAlign: "center",
+            margin: "0 auto",
+            height: "150px",
+            width: "150px",
             borderRadius: "50%",
-            border: "1px solid lightgrey",
+        },
+        imageStyle: {
+            width:"100%",
+            height: "auto",
         }
     }
     return (
@@ -19,7 +26,9 @@ const UserDetailPic = (props) => {
             <div className="list-group-item col-xs-12"
                 style={styles.listItem}>
                 <div className="text-center circle">
-                    <img src={props.data.image} style={styles.imageStyle}/>
+                    <div style={styles.imgContainer}>
+                        <img src={props.data.image} style={styles.imageStyle}/>
+                    </div>
                 </div>
             </div>
         </div>

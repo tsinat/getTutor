@@ -13,14 +13,17 @@ class Categories extends Component {
     getStyles() {
         return {
             categoryStyle: {
-                height: "auto",
-                width: "80%",
+                height: "100vh",
                 overflow: "scroll",
                 marginBottom: 0
             },
             headerStyle: {
-                marginTop: 0,
-                padding: 0
+                width: "100%",
+                marginTop: "-25px",
+                marginBottom: "20px",
+                background: "white",
+                padding: "5px",
+                borderBottom: "1px solid lightgrey",
             }
         }
     }
@@ -48,11 +51,10 @@ class Categories extends Component {
                 transitionAppear={true}
                 transitionEnter={false}
                 transitionLeave={false}>
+                <div className="" key='2' style={styles.headerStyle}>
+                    <h2 className="text-center" >Select the category of your interest</h2>
+                </div>
                 <div className="container" key='1' style={styles.categoryStyle}>
-                    <div className="" key='2'>
-                        <h2 className="text-center" style={styles.headerStyle}>Select the category of your interest</h2>
-                    </div>
-                    <hr />
                     {this.renderCategory()}
                 </div>
             </ReactCSSTransitionGroup>

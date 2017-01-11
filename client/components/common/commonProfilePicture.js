@@ -8,18 +8,28 @@ const ProfilePic = (props) => {
             borderRadius: 0,
             borderBottom: "2px solid #FAFAFA"
         },
-        imageStyle: {
+        imgContainer: {
+            position: "relative",
+            overflow: "hidden",
+            textAlign: "center",
+            margin: "0 auto",
+            height: "150px",
             width: "150px",
-            height: "auto",
             borderRadius: "50%",
-            border: "1px solid lightgrey"
+        },
+        imageStyle: {
+            width: "100%",
+            height: "auto",
+            top: 0,
+            left: 0,
+            right: 0,
         }
     }
     return (
         <div className="row">
-            <div className="list-group-item col-xs-12" 
+            <div className="list-group-item col-xs-12"
                 style={styles.listItem}>
-                <div className="text-center circle">
+                <div className="" style={styles.imgContainer}>
                     <img src={props.data.image} style={styles.imageStyle}/>
                 </div>
                 <div className="text-center">

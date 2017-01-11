@@ -5,27 +5,42 @@ import Radium from 'radium';
 const Category = (props) => {
     const styles = {
         category: {
-            marginBottom: "10px",
+            margin: "0",
+            padding: "0 10px"
+        },
+        imgContainer: {
+            position: "relative",
+            overflow: "hidden",
+            textAlign: "center",
+            margin: "0 auto",
+            height: "140px",
+            width: "100%",
         },
         image: {
-            width: "100%",
-            height: "150px",
-            borderBottom: "1px solid lightgrey"
+          width: "100%",
+          height: "auto",
+          borderBottom: "1px solid lightgrey"
         },
         thumbnailStyle: {
-            background:"#EFF0F2",
-            border: "none",
-            borderRadius: 0,
-            padding:0,
-            boxShadow: "1px 1px 1px lightgrey"
-        }
+          background:"#FFFFFF",
+          border: "none",
+          borderRadius: 0,
+          padding:0,
+        //   height: "280px",
+          boxShadow:"2px 5px 10px 0px rgba(46,61,73,0.15)"
+      },
+      captionStyle: {
+          padding: "0 15px 10px 15px"
+      }
     };
 
     return (
-        <div className="col-sm-6 col-md-4" style={styles.category}>
+        <div className="col-xs-12 col-md-4" style={styles.category}>
             <div className="thumbnail" style={styles.thumbnailStyle}>
-                <img src={props.category.image} alt="..." style={styles.image}/>
-                <div className="caption">
+                <div style={styles.imgContainer}>
+                    <img src={props.category.image} alt="..." style={styles.image}/>
+                </div>
+                <div className="caption" style={styles.captionStyle}>
                     <h3>{ props.category.title}</h3>
                     <p>{props.category.desc}</p>
                 </div>

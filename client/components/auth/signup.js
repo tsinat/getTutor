@@ -42,14 +42,15 @@ class Signup extends Component {
         return {
             signupStyle: {
                 borderRadius: 0,
-                height: "100vh"
+                height: "100vh",
+                padding: "0 20px",
             },
             jambotronStyle: {
                 padding: "40px",
                 borderRadius: 0,
-                background: "#EFF0F2",
-                marginTop: "40px",
-                boxShadow: "5px 5px 5px 5px lightgrey"
+                background: "#FFFFFF",
+                marginTop: "20px",
+                boxShadow:"12px 15px 20px 0px rgba(46,61,73,0.15)"
             }
         }
     }

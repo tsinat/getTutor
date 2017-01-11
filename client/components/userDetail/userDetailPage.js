@@ -15,7 +15,7 @@ class SingleUserDetail extends Component {
     getStyles() {
         return {
             containerStyle: {
-                width: "80%",
+                padding: "0 40px",
                 height: "100vh",
                 background: "white"
             }

@@ -6,24 +6,29 @@ const Link = Radium(ReactRouterLink);
 const SingleUser = (props) => {
     const styles = {
         thumbnailStyle: {
-            cursor: "pointer",
-            borderRadius: 0,
-            border: "none",
-            padding: "15px",
-            background: "#EFF0F2",
-            transition: "boxShadow .3s ease-in-out",
-            boxShadow: "1px 1px 1px #ecf0f1",
-            boxSizing: "border-box",
-            minHeight: "200px",
+             background:"#FFFFFF",
+             border: "none",
+             borderRadius: 0,
+             padding: "15px",
+             boxShadow: "1px 1px 1px lightgrey",
+             boxShadow:"12px 15px 20px 0px rgba(46,61,73,0.15)",
+             position: 'relative',
+             overflow: 'hidden',
             ":hover": {
                 boxShadow: "3px 3px 3px lightgrey",
-                // transform: "scale(1.01)"
-                textDecoration: "none",
                 cursor: "pointer"
             }
         },
-        singleUserStyle: {
-            // padding: "0 8px",
+        imgStyle: {
+            width: "100%",
+            height: "auto",
+
+        },
+        imgContainer: {
+            overflow: "hidden",
+            textAlign: "center",
+            margin: "0 auto",
+            maxHeight: "260px",
         },
         nameStyle: {
             color:"#F05A50",
@@ -34,7 +39,7 @@ const SingleUser = (props) => {
         hrStyle: {
             margin: 0,
         },
-        textStyle: {
+        linkStyle: {
             textDecoration: "none"
         },
         detail: {
@@ -45,15 +50,17 @@ const SingleUser = (props) => {
         }
     };
     return (
-        <Link to={`/userDetail/${props.user._id}`} key={props.index} style={styles.textStyle}>
-            <div className="" style={styles.singleUserStyle} key={props.index + 2}>
+        <Link to={`/userDetail/${props.user._id}`} key={props.index} style={styles.linkStyle}>
+            <div className=""  key={props.index + 2}>
                 <div className="thumbnail" style={styles.thumbnailStyle} key={props.index + 3}>
-                    <img src={props.user.image} alt="..."/>
+                    <div style={styles.imgContainer}>
+                        <img src={props.user.image} alt="..."  style={styles.imgStyle}/>
+                    </div>
                     <div className="caption">
                         <h4 className="text-center" style={styles.nameStyle}>{props.user.bio.firstName} {props.user.bio.lastName}</h4>
                         <hr style={styles.hrStyle}/>
                         <h4>{props.user.category}</h4>
-                        <span style={styles.textStyle}>Job Title | @companyName</span>
+                        <span>Job Title | @companyName</span>
                     </div>
                     <div className="detail" style={styles.detail} key={props.index + 1}>
                         <span>{props.user.email}</span>
