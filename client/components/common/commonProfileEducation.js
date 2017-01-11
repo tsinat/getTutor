@@ -40,7 +40,9 @@ const ProfileEdu = (props) => {
     const styles = {
         listItem: {
             borderRadius: 0,
-            marginBottom:"40px"
+        },
+        sectionStyle: {
+            // marginBottom: "400px"
         }
     }
     const pathName = location.pathname;

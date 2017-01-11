@@ -8,10 +8,10 @@ const SingleUser = (props) => {
         thumbnailStyle: {
              background:"#FFFFFF",
              border: "none",
-             borderRadius: 0,
+             borderRadius: "5px",
              padding: "15px",
              boxShadow: "1px 1px 1px lightgrey",
-             boxShadow:"12px 15px 20px 0px rgba(46,61,73,0.15)",
+             boxShadow:"7px 10px 15px 0px rgba(46,61,73,0.15)",
              position: 'relative',
              overflow: 'hidden',
             ":hover": {

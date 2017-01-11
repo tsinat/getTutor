@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 const UserDetailPic = (props) => {
     const styles = {
         listItem: {
-            marginTop: "40px",
             borderRadius: 0,
             borderBottom: "2px solid #FAFAFA"
         },

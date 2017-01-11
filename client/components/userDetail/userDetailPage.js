@@ -15,9 +15,12 @@ class SingleUserDetail extends Component {
     getStyles() {
         return {
             containerStyle: {
-                padding: "0 40px",
-                height: "100vh",
-                background: "white"
+                padding: "20px 40px 40px 40px",
+                boxShadow:"7px 10px 15px 0px rgba(46,61,73,0.15)",
+                height: "100%",
+                background: "white",
+                marginTop: "20px",
+                marginBottom: "40px"
             }
         }
     }

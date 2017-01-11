@@ -4,7 +4,7 @@ import Radium from 'radium';
 const ProfilePic = (props) => {
     const styles = {
         listItem: {
-            marginTop: "40px",
+            // marginTop: "40px",
             borderRadius: 0,
             borderBottom: "2px solid #FAFAFA"
         },
