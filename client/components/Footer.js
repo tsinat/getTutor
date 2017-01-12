@@ -15,6 +15,7 @@ class Footer extends Component {
                 paddingTop: "20px",
                 textAlign: "center",
                 backgroundColor: "#F05A50",
+                backgroundColor: "#283E4A",
                 opacity: 0.7
             },
             footerStyleUl: {

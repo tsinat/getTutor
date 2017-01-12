@@ -30,7 +30,10 @@ const Category = (props) => {
           boxShadow:"2px 5px 10px 0px rgba(46,61,73,0.15)"
       },
       captionStyle: {
-          padding: "0 15px 10px 15px"
+          padding: "0 15px 10px 15px",
+      },
+      headerStyle: {
+          color: "#697881",
       }
     };
 
@@ -41,7 +44,7 @@ const Category = (props) => {
                     <img src={props.category.image} alt="..." style={styles.image}/>
                 </div>
                 <div className="caption" style={styles.captionStyle}>
-                    <h3>{ props.category.title}</h3>
+                    <h3 style={styles.headerStyle}>{ props.category.title}</h3>
                     <p>{props.category.desc}</p>
                 </div>
             </div>

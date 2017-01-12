@@ -71,10 +71,11 @@ class Header extends Component {
                 position: 'fixed',
                 top: 0,
                 fontWeight: "bold",
-                background: "#F05A50",
+                background: "#283E4A",
                 // background: "#0AB2BD",
                 borderBottom: "none",
                 transition: "0.1s ease-in-out",
+                borderBottom: "5px solid #C0C0C9"
             }
         }
     }
