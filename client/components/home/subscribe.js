@@ -17,14 +17,21 @@ const Subscribe = (props) => {
         inputStyle: {
             height: "40px",
             marginRight: 0,
+            border: "2px solid #FFFFFF",
+            backgroundColor: "transparent",
+            color: "#FFFFFF"
         },
         btnStyle: {
             height: "40px",
             marginRight: 0,
             backgroundColor: "transparent",
-            color: "#FFFFFF",
-            border: "2px solid #F05A50",
-            fontWeight: "bold"
+            color: "#F05A50",
+            border: "2px solid #FFFFFF",
+            fontSize: "1.3em",
+            fontWeight: "bold",
+            ':hover': {
+                background:"red"
+            }
         }
     }
     return (
