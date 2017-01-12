@@ -47,7 +47,7 @@ class Signin extends Component {
                 padding: "0 20px",
             },
             jumbotronStyle: {
-                padding: "40px",
+                padding: "0 40px 40px",
                 borderRadius: 0,
                 background: "#FFFFFF",
                 marginTop: "20px",
@@ -75,9 +75,13 @@ class Signin extends Component {
                 transitionLeave={false}>
                 <div className="container">
                     <div className="row " style={styles.signinStyle}>
-                        <div className="col-xs-12  col-md-8 col-md-offset-2 jumbotron" style={styles.jumbotronStyle}>
+                        <div className="col-xs-12  col-md-10 col-md-offset-1 jumbotron" style={styles.jumbotronStyle}>
                             <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
                                 <div className="row">
+                                    <div>
+                                        <h3 className="text-center">Sign In</h3>
+                                        <hr /><br />
+                                    </div>
                                     <fieldset className="form-group col-xs-12 col-md-6">
                                         <label>Email:</label>
                                         <Field name="email" component={InputField} type="email"/>
@@ -88,6 +92,7 @@ class Signin extends Component {
                                     </fieldset>
                                 </div>
                                 {this.renderAlert()}
+                                <br />
                                 <button action="submit" className="btn btn-primary btn-block">Sign in</button>
                             </form>
                         </div>

@@ -46,7 +46,7 @@ class Signup extends Component {
                 padding: "0 20px",
             },
             jambotronStyle: {
-                padding: "40px",
+                padding: "0 40px 40px",
                 borderRadius: 0,
                 background: "#FFFFFF",
                 marginTop: "20px",
@@ -75,9 +75,13 @@ class Signup extends Component {
                 transitionLeave={false}>
                 <div className="container">
                     <div className="row " style={styles.signupStyle}>
-                        <div className="col-xs-12  col-md-8 col-md-offset-2 jumbotron" style={styles.jambotronStyle}>
+                        <div className="col-xs-12  col-md-10 col-md-offset-1 jumbotron" style={styles.jambotronStyle}>
                             <form onSubmit={handleSubmit( this.handleFormSubmit.bind(this))}>
                                 <div className="row">
+                                    <div>
+                                        <h3 className="text-center">Sign Up</h3>
+                                        <hr /><br />
+                                    </div>
                                     <fieldset className="form-group col-xs-12 col-md-6">
                                         <label>First Name:</label>
                                         <Field name="firstName" component={InputField} type="text" />
@@ -122,6 +126,7 @@ class Signup extends Component {
                                     <Field name="passwordConfirm" component={InputField} type="password"/>
                                 </fieldset>
                                 { this.renderAlert() }
+                                <br />
                                 <button action="submit" className="btn btn-primary btn-block">Sign up</button>
                             </form>
                         </div>
