@@ -24,9 +24,9 @@ const Subscribe = (props) => {
         btnStyle: {
             height: "40px",
             marginRight: 0,
-            backgroundColor: "transparent",
-            color: "#F05A50",
-            border: "2px solid #FFFFFF",
+            backgroundColor: "#F05A50",
+            color: "#FFFFFF",
+            border: "2px solid #F05A50",
             fontSize: "1.3em",
             fontWeight: "bold",
             ':hover': {
