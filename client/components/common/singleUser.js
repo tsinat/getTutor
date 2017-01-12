@@ -31,7 +31,7 @@ const SingleUser = (props) => {
             maxHeight: "260px",
         },
         nameStyle: {
-            color:"#F05A50",
+            color:"grey",
             opacity: 0.5,
             marginTop: 0,
             textDecoration: "none"
