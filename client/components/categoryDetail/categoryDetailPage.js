@@ -17,9 +17,9 @@ class CategoryDetail extends Component {
                 width: "100%",
                 marginTop: "-25px",
                 marginBottom: "20px",
-                background: "white",
-                padding: "5px",
+                padding: "8px",
                 borderBottom: "1px solid lightgrey",
+                color: "#697881",
             }
         };
     }

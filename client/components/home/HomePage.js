@@ -34,7 +34,8 @@ class HomePage extends Component {
                 borderBottom: "1px solid lightgrey",
                 padding: "20px",
                 marginTop: "-10px",
-                background: "#FFFFFF"
+                background: "#FFFFFF",
+                color: "#697881",
             }
         }
     }
