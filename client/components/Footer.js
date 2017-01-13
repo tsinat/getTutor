@@ -30,7 +30,7 @@ class Footer extends Component {
                 color: "grey"
             },
             linkStyle: {
-                color: "white",
+                color: "#FFF",
                 fontWeight: "bold",
                 textDecoration: "none"
             }

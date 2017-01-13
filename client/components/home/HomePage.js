@@ -88,7 +88,7 @@ class HomePage extends Component {
         }
 
     scrollUp() {
-        const scrollT = (screen.height > 800) ? screen.height: screen.height * 0.88;
+        const scrollT = (screen.height > 800) ? screen.height: screen.height * 0.86;
         scroll.scrollTo(scrollT);
     }
 

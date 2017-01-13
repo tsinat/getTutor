@@ -18,8 +18,7 @@ const Subscribe = (props) => {
             height: "40px",
             marginRight: 0,
             border: "2px solid #FFFFFF",
-            backgroundColor: "transparent",
-            color: "#FFFFFF"
+            borderRadius: 0,
         },
         btnStyle: {
             height: "40px",
@@ -27,11 +26,10 @@ const Subscribe = (props) => {
             backgroundColor: "#F05A50",
             color: "#FFFFFF",
             border: "2px solid #F05A50",
+            borderRadius: 0,
             fontSize: "1.3em",
             fontWeight: "bold",
-            ':hover': {
-                background:"red"
-            }
+
         }
     }
     return (

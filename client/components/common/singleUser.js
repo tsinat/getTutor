@@ -8,15 +8,16 @@ const SingleUser = (props) => {
         thumbnailStyle: {
              background:"#FFFFFF",
              border: "none",
-             borderRadius: "5px",
+             borderRadius: "0",
              padding: "15px",
              boxShadow: "1px 1px 1px lightgrey",
-             boxShadow:"7px 10px 15px 0px rgba(46,61,73,0.15)",
+             boxShadow:"5px 5px 5px 0px rgba(46,61,73,0.15)",
              position: 'relative',
              overflow: 'hidden',
             ":hover": {
-                boxShadow: "3px 3px 3px lightgrey",
-                cursor: "pointer"
+                boxShadow:"7px 15px 10px 0px rgba(46,61,73,0.15)",
+                cursor: "pointer",
+                boxSizing: "border-box"
             }
         },
         imgStyle: {
@@ -31,8 +32,7 @@ const SingleUser = (props) => {
             maxHeight: "260px",
         },
         nameStyle: {
-            color:"grey",
-            opacity: 0.5,
+            color:"#697881",
             marginTop: 0,
             textDecoration: "none"
         },

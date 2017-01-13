@@ -7,6 +7,9 @@
  body {
      background: #F4F4EF;
  }
+ input, select {
+     border-radius: 0 !important;
+ }
 .example-enter {
   opacity: 0.01;
 }
@@ -14,6 +17,9 @@
 .btn-primary {
     background: #F05A50 !important;
     border: 1px solid #F05A50 !important;
+    border-radius: 0 !important;
+}
+.btn-default {
     border-radius: 0 !important;
 }
 .btn-primary:focus{
