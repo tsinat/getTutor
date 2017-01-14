@@ -28,10 +28,6 @@ class App extends Component {
         }
     }
 
-    componentDidMount() {
-       this.setState({ mounted: true });
-    }
-
     render(){
         const styles = this.getStyles();
         return (

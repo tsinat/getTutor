@@ -24,7 +24,7 @@ const ProfileSum = (props) => {
                 onClick={ props.toggleEditing}
                 style={styles.listItem}>
                 {(pathName== '/profile') && <span className="glyphicon glyphicon-edit pull-right"></span>}
-                <h4>Summary</h4><hr />
+                <h4 className="text-center">Summary</h4><hr />
                 <p className="">
                     { renderSumary(props)}
                 </p><br />

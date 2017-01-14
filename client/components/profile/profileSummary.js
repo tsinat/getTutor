@@ -57,31 +57,29 @@ class ProfileSummary extends Component {
             );
         } else {
             return (
-                <div className="row ">
-                    <div className="col-xs-12">
-                        <form>
-                            <ul className="list-group-item" style={styles.ulStyles}>
-                                <li >
-                                    <label><strong>Summary:</strong></label>
-                                    <textarea
-                                        name="summary"
-                                        className="form-control"
-                                        rows='5'
-                                        value={this.state.summary}
-                                        onChange={this.onChange}></textarea>
-                                </li><br />
-                                <li className="btn-group">
-                                    <button
-                                        onClick={this.handleUpdate}
-                                        action="submit"
-                                        className="btn btn-primary">Update</button>
-                                    <button
-                                        className="btn btn-default"
-                                        onClick={this.toggleEditing}>Cancel</button>
-                                </li>
-                            </ul>
-                        </form>
-                    </div>
+                <div className="row list-group-item">
+                    <form>
+                        <div>
+                            <fieldset >
+                                <label><strong>Summary:</strong></label>
+                                <textarea
+                                    name="summary"
+                                    className="form-control"
+                                    rows='5'
+                                    value={this.state.summary}
+                                    onChange={this.onChange}></textarea>
+                            </fieldset><br />
+                            <fieldset className="btn-group">
+                                <button
+                                    onClick={this.handleUpdate}
+                                    action="submit"
+                                    className="btn btn-primary">Update</button>
+                                <button
+                                    className="btn btn-default"
+                                    onClick={this.toggleEditing}>Cancel</button>
+                            </fieldset>
+                        </div>
+                    </form>
                 </div>
             );
         }

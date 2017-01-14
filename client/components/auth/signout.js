@@ -14,7 +14,8 @@ class Signout extends Component {
         }
         return (
             <div className="container" style={styles.containerStyle}>
-                Sorry to see you go ... Please visit us again
+                <br />
+                <h3 className="text-center">Sorry to see you go ... Please visit us again</h3>
             </div>
         );
     }

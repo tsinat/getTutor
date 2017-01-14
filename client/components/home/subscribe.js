@@ -17,7 +17,6 @@ const Subscribe = (props) => {
         inputStyle: {
             height: "40px",
             marginRight: 0,
-            border: "2px solid #FFFFFF",
             borderRadius: 0,
         },
         btnStyle: {
@@ -25,7 +24,6 @@ const Subscribe = (props) => {
             marginRight: 0,
             backgroundColor: "#F05A50",
             color: "#FFFFFF",
-            border: "2px solid #F05A50",
             borderRadius: 0,
             fontSize: "1.3em",
             fontWeight: "bold",
@@ -39,7 +37,10 @@ const Subscribe = (props) => {
                     <input className="form-control" type="text"  style={styles.inputStyle} placeholder=" Please enter your email"/>
                 </div>
                 <div className="col-xs-4 col-md-2">
-                    <button className="btn btn-block " style={styles.btnStyle}>Subscribe</button>
+                    <button
+                        className="btn btn-block "
+                        style={styles.btnStyle}
+                        onClick={(e)=> e.preventDefault() }>Subscribe</button>
                 </div>
             </form>
         </div>

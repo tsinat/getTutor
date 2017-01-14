@@ -17,7 +17,7 @@ class SingleUserDetail extends Component {
             containerStyle: {
                 padding: "20px 40px 40px 40px",
                 height: "100%",
-                marginTop: "20px",
+                marginTop: 0,
                 marginBottom: "40px"
             }
         }
@@ -38,8 +38,10 @@ class SingleUserDetail extends Component {
                             data={this.props.userDetail}/>
                         <ProfileBio
                             data={this.props.userDetail}/>
+                            <br />
                         <ProfileSummary
                             data={this.props.userDetail}/>
+                            <br />
                         <ProfileEducation
                             data={this.props.userDetail}/>
                     </div>

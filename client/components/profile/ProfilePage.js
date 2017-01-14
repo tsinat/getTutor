@@ -25,7 +25,7 @@ import ProfilePicture from './profilePicture';
            containerStyle: {
                padding: "20px 40px 20px 40px",
                height: "100%",
-               marginTop: "20px",
+               marginTop: 0,
                marginBottom: "40px"
            }
        }

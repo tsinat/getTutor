@@ -71,8 +71,8 @@ class Header extends Component {
                 position: 'fixed',
                 top: 0,
                 fontWeight: "bold",
-                background: "#283E4A",
-                // background: "#0AB2BD",
+                // background: "#283E4A",
+                background: "#2E3D49",
                 borderBottom: "none",
                 transition: "0.1s ease-in-out",
                 borderBottom: "5px solid #C0C0C9"

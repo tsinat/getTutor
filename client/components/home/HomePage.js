@@ -58,8 +58,6 @@ class HomePage extends Component {
     }
 
     componentDidMount() {
-        // const el =  document.getElementById('test');
-
         window.addEventListener("resize", this.updateDimensions);
 
         Events.scrollEvent.register('begin', function(to, element) {
@@ -71,7 +69,6 @@ class HomePage extends Component {
         });
 
         scrollSpy.update();
-        // this.setState({height: el.getBoundingClientRect().top});
     }
 
     componentWillUnmount() {
@@ -88,25 +85,25 @@ class HomePage extends Component {
         }
 
     scrollUp() {
-        const scrollT = (screen.height > 800) ? screen.height: screen.height * 0.86;
+        const scrollT = (screen.height > 800) ? screen.height - 30: screen.height * 0.86;
         scroll.scrollTo(scrollT);
     }
 
     scrollToTop() {
         scroll.scrollToTop();
     }
-
-    scrollToBottom() {
-        scroll.scrollToBottom();
-    }
-
-    scrollTo() {
-        scroll.scrollTo(100);
-    }
-
-    scrollMore() {
-        scroll.scrollMore(100);
-    }
+    // 
+    // scrollToBottom() {
+    //     scroll.scrollToBottom();
+    // }
+    //
+    // scrollTo() {
+    //     scroll.scrollTo(100);
+    // }
+    //
+    // scrollMore() {
+    //     scroll.scrollMore(100);
+    // }
 
     render() {
         const styles = this.getStyles();
@@ -120,7 +117,7 @@ class HomePage extends Component {
                 transitionLeave={false}>
                 {this.renderHeader()}
                 <div className="" id="test" style={styles.panelStyle} key="me" onClick={this.scrollToTop()}>
-                    <h3 className="text-center" key='you' style={styles.headerStyle}>Some of the top rated mentors around you</h3>
+                    <h3 className="text-center" key='you' style={styles.headerStyle}>Top rated mentors around you</h3>
                 </div>
                 <SingleUserList allUsers={this.props.allUsers} key='what'/>
                 <Subscribe  key="sub"/>

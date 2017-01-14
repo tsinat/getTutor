@@ -7,7 +7,7 @@ import ProfileBio from '../common/commonProfileBio';
 
 const form =  reduxForm({
     form: 'profileEdit',
-    fields: [ 'firstName', 'lastName', 'email', 'educations'],
+    fields: [ 'firstName', 'lastName', 'email', 'tel', 'specialization', 'website'],
 });
 
 class ProfileBioList extends Component {
@@ -17,6 +17,9 @@ class ProfileBioList extends Component {
              bio: {
                firstName = '',
                lastName = '',
+               tel = '',
+               specialization = '',
+               website = ''
              } = {},
              email = '',
          } = this.props.data;
@@ -25,7 +28,10 @@ class ProfileBioList extends Component {
             editing: false,
             firstName: firstName,
             lastName: lastName,
-            email: email
+            email: email,
+            tel: tel,
+            specialization: specialization,
+            website: website
         };
         this.toggleEditing = this.toggleEditing.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
@@ -34,17 +40,10 @@ class ProfileBioList extends Component {
 
     getStyles() {
         return {
-            ulStyles: {
-                listStyle: "none"
+            btnGroup: {
+                marginLeft: "14px"
             }
         }
-    }
-
-    componentDidMount() {
-        this.setState({
-            firstName: this.props.data.bio.firstName,
-            lastName: this.props.data.bio.lastName
-        });
     }
 
     onChange(e) {
@@ -74,49 +73,74 @@ class ProfileBioList extends Component {
             );
         } else {
             return (
-                <div className="row ">
-                    <div className="col-xs-12">
-                        <form>
-                            <ul className="list-group-item" style={styles.ulStyles}>
-                                <li >
-                                    <label>First Name:</label>
-                                    <input
-                                        name="firstName"
-                                        type="text"
-                                        className="form-control"
-                                        value={this.state.firstName}
-                                        onChange={this.onChange}/>
-                                </li>
-                                <li className="">
-                                    <label className="">Last Name:</label>
-                                    <input
-                                        name="lastName"
-                                        type="text"
-                                        className="form-control"
-                                        value={this.state.lastName}
-                                        onChange={this.onChange}/>
-                                </li>
-                                <li className="">
-                                    <label>Email:</label>
-                                    <input
-                                        name="email"
-                                        type="text"
-                                        className="form-control"
-                                        value={this.state.email}
-                                        onChange={this.onChange}/>
-                                </li><br />
-                                <li className="btn-group">
-                                    <button
-                                        onClick={this.handleUpdate}
-                                        action="submit"
-                                        className="btn btn-primary">Update</button>
-                                    <button
-                                        onClick={this.toggleEditing}
-                                        className="btn btn-default">Cancel</button>
-                                </li>
-                            </ul>
-                        </form>
-                    </div>
+                <div className="row list-group-item">
+                    <form>
+                        <div>
+                            <fieldset className="form-group col-xs-12 col-md-6">
+                                <label>First Name:</label>
+                                <input
+                                    name="firstName"
+                                    type="text"
+                                    className="form-control"
+                                    value={this.state.firstName}
+                                    onChange={this.onChange}/>
+                            </fieldset>
+                            <fieldset className="form-group col-xs-12 col-md-6">
+                                <label className="">Last Name:</label>
+                                <input
+                                    name="lastName"
+                                    type="text"
+                                    className="form-control"
+                                    value={this.state.lastName}
+                                    onChange={this.onChange}/>
+                            </fieldset>
+                            <fieldset className="form-group col-xs-12 col-md-6">
+                                <label>Email:</label>
+                                <input
+                                    name="email"
+                                    type="email"
+                                    className="form-control"
+                                    value={this.state.email}
+                                    onChange={this.onChange}/>
+                            </fieldset>
+                            <fieldset className="form-group col-xs-12 col-md-6">
+                                <label>Tel:</label>
+                                <input
+                                    name="tel"
+                                    type="text"
+                                    className="form-control"
+                                    value={this.state.tel}
+                                    onChange={this.onChange}/>
+                            </fieldset>
+                            <fieldset className="form-group col-xs-12 col-md-6">
+                                <label>Website:</label>
+                                <input
+                                    name="website"
+                                    type="url"
+                                    className="form-control"
+                                    value={this.state.website}
+                                    onChange={this.onChange}/>
+                            </fieldset>
+                            <fieldset className="form-group col-xs-12 col-md-6">
+                                <label>Specialization:</label>
+                                <input
+                                    name="specialization"
+                                    type="text"
+                                    className="form-control"
+                                    value={this.state.specialization}
+                                    onChange={this.onChange}/>
+                            </fieldset>
+                            <fieldset className="btn-group" style={styles.btnGroup}>
+                                <button
+                                    onClick={this.handleUpdate}
+                                    action="submit"
+                                    className="btn btn-primary">Update</button>
+                                <button
+                                    onClick={this.toggleEditing}
+                                    className="btn btn-default">Cancel</button>
+                            </fieldset>
+                        </div>
+                    </form>
                 </div>
             );
         }

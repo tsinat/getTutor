@@ -14,6 +14,9 @@ const userSchema = new Schema({
     bio: {
         firstName: { type: String, default: "" },
         lastName: { type: String, default: ""},
+        tel: { type: String, default: ""},
+        website: { type: String, default: ""},
+        specialization: { type: String, default: ""}
     },
     summary: String,
     education: {

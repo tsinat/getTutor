@@ -8,7 +8,7 @@ import ProfileEdu from '../common/commonProfileEducation';
 const form =  reduxForm({
     form: 'profileEducation',
     fields: [ 'firstName', 'lastName', 'email', 'educations'],
-    // validate
+    // vafieldsetdate
 });
 
 class ProfileEducation extends Component {
@@ -28,7 +28,7 @@ class ProfileEducation extends Component {
     getStyles() {
         return {
             ulStyles: {
-                listStyle: "none"
+                fieldsetstStyle: "none"
             }
         }
     }
@@ -60,48 +60,46 @@ class ProfileEducation extends Component {
             );
         } else {
             return (
-                <div className="row ">
-                    <div className="col-xs-12">
-                        <form>
-                            <ul className="list-group-item" style={styles.ulStyles}>
-                                <li >
-                                    <label>School:</label>
-                                    <input
-                                        name="school"
-                                        type="text"
-                                        className="form-control"
-                                        onChange={this.onChange }
-                                        value={this.state.school}/>
-                                </li>
-                                <li className="">
-                                    <label className="">Degree:</label>
-                                    <input
-                                        name="degree"
-                                        type="text"
-                                        className="form-control"
-                                        onChange={this.onChange }
-                                        value={this.state.degree}/>
-                                </li>
-                                <li className="">
-                                    <label>Field of Study:</label>
-                                    <input
-                                        name="field"
-                                        type="text"
-                                        className="form-control"
-                                        onChange={this.onChange }
-                                        value={this.state.field}/>
-                                </li><br />
-                                <li className="btn-group">
-                                    <button
-                                        onClick={this.handleUpdate}
-                                        action="submit" className="btn btn-primary">Update</button>
-                                    <button
-                                        onClick={this.toggleEditing}
-                                        className="btn btn-default">Cancel</button>
-                                </li>
-                            </ul>
-                        </form>
-                    </div>
+                <div className="row list-group-item">
+                    <form>
+                        <div>
+                            <fieldset >
+                                <label>School:</label>
+                                <input
+                                    name="school"
+                                    type="text"
+                                    className="form-control"
+                                    onChange={this.onChange }
+                                    value={this.state.school}/>
+                            </fieldset>
+                            <fieldset className="">
+                                <label className="">Degree:</label>
+                                <input
+                                    name="degree"
+                                    type="text"
+                                    className="form-control"
+                                    onChange={this.onChange }
+                                    value={this.state.degree}/>
+                            </fieldset>
+                            <fieldset className="">
+                                <label>Field of Study:</label>
+                                <input
+                                    name="field"
+                                    type="text"
+                                    className="form-control"
+                                    onChange={this.onChange }
+                                    value={this.state.field}/>
+                            </fieldset><br />
+                            <fieldset className="btn-group">
+                                <button
+                                    onClick={this.handleUpdate}
+                                    action="submit" className="btn btn-primary">Update</button>
+                                <button
+                                    onClick={this.toggleEditing}
+                                    className="btn btn-default">Cancel</button>
+                            </fieldset>
+                        </div>
+                    </form>
                 </div>
             );
         }

@@ -6,7 +6,6 @@ const renderProfileEducation = (props) => {
     if(pathName == "/profile") {
         return (
             <div>
-                <h4>Education</h4><hr />
                 <p className="">
                     <strong>School:</strong> { props.data.education.school ? props.data.education.school : 'School you attended ?'}
                 </p>
@@ -21,7 +20,6 @@ const renderProfileEducation = (props) => {
     } else {
         return (
             <div>
-                <h4>Education</h4><hr />
                 <p className="">
                     <strong>School:</strong> { props.data.education.school ? props.data.education.school : ''}
                 </p>
@@ -53,6 +51,7 @@ const ProfileEdu = (props) => {
                 onClick={props.toggleEditing}
                 style={styles.listItem}>
                 {(pathName== '/profile') && <span className="glyphicon glyphicon-edit pull-right"></span>}
+                <h4 className="text-center">Education</h4><hr />
                 { renderProfileEducation(props) }
             </div>
         </div>
