@@ -26,6 +26,9 @@ const ProfileBio = (props) => {
                     <p className="">
                         <strong>Email:</strong> { props.data.email }
                     </p>
+                    <p className="">
+                        <strong>Twitter:</strong><a href={`https://twitter.com/${props.data.bio.twitter}`} target="_blank"> {props.data.bio.twitter}</a>
+                    </p>
                 </div>
             </div>
             <div className="col-xs-12 col-md-6">

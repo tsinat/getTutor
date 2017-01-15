@@ -7,7 +7,7 @@ import ProfileBio from '../common/commonProfileBio';
 
 const form =  reduxForm({
     form: 'profileEdit',
-    fields: [ 'firstName', 'lastName', 'email', 'tel', 'specialization', 'website'],
+    fields: [ 'firstName', 'lastName', 'email', 'tel', 'specialization', 'twitter', 'website'],
 });
 
 class ProfileBioList extends Component {
@@ -19,6 +19,7 @@ class ProfileBioList extends Component {
                lastName = '',
                tel = '',
                specialization = '',
+               twitter = '',
                website = ''
              } = {},
              email = '',
@@ -31,6 +32,7 @@ class ProfileBioList extends Component {
             email: email,
             tel: tel,
             specialization: specialization,
+            twitter: twitter,
             website: website
         };
         this.toggleEditing = this.toggleEditing.bind(this);
@@ -104,6 +106,15 @@ class ProfileBioList extends Component {
                                     onChange={this.onChange}/>
                             </fieldset>
                             <fieldset className="form-group col-xs-12 col-md-6">
+                                <label>Twitter:</label>
+                                <input
+                                    name="twitter"
+                                    type="text"
+                                    className="form-control"
+                                    value={this.state.twitter}
+                                    onChange={this.onChange}/>
+                            </fieldset>
+                            <fieldset className="form-group col-xs-12 col-md-6">
                                 <label>Tel:</label>
                                 <input
                                     name="tel"
@@ -121,7 +132,7 @@ class ProfileBioList extends Component {
                                     value={this.state.website}
                                     onChange={this.onChange}/>
                             </fieldset>
-                            <fieldset className="form-group col-xs-12 col-md-6">
+                            <fieldset className="form-group col-xs-12">
                                 <label>Specialization:</label>
                                 <input
                                     name="specialization"

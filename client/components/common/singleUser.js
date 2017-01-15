@@ -60,7 +60,9 @@ const SingleUser = (props) => {
                         <h4 className="text-center" style={styles.nameStyle}>{props.user.bio.firstName} {props.user.bio.lastName}</h4>
                         <hr style={styles.hrStyle}/>
                         <h4>{props.user.category}</h4>
-                        <span>Job Title | @companyName</span>
+                        <p>Twitter: <a href={props.user.bio.website} target="_blank">{props.user.bio.twitter}</a></p>
+                        <p>Website: <a href={props.user.bio.website} target="_blank">{props.user.bio.website}</a></p>
+                        <p>Courses: <a href={props.user.bio.specialization} target="_blank">{props.user.bio.specialization}</a></p>
                     </div>
                     <div className="detail" style={styles.detail} key={props.index + 1}>
                         <span>{props.user.email}</span>

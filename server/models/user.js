@@ -16,6 +16,7 @@ const userSchema = new Schema({
         lastName: { type: String, default: ""},
         tel: { type: String, default: ""},
         website: { type: String, default: ""},
+        twitter: { type: String, default: ""},
         specialization: { type: String, default: ""}
     },
     summary: String,
