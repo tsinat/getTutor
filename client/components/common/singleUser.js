@@ -60,13 +60,13 @@ const SingleUser = (props) => {
                         <h4 className="text-center" style={styles.nameStyle}>{props.user.bio.firstName} {props.user.bio.lastName}</h4>
                         <hr style={styles.hrStyle}/>
                         <h4>{props.user.category}</h4>
-                        <p>Twitter: <a href={props.user.bio.website} target="_blank">{props.user.bio.twitter}</a></p>
-                        <p>Website: <a href={props.user.bio.website} target="_blank">{props.user.bio.website}</a></p>
-                        <p>Courses: <a href={props.user.bio.specialization} target="_blank">{props.user.bio.specialization}</a></p>
+                        <p>email: {props.user.email}</p>
+                        { props.user.bio.twitter && <p>Twitter: <a href={props.user.bio.twitter} target="_blank">{props.user.bio.twitter}</a></p> }
+                        { props.user.bio.website && <p>Website: <a href={props.user.bio.website} target="_blank">{props.user.bio.website}</a></p> }
+                        { props.user.bio.specialization && <p>Courses: <a href={props.user.bio.specialization} target="_blank">{props.user.bio.specialization}</a></p> }
                     </div>
-                    <div className="detail" style={styles.detail} key={props.index + 1}>
-                        <span>{props.user.email}</span>
-                    </div>
+                    {/* <div className="detail" style={styles.detail} key={props.index + 1}> */}
+                    {/* </div> */}
                 </div>
             </div>
         </Link>
