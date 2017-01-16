@@ -7,7 +7,7 @@ const categoryList = [
     },
     {
     title: "Networking",
-    id: "Newtworking",
+    id: "Networking",
     desc: "If you wanted learn about Computer Networking, Internet of Things. You will learn TCP/IP protocol and Configure LAN and WAN",
     image: "/public/images/cintbanner.jpg"
     },

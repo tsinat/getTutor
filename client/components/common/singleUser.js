@@ -61,9 +61,9 @@ const SingleUser = (props) => {
                         <hr style={styles.hrStyle}/>
                         <h4>{props.user.category}</h4>
                         <p>email: {props.user.email}</p>
-                        { props.user.bio.twitter && <p>Twitter: <a href={props.user.bio.twitter} target="_blank">{props.user.bio.twitter}</a></p> }
-                        { props.user.bio.website && <p>Website: <a href={props.user.bio.website} target="_blank">{props.user.bio.website}</a></p> }
-                        { props.user.bio.specialization && <p>Courses: <a href={props.user.bio.specialization} target="_blank">{props.user.bio.specialization}</a></p> }
+                        { props.user.bio.twitter && <p>Twitter: {props.user.bio.twitter}</p> }
+                        { props.user.bio.website && <p>Website: {props.user.bio.website}</p> }
+                        { props.user.bio.specialization && <p>Courses: {props.user.bio.specialization}</p> }
                     </div>
                     {/* <div className="detail" style={styles.detail} key={props.index + 1}> */}
                     {/* </div> */}
