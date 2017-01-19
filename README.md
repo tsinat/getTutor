@@ -14,5 +14,6 @@
 ---
     git clone https://github.com/tsinat/getTutor
     cd getTutor
+    touch .env                 // add your credentials to .env files
     npm install
     npm start
