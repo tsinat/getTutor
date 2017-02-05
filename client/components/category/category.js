@@ -26,7 +26,6 @@ const Category = (props) => {
           border: "none",
           borderRadius: 0,
           padding:0,
-        //   height: "280px",
           boxShadow:"2px 5px 10px 0px rgba(46,61,73,0.15)"
       },
       captionStyle: {
