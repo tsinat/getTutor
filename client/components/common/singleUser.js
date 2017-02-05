@@ -65,8 +65,6 @@ const SingleUser = (props) => {
                         { props.user.bio.website && <p>Website: {props.user.bio.website}</p> }
                         { props.user.bio.specialization && <p>Courses: {props.user.bio.specialization}</p> }
                     </div>
-                    {/* <div className="detail" style={styles.detail} key={props.index + 1}> */}
-                    {/* </div> */}
                 </div>
             </div>
         </Link>
