@@ -5,7 +5,6 @@ import { FETCH_MESSAGE, UPDATE_USER, UPLOAD_PICTURE } from './types';
 export function updateUser(userData) {
     return function(dispatch) {
         axios.post(`/api/update`, userData).then(response => {
-            console.log('updated Data from server:', response.data);
             dispatch({
                 type: UPDATE_USER,
                 payload: response.data
@@ -24,7 +23,6 @@ export function fetchUser() {
                 authorization: localStorage.getItem('token')
             }
         }).then(response => {
-            console.log('fetchUser', response.data);
             dispatch({
                 type: FETCH_MESSAGE,
                 payload: response.data
@@ -42,7 +40,6 @@ export function uploadPicture(data, id) {
                 authorization: localStorage.getItem('token')
             }
         }).then(response => {
-            console.log('response after uploading picture', response.data);
             dispatch({
                 type: UPLOAD_PICTURE,
                 payload: response.data
