@@ -49,9 +49,9 @@ class Signin extends Component {
             jumbotronStyle: {
                 padding: "0 40px 40px",
                 borderRadius: 0,
-                background: "#FFFFFF",
+                background: "transparent",
                 marginTop: "20px",
-                boxShadow:"12px 15px 20px 0px rgba(46,61,73,0.15)"
+                // boxShadow:"12px 15px 20px 0px rgba(46,61,73,0.15)"
             }
         }
     }
