@@ -52,6 +52,9 @@ class Signin extends Component {
                 background: "transparent",
                 marginTop: "20px",
                 // boxShadow:"12px 15px 20px 0px rgba(46,61,73,0.15)"
+            },
+            hrStyle: {
+                borderColor: "#ffffff"
             }
         }
     }
@@ -80,7 +83,7 @@ class Signin extends Component {
                                 <div className="row">
                                     <div>
                                         <h3 className="text-center">Sign In</h3>
-                                        <hr /><br />
+                                        <hr style={styles.hrStyle}/><br />
                                     </div>
                                     <fieldset className="form-group col-xs-12 col-md-6">
                                         <label>Email:</label>
