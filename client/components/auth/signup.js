@@ -50,7 +50,6 @@ class Signup extends Component {
                 borderRadius: 0,
                 background: "transparent",
                 marginTop: "20px",
-                // boxShadow:"12px 15px 20px 0px rgba(46,61,73,0.15)"
             }
         }
     }
