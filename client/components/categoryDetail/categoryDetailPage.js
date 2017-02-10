@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import Radium from 'radium';
+
 import * as actions from '../../actions/usersAction';
 import SingleUserList from '../home/singleUserList';
-import Radium from 'radium';
 
 class CategoryDetail extends Component {
     constructor() {

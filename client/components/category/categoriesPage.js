@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Radium from 'radium';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { Link, browserHistory} from 'react-router';
+
 import * as actions from '../../actions';
 import Category from './category';
-import { Link, browserHistory} from 'react-router';
 import categoryList from '../../data/categoriesData';
 
 class Categories extends Component {
