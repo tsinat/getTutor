@@ -11,7 +11,7 @@ const SingleUser = (props) => {
              borderRadius: "0",
              padding: "15px",
              boxShadow: "1px 1px 1px lightgrey",
-             boxShadow:"5px 5px 5px 0px rgba(46,61,73,0.15)",
+            //  boxShadow:"5px 5px 5px 0px rgba(46,61,73,0.15)",
              position: 'relative',
              overflow: 'hidden',
             ":hover": {

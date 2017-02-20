@@ -9,7 +9,7 @@ class SingleUserList extends Component {
         return {
             containerStyle: {
                 margin: "0 auto",
-                padding: "0 40px"
+                // padding: "0 40px"
             }
         }
     }
