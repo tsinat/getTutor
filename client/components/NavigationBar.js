@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import { hashHistory} from 'react-router';
-import {Link as ReactRouterLink} from 'react-router';
+import { Link as ReactRouterLink } from 'react-router';
 const Link = Radium(ReactRouterLink);
 import { connect } from 'react-redux';
 import Radium, {style} from 'radium';
@@ -60,9 +60,6 @@ class Header extends Component {
                     color: "#F05A50",
                 }
             },
-            ulStyles: {
-                // padding: "2px"
-            },
             logo: {
                 color: "white",
                 fontSize: "1.8em",
@@ -71,7 +68,6 @@ class Header extends Component {
                 position: 'fixed',
                 top: 0,
                 fontWeight: "bold",
-                // background: "#283E4A",
                 background: "#2E3D49",
                 borderBottom: "none",
                 transition: "0.1s ease-in-out",
@@ -192,7 +188,6 @@ class Header extends Component {
               </div>
             </nav>
         );
-
     }
 }
 

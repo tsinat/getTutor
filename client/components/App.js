@@ -1,8 +1,9 @@
 import React from 'react';
 import { Component } from 'react';
+import Radium from 'radium';
+
 import Navigation from './NavigationBar';
 import Footer from './Footer';
-import Radium from 'radium';
 
 class App extends Component {
 

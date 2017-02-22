@@ -1,12 +1,12 @@
 import express from 'express';
 import multer from 'multer';
+import passport from 'passport';
 
 import { signup, signin } from '../controllers/authentication';
 import { update } from '../controllers/profile';
 import { getAll, getSingleUser, getCategoryUsers } from '../controllers/users';
 import { uploadImage } from '../controllers/awsUpload';
 import passportService from '../services/passport';
-import passport from 'passport';
 
 let upload = multer({storage: multer.memoryStorage()});
 

@@ -47,7 +47,6 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'index.html'));
 });
 
-
 const server = http.createServer(app);
 
 server.listen(PORT, () => console.log(`Running on localhost://${PORT}`))

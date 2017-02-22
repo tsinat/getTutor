@@ -8,7 +8,6 @@ import ProfileEdu from '../common/commonProfileEducation';
 const form =  reduxForm({
     form: 'profileEducation',
     fields: [ 'firstName', 'lastName', 'email', 'educations'],
-    // vafieldsetdate
 });
 
 class ProfileEducation extends Component {

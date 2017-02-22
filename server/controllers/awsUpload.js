@@ -2,9 +2,11 @@ import express from 'express';
 import uuid from 'uuid';
 import AWS from 'aws-sdk';
 import dotenv from 'dotenv'
-dotenv.config();
 
 import User from '../models/user';
+
+dotenv.config();
+
 
 let s3 = new AWS.S3();
 let bucketName = process.env.AWS_BUCKET;

@@ -5,8 +5,7 @@ const ProfileBio = (props) => {
     const styles = {
         listItem: {
             borderRadius: 0,
-        },
-
+        }
     }
     const pathName = location.pathname;
     return (

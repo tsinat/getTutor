@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Radium from 'radium';
+
 import * as actions from '../../actions/profileAction';
 import ProfileBioList from './profileBio';
 import ProfileSummary from './profileSummary';

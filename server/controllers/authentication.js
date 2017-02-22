@@ -1,4 +1,5 @@
 import jwt from 'jwt-simple';
+
 import User from '../models/user';
 import { SECRET } from '../config';
 

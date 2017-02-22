@@ -1,7 +1,8 @@
 import passport from 'passport';
-import { SECRET } from '../config';
 import { Strategy, ExtractJwt }  from 'passport-jwt';
 import LocalStrategy from 'passport-local';
+
+import { SECRET } from '../config';
 import User from '../models/user';
 
 const localLogin = new LocalStrategy({ usernameField: 'email'}, (email, password, done) => {
