@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Radium from 'radium';
 import Scroll from 'react-scroll';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 import * as actions from '../../actions/usersAction';
 import Header from './header';
 import SingleUserList from './singleUserList';
@@ -92,7 +93,7 @@ class HomePage extends Component {
     scrollToTop() {
         scroll.scrollToTop();
     }
-    // 
+    //
     // scrollToBottom() {
     //     scroll.scrollToBottom();
     // }

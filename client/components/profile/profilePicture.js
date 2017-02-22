@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import Radium from 'radium';
+
 import ProfilePic from '../common/commonProfilePicture';
 
 const form =  reduxForm({
