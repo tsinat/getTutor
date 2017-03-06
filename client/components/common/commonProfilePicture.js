@@ -4,7 +4,6 @@ import Radium from 'radium';
 const ProfilePic = (props) => {
     const styles = {
         listItem: {
-            // marginTop: "40px",
             borderRadius: 0,
             borderBottom: "2px solid #FAFAFA"
         },
@@ -25,6 +24,7 @@ const ProfilePic = (props) => {
             right: 0,
         }
     }
+    
     return (
         <div className="row">
             <div className="list-group-item col-xs-12"

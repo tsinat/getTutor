@@ -12,7 +12,6 @@ import ProfilePicture from './profilePicture';
  class ProfilePage extends Component {
    constructor(){
      super();
-
      this.updateProfile = this.updateProfile.bind(this);
      this.handleProfilePicture = this.handleProfilePicture.bind(this);
    }
