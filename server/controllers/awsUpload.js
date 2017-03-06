@@ -7,13 +7,11 @@ import User from '../models/user';
 
 dotenv.config();
 
-
 let s3 = new AWS.S3();
 let bucketName = process.env.AWS_BUCKET;
 let urlBase = process.env.AWS_URL_BASE;
 
 export function uploadImage(req, res, next) {
-    console.log('file:', req.body);
     let file = req.body;
     let id = req.params.id
 
@@ -39,7 +37,7 @@ export function uploadImage(req, res, next) {
         ACL: 'public-read',
         Body: buf
     };
-    console.log('params:', params);
+
     s3.putObject(params, (err, result) => {
         if (err)
             return res.status(402).send(err);
@@ -48,11 +46,10 @@ export function uploadImage(req, res, next) {
         let passedObj = {
             image: imgUrl
         }
-        console.log('id', id);
+
         User.findByIdAndUpdate(id, passedObj, {
             new: true
         }, (err, updatedUser) => {
-            console.log('updatedUser:', updatedUser);
             if (err) {
                 return next({error: 'error while updating url in db'});
             }
