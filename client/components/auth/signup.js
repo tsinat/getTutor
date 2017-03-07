@@ -16,7 +16,6 @@ const form =  reduxForm({
 });
 
 class Signup extends Component {
-
     handleFormSubmit(formProps) {
         console.log('formProps:', formProps);
         const newUser = {
