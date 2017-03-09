@@ -16,6 +16,23 @@ const form =  reduxForm({
 });
 
 class Signup extends Component {
+    
+    getStyles() {
+        return {
+            signupStyle: {
+                borderRadius: 0,
+                height: "100%",
+                padding: "0 20px",
+            },
+            jambotronStyle: {
+                padding: "0 40px 40px",
+                borderRadius: 0,
+                background: "transparent",
+                marginTop: "20px",
+            }
+        }
+    }
+
     handleFormSubmit(formProps) {
         console.log('formProps:', formProps);
         const newUser = {
@@ -35,22 +52,6 @@ class Signup extends Component {
                     <strong>Opps!</strong> {this.props.errorMessage }
                 </div>
             );
-        }
-    }
-
-    getStyles() {
-        return {
-            signupStyle: {
-                borderRadius: 0,
-                height: "100%",
-                padding: "0 20px",
-            },
-            jambotronStyle: {
-                padding: "0 40px 40px",
-                borderRadius: 0,
-                background: "transparent",
-                marginTop: "20px",
-            }
         }
     }
 

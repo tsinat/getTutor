@@ -23,22 +23,6 @@ class Signin extends Component {
         this.state = { showSignin: false };
     }
 
-    handleFormSubmit({email, password}) {
-        console.log('email and password:', {email, password});
-        this.props.signinUser({email, password});
-    }
-
-    renderAlert() {
-        if (this.props.errorMessage) {
-            return (
-                <div className="alert alert-danger">
-                    <strong>Opps!</strong>
-                    {this.props.errorMessage}
-                </div>
-            );
-        }
-    }
-
     getStyles() {
         return {
             signinStyle: {
@@ -55,6 +39,22 @@ class Signin extends Component {
             hrStyle: {
                 borderColor: "#ffffff"
             }
+        }
+    }
+
+    handleFormSubmit({email, password}) {
+        console.log('email and password:', {email, password});
+        this.props.signinUser({email, password});
+    }
+
+    renderAlert() {
+        if (this.props.errorMessage) {
+            return (
+                <div className="alert alert-danger">
+                    <strong>Opps!</strong>
+                    {this.props.errorMessage}
+                </div>
+            );
         }
     }
 
