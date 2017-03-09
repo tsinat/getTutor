@@ -16,7 +16,7 @@ const form =  reduxForm({
 });
 
 class Signup extends Component {
-    
+
     getStyles() {
         return {
             signupStyle: {
@@ -65,6 +65,7 @@ class Signup extends Component {
                 category,
                 password,
                 passwordConfirm }} = this.props;
+                
         return (
             <ReactCSSTransitionGroup
                 component="div"
