@@ -37,8 +37,6 @@ class CategoryDetail extends Component {
             this.setState({searchPhrase: phrase});
             this.props.getCategoryUsers(phrase);
         }
-        console.log(this.state.searchPhrase);
-        console.log(param);
     }
 
     render() {

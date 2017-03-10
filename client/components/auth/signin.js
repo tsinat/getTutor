@@ -43,7 +43,6 @@ class Signin extends Component {
     }
 
     handleFormSubmit({email, password}) {
-        console.log('email and password:', {email, password});
         this.props.signinUser({email, password});
     }
 
@@ -67,7 +66,7 @@ class Signin extends Component {
                 password
             }
         } = this.props;
-        
+
         return (
             <ReactCSSTransitionGroup
                 component="div"

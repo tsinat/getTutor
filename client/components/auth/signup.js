@@ -34,7 +34,6 @@ class Signup extends Component {
     }
 
     handleFormSubmit(formProps) {
-        console.log('formProps:', formProps);
         const newUser = {
             bio: { firstName: formProps.firstName, lastName: formProps.lastName },
             email: formProps.email,
@@ -65,7 +64,7 @@ class Signup extends Component {
                 category,
                 password,
                 passwordConfirm }} = this.props;
-                
+
         return (
             <ReactCSSTransitionGroup
                 component="div"

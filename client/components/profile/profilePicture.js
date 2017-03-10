@@ -39,7 +39,6 @@ class ProfilePicture extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log('file:', this.state);
         let data = {
             data_uri: this.state.data_uri,
             filename: this.state.filename,
