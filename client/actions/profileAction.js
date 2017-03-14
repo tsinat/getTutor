@@ -1,5 +1,6 @@
- import axios from 'axios';
+import axios from 'axios';
 import { browserHistory } from 'react-router';
+
 import { FETCH_MESSAGE, UPDATE_USER, UPLOAD_PICTURE } from './types';
 
 export function updateUser(userData) {

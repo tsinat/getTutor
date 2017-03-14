@@ -16,7 +16,6 @@ const form =  reduxForm({
 });
 
 class Signup extends Component {
-
     getStyles() {
         return {
             signupStyle: {
