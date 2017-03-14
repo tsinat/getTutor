@@ -5,7 +5,6 @@ import Radium from 'radium';
 import SingleUser from '../common/singleUser';
 
 class SingleUserList extends Component {
-
     getStyles() {
         return {
             containerStyle: {

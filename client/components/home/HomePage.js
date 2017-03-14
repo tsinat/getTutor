@@ -20,7 +20,6 @@ class HomePage extends Component {
         super(props);
         this.state = {
             width: null,
-            // height: 0
         }
         this.scrollUp = this.scrollUp.bind(this);
         this.updateDimensions = this.updateDimensions.bind(this);
@@ -93,18 +92,6 @@ class HomePage extends Component {
     scrollToTop() {
         scroll.scrollToTop();
     }
-    //
-    // scrollToBottom() {
-    //     scroll.scrollToBottom();
-    // }
-    //
-    // scrollTo() {
-    //     scroll.scrollTo(100);
-    // }
-    //
-    // scrollMore() {
-    //     scroll.scrollMore(100);
-    // }
 
     render() {
         const styles = this.getStyles();
