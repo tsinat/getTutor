@@ -27,13 +27,13 @@ const Category = (props) => {
           borderRadius: 0,
           padding:0,
           boxShadow:"2px 5px 10px 0px rgba(46,61,73,0.15)"
-      },
-      captionStyle: {
+        },
+        captionStyle: {
           padding: "0 15px 10px 15px",
-      },
-      headerStyle: {
+        },
+        headerStyle: {
           color: "#697881",
-      }
+        }
     };
 
     return (

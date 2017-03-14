@@ -8,6 +8,7 @@ const ProfileBio = (props) => {
         }
     }
     const pathName = location.pathname;
+
     return (
         <div className="row list-group-item"
             onClick={props.toggleEditing}
@@ -45,7 +46,6 @@ const ProfileBio = (props) => {
                 </div>
             </div>
         </div>
-
     );
 }
 

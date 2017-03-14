@@ -9,7 +9,6 @@ import Category from './category';
 import categoryList from '../../data/categoriesData';
 
 class Categories extends Component {
-
     getStyles() {
         return {
             categoryStyle: {
