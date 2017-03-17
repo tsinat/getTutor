@@ -62,7 +62,8 @@ class Signup extends Component {
                 status,
                 category,
                 password,
-                passwordConfirm }} = this.props;
+                passwordConfirm }
+            } = this.props;
 
         return (
             <ReactCSSTransitionGroup
