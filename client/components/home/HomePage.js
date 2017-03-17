@@ -49,7 +49,6 @@ class HomePage extends Component {
             height = w.innerHeight || documentElement.clientHeight || body.clientHeight;
 
         this.setState({width: width});
-        console.log('width:', width);
     }
 
     componentWillMount() {

@@ -27,7 +27,6 @@ const Subscribe = (props) => {
             borderRadius: 0,
             fontSize: "1.3em",
             fontWeight: "bold",
-
         }
     }
     return (
