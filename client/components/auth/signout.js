@@ -14,6 +14,7 @@ class Signout extends Component {
                 height: "100vh"
             }
         }
+
         return (
             <div className="container" style={styles.containerStyle}>
                 <br />
