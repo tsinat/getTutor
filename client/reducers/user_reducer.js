@@ -2,8 +2,7 @@ import {UPDATE_USER, FETCH_MESSAGE, FETCH_USERS, SINGLE_USER, CATEGORY_USERS, UP
 
 export default function(state = {}, action) {
     switch (action.type) {
-        case UPDATE_USER:
-            console.log('UPDATE_USER:', action.payload);
+        case UPDATE_USER:);
             return {
                 ...state,
                 user: action.payload
@@ -19,19 +18,16 @@ export default function(state = {}, action) {
                 user: action.payload
             };
         case FETCH_USERS:
-            console.log('fetch all users', action.payload);
             return {
                 ...state,
                 allUsers: action.payload
             };
         case SINGLE_USER:
-            console.log('fetch all users', action.payload);
             return {
                 ...state,
                 userDetail: action.payload
             };
         case CATEGORY_USERS:
-            console.log('fetch all users', action.payload);
             return {
                 ...state,
                 cateogryUsers: action.payload
