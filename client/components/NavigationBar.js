@@ -84,7 +84,6 @@ class Header extends Component {
     renderLinks() {
         const styles = this.getStyles();
         const pathName = location.pathname;
-        console.log(pathName);
         const btnSignup = classNames({ 'nav-link': true,  'active': pathName == "/signup" });
         const btnSignin = classNames({ 'nav-link': true,  'active': pathName == "/signin" });
         const btnCategories = classNames({ 'nav-link': true,  'active': pathName == "/categories" });
