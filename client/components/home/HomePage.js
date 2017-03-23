@@ -64,7 +64,7 @@ class HomePage extends Component {
         });
 
         Events.scrollEvent.register('end', function(to, element) {
-            console.log("end", arguments);
+            // console.log("end", arguments);
         });
 
         scrollSpy.update();

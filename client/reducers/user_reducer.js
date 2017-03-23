@@ -2,7 +2,7 @@ import {UPDATE_USER, FETCH_MESSAGE, FETCH_USERS, SINGLE_USER, CATEGORY_USERS, UP
 
 export default function(state = {}, action) {
     switch (action.type) {
-        case UPDATE_USER:);
+        case UPDATE_USER:
             return {
                 ...state,
                 user: action.payload
