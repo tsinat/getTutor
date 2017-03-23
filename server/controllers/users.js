@@ -1,7 +1,6 @@
 import User from '../models/user';
 
 export function getAll(req, res, next) {
-    console.log('wow it works');
     User.find({})
         // .where('status').equals("Mentor")
         .limit(20)
@@ -23,7 +22,6 @@ export function getSingleUser(req, res, next) {
 }
 
 export function getCategoryUsers(req, res, next) {
-    console.log('category users:', req.params.category);
     const phrase = req.params.category;
     User.find({})
         .where('category').equals(phrase)
