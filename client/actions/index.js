@@ -6,9 +6,7 @@ import { AUTH_USER, AUTH_ERROR, SIGN_OUT, ROOT_URL } from './types';
 export function signinUser({email, password}) {
     return function(dispatch) {
         axios.post(`/api/signin`, {email, password}).then(response => {
-            dispatch({
-                type: AUTH_USER
-            });
+            dispatch({type: AUTH_USER});
             localStorage.setItem('token', response.data.token);
             browserHistory.push('/profile');
         }).catch(error => {
@@ -20,9 +18,7 @@ export function signinUser({email, password}) {
 export function signupUser(formProps) {
     return function(dispatch) {
         axios.post(`/api/signup`, formProps).then(response => {
-            dispatch({
-                type: AUTH_USER
-            });
+            dispatch({type: AUTH_USER});
             localStorage.setItem('token', response.data.token);
             browserHistory.push('/profile');
         }).catch(error => {
