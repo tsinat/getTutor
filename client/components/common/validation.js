@@ -28,6 +28,6 @@ export default function validate(formProps) {
     if (!formProps.passwordConfirm) {
         errors.passwordConfirm = 'Please enter a password Confirmation'
     }
-    
+
     return errors;
 }
