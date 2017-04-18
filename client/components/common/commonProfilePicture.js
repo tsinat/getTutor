@@ -23,8 +23,8 @@ const ProfilePic = (props) => {
             left: 0,
             right: 0,
         }
-    }
-    
+    };
+
     return (
         <div className="row">
             <div className="list-group-item col-xs-12"

@@ -28,7 +28,7 @@ const Subscribe = (props) => {
             fontSize: "1.3em",
             fontWeight: "bold",
         }
-    }
+    };
     return (
         <div style={styles.imageStyle}>
             <form className="row">

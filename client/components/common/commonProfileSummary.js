@@ -15,7 +15,7 @@ const ProfileSum = (props) => {
         listItem: {
             borderRadius: 0,
         }
-    }
+    };
     const pathName = location.pathname;
 
     return (
