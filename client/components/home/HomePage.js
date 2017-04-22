@@ -9,10 +9,10 @@ import Header from './header';
 import SingleUserList from './singleUserList';
 import Subscribe from './subscribe';
 
-let Link = Scroll.Link;
-let Element = Scroll.Element;
-let Events = Scroll.Events;
-let scroll = Scroll.animateScroll;
+let Link =      Scroll.Link;
+let Element =   Scroll.Element;
+let Events =    Scroll.Events;
+let scroll =    Scroll.animateScroll;
 let scrollSpy = Scroll.scrollSpy;
 
 class HomePage extends Component {
