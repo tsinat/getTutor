@@ -84,11 +84,11 @@ class Signin extends Component {
                                         <h3 className="text-center">Sign In</h3>
                                         <hr style={styles.hrStyle}/><br />
                                     </div>
-                                    <fieldset className="form-group col-xs-12 col-md-6">
+                                    <fieldset className="form-group col-xs-12 col-md-6 col-lg-6">
                                         <label>Email:</label>
                                         <Field name="email" component={InputField} type="email"/>
                                     </fieldset>
-                                    <fieldset className="form-group col-xs-12 col-md-6">
+                                    <fieldset className="form-group col-xs-12 col-md-6 col-lg-6">
                                         <label>Password:</label>
                                         <Field name="password" component={InputField} type="password"/>
                                     </fieldset>
