@@ -55,7 +55,6 @@ export function uploadImage(req, res, next) {
             }
 
             res.send(updatedUser);
-            //   });
         });
     });
 }
