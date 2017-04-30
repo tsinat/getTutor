@@ -24,6 +24,7 @@ const jwtOptions = {
     jwtFromRequest: ExtractJwt.fromHeader('authorization'),
     secretOrKey: SECRET
 };
+
 //creat JWT Strategy
 const jwtLogin = new Strategy(jwtOptions, (payload, done) => {
     User.findById(payload._id, (err, user) => {

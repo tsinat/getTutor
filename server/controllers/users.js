@@ -2,7 +2,6 @@ import User from '../models/user';
 
 export function getAll(req, res, next) {
     User.find({})
-        // .where('status').equals("Mentor")
         .limit(20)
         .exec((err, users) => {
         if (err) {
